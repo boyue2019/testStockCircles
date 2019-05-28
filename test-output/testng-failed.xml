@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" guice-stage="DEVELOPMENT" name="Failed suite [StockCircles Automation Testing]" parallel="tests">
+  <listeners>
+    <listener class-name="com.jds.testCase.caseRule.listener.LCaseType"/>
+    <listener class-name="com.jds.testCase.caseRule.listener.LCaseRetry"/>
+    <listener class-name="com.jds.testCase.caseRule.listener.LTestNG"/>
+  </listeners>
+  <test thread-count="2" name="CompatibilityTesting(failed)" parallel="tests">
+    <classes>
+      <class name="TestClass">
+        <methods>
+          <include name="beforeClass"/>
+          <include name="test3"/>
+          <include name="beforeSuite"/>
+          <include name="test4"/>
+          <include name="resetPage"/>
+        </methods>
+      </class> <!-- TestClass -->
+    </classes>
+  </test> <!-- CompatibilityTesting(failed) -->
+</suite> <!-- Failed suite [StockCircles Automation Testing] -->
