@@ -1,5 +1,6 @@
 import com.jds.testCase.caseRule.rule.RGroupName;
 import io.qameta.allure.Description;
+import org.testng.Assert;
 import org.testng.annotations.*;
 
 public class TestClass{
@@ -72,7 +73,7 @@ public class TestClass{
     @Test(groups = {RGroupName.FT,RGroupName.RT})
     public void test3() {
         System.out.println(this.getClass().getName() + " test3");
-        //Assert.assertEquals("1", "2");
+        Assert.assertEquals("1", "2");
     }
 
     @Test(groups = {RGroupName.RT})
