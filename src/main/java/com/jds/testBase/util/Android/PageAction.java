@@ -154,18 +154,17 @@ public class PageAction {
     public static byte[] screenshot(){
         Date date = new Date();
         SimpleDateFormat screen_name = new SimpleDateFormat("yyyyMMdd_HHmmss");
-        String screenName = screen_name.format(date.getTime());   //获取精确时间
+        String screenName = screen_name.format(date.getTime());   //获取执行时间
 
-        //从系统变量中获取截图路径
-        File savePath = new File(System.getProperty("savePicPath"));
+        File savePath = new File(System.getProperty("savePicPath")); //从系统变量中获取截图路径(BeforeSuite
 
         //App截屏
         try{
-            File screenFile = Driver.getDriverAN().getScreenshotAs(OutputType.FILE);
-            byte[] screenshot = Driver.getDriverAN().getScreenshotAs(OutputType.BYTES);
+            File screenFile = Driver.getDriverAN().getScreenshotAs(OutputType.FILE);  //保存本地
+            byte[] screenShot = Driver.getDriverAN().getScreenshotAs(OutputType.BYTES);  //返回screenShot,用于上传Allure附件
             FileUtils.copyFile(screenFile,new File(savePath + "/" + screenName + ".jpg"));
             Log4jUtils.logInfo("截图成功:" + savePath + "/" + screenName + ".jpg");
-            return screenshot;
+            return screenShot;
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -190,5 +189,36 @@ public class PageAction {
     public static void touchIOS(int x,int y){
         IOSTouchAction action = new IOSTouchAction(Driver.getDriverIOS());
         action.press(PointOption.point(x,y));
+    }
+
+    /**
+     * 创建截图、日志目录
+     */
+    public static void createSavePath(){
+        Date date = new Date();
+        SimpleDateFormat datePath = new SimpleDateFormat("yyyy-MM-dd");
+        String datePathName = datePath.format(date.getTime());       //获取日期
+        SimpleDateFormat timePath = new SimpleDateFormat("HH_mm_ss");
+        String timePathName = timePath.format(date.getTime());       //获取时间
+        SimpleDateFormat fileName = new SimpleDateFormat("yyyyMMdd_HHmmss");
+        String logName = fileName.format(date.getTime());            //获取精确时间
+
+        //创建截图目录：文件夹名称为当天日期
+        File savePicPath = new File("/Users/boyue/工作/StockCircles/ScreenShot/" + datePathName + "/" + timePathName + "/");
+        if(!savePicPath.exists()){
+            savePicPath.mkdirs();  //不存在则创建当日文件夹
+            System.setProperty("savePicPath",savePicPath.toString());  //设置截图保存路径
+        }else {
+        }
+
+        //创建日志目录：文件夹名称为当天日期
+        File saveLogPath = new File("/Users/boyue/工作/StockCircles/Log/" + datePathName + "/" + timePathName + "/");
+        File filelogPath = new File(  "Log/" + datePathName + "/" + timePathName + "/" + logName);
+        if(!saveLogPath.exists()){
+            saveLogPath.mkdirs();  //不存在则创建当日文件夹
+            System.setProperty("logPath",filelogPath.toString());  //设置日志文件名称
+            System.out.println(System.getProperty("logPath"));
+        }else {
+        }
     }
 }

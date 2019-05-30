@@ -9,6 +9,11 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Parameters;
 
+/**
+ * 测试用例基类
+ * BeforeSuite:创建本地目录用于保存日志和截图
+ * BeforeClass:每个Class(以页面为纬度)执行前重启APP
+ */
 public class BaseCase {
     static HomePage homePage;
     static MinePage minePage;
@@ -16,7 +21,7 @@ public class BaseCase {
 
     @BeforeSuite(description = "创建截图及日志目录")
     public void creatPath(){
-        Driver.createSavePath();
+        PageAction.createSavePath();
     }
 
     @Parameters({"port","udid"})

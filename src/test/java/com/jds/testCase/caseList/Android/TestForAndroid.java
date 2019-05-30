@@ -11,7 +11,6 @@ public class TestForAndroid extends BaseCase{
     public void testCase1() throws Exception{
         minePage = homePage.goToMinePage();
         minePage.PageScreenshot();
-        //minePage.minePageScreenshot();
     }
 
     @Story("【模块】首页")

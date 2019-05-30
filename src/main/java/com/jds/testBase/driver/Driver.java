@@ -4,15 +4,10 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.ios.IOSElement;
-import io.qameta.allure.Step;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.concurrent.TimeUnit;
 
 public class Driver {
 
@@ -72,36 +67,5 @@ public class Driver {
 
     public static IOSDriver<IOSElement> getDriverIOS(){
         return driverIOS;
-    }
-
-    /**
-     * 创建截图、日志目录
-     */
-    public static void createSavePath(){
-        Date date = new Date();
-        SimpleDateFormat datePath = new SimpleDateFormat("yyyy-MM-dd");
-        String datePathName = datePath.format(date.getTime());       //获取日期
-        SimpleDateFormat timePath = new SimpleDateFormat("HH_mm_ss");
-        String timePathName = timePath.format(date.getTime());       //获取时间
-        SimpleDateFormat fileName = new SimpleDateFormat("yyyyMMdd_HHmmss");
-        String logName = fileName.format(date.getTime());            //获取精确时间
-
-        //创建截图目录：文件夹名称为当天日期
-        File savePicPath = new File("/Users/boyue/工作/StockCircles/ScreenShot/" + datePathName + "/" + timePathName + "/");
-        if(!savePicPath.exists()){
-            savePicPath.mkdirs();  //不存在则创建当日文件夹
-            System.setProperty("savePicPath",savePicPath.toString());  //设置截图保存路径
-        }else {
-        }
-
-        //创建日志目录：文件夹名称为当天日期
-        File saveLogPath = new File("/Users/boyue/工作/StockCircles/Log/" + datePathName + "/" + timePathName + "/");
-        File filelogPath = new File(  "Log/" + datePathName + "/" + timePathName + "/" + logName);
-        if(!saveLogPath.exists()){
-            saveLogPath.mkdirs();  //不存在则创建当日文件夹
-            System.setProperty("logPath",filelogPath.toString());  //设置日志文件名称
-            System.out.println(System.getProperty("logPath"));
-        }else {
-        }
     }
 }

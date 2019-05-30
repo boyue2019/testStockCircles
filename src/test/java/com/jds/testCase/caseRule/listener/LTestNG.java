@@ -1,5 +1,6 @@
 package com.jds.testCase.caseRule.listener;
 
+import com.jds.testBase.log.Log4jUtils;
 import com.jds.testBase.util.Android.PageAction;
 import io.qameta.allure.Attachment;
 import io.qameta.allure.Step;
@@ -21,7 +22,8 @@ public class LTestNG implements ITestListener {
     @Override
     public void onTestFailure(ITestResult result){
         String failTestName = result.getMethod().getMethodName();
-        System.out.println("----执行失败:" + failTestName);
+        Log4jUtils.logError("用例执行失败:" + failTestName);
+        onFailureScreenshot();
     };
 
     @Override
