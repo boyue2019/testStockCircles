@@ -35,7 +35,7 @@
     <!-- 测试 -->
     <test name="CompatibilityTesting" enabled="false">
         <classes>
-            <class name="TestClass"></class>
+            <class name="TestClass2"></class>
         </classes>
     </test>
 </suite>

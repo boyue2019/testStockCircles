@@ -38,6 +38,10 @@ public class LTestNG implements ITestListener {
     @Override
     public void onFinish(ITestContext result){};
 
+    /**
+     * 截图上传附件至Allure测试报告
+     * @return
+     */
     @Step("【报告】失败截图")
     @Attachment(value = "用例执行失败,截图:",type = "image/jpg")
     public byte[] onFailureScreenshot(){
