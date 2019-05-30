@@ -1,5 +1,7 @@
 import com.jds.testCase.caseRule.rule.RGroupName;
 import io.qameta.allure.Description;
+import io.qameta.allure.Stories;
+import io.qameta.allure.Story;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
@@ -60,23 +62,29 @@ public class TestClass{
     }
      */
 
-    @Test(groups = {RGroupName.FT,RGroupName.RT})
+    @Test(groups = {RGroupName.FT,RGroupName.RT},description = "哈哈哈")
+    @Story("首页功能")
     public void test1() {
+        counter = 2;
         System.out.println(this.getClass().getName() + " test1");
     }
 
     @Test(groups = {RGroupName.FT,RGroupName.CT})
+    @Story("首页功能")
     public void test2() {
         System.out.println(this.getClass().getName() + " test2");
     }
 
     @Test(groups = {RGroupName.FT,RGroupName.RT})
+    @Story("我的功能")
     public void test3() {
+        counter = 5;
         System.out.println(this.getClass().getName() + " test3");
-        Assert.assertEquals("1", "2");
+        //Assert.assertEquals("1", "2");
     }
 
     @Test(groups = {RGroupName.RT})
+    @Story("我的功能")
     public void test4() {
         System.out.println(this.getClass().getName() + " test4");
         //Assert.assertEquals("1", "2");
@@ -84,6 +92,7 @@ public class TestClass{
 
     @Test(groups = {RGroupName.RT})
     public void test5() {
+        System.out.println("counter:" + counter);
         System.out.println(this.getClass().getName() + " test5");
     }
 }

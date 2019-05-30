@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="StockCircles Automation Testing" parallel="tests" thread-count="2">
+<suite name="投资易课APP_UI自动化" parallel="tests" thread-count="2">
     <!-- 设置监听器 -->
     <listeners>
         <listener class-name="com.jds.testCase.caseRule.listener.LCaseType"/>
@@ -10,12 +10,12 @@
     </listeners>
 
     <!-- Android -->
-    <test name="RegressionTesting_Android" verbose="2" enabled="false">
+    <test name="RegressionTesting_Android" verbose="2" enabled="true">
         <parameter name="port" value="4723"></parameter>
         <parameter name="udid" value="edd06f8e"></parameter>
         <classes>
-            <class name="com.jds.testCase.caseList.Android.TestForAndroid">
-            </class>
+            <class name="com.jds.testCase.caseList.Android.TestForAndroid"></class>
+            <class name="com.jds.testCase.caseList.Android.test2"></class>
         </classes>
     </test>
 
@@ -33,7 +33,7 @@
     </test>
 
     <!-- 测试 -->
-    <test name="CompatibilityTesting" enabled="true">
+    <test name="CompatibilityTesting" enabled="false">
         <classes>
             <class name="TestClass"></class>
         </classes>

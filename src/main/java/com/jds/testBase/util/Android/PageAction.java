@@ -151,7 +151,7 @@ public class PageAction {
     /**
      * 截图(非等待)
      */
-    public static void screenshot(){
+    public static byte[] screenshot(){
         Date date = new Date();
         SimpleDateFormat screen_name = new SimpleDateFormat("yyyyMMdd_HHmmss");
         String screenName = screen_name.format(date.getTime());   //获取精确时间
@@ -162,11 +162,14 @@ public class PageAction {
         //App截屏
         try{
             File screenFile = Driver.getDriverAN().getScreenshotAs(OutputType.FILE);
+            byte[] screenshot = Driver.getDriverAN().getScreenshotAs(OutputType.BYTES);
             FileUtils.copyFile(screenFile,new File(savePath + "/" + screenName + ".jpg"));
             Log4jUtils.logInfo("截图成功:" + savePath + "/" + screenName + ".jpg");
+            return screenshot;
         }catch (Exception e){
             e.printStackTrace();
         }
+        return null;
     }
 
     /**

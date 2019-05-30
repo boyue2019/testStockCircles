@@ -4,6 +4,7 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.ios.IOSElement;
+import io.qameta.allure.Step;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.io.File;

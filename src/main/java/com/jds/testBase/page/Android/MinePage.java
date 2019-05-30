@@ -1,6 +1,7 @@
 package com.jds.testBase.page.Android;
 
 import com.jds.testBase.util.Android.PageAction;
+import io.qameta.allure.Attachment;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
@@ -20,7 +21,7 @@ public class MinePage extends BasePage implements IBottomNavigation{
      * 进入登录页面
      * @return
      */
-    @Step("【我的】点击进入用户登录页")
+    @Step("【我的】点击进入用户登录页面")
     public LoginPage goToLoginPage(){
         PageAction.click(5,login);
         return new LoginPage();
@@ -30,7 +31,8 @@ public class MinePage extends BasePage implements IBottomNavigation{
      * 等待元素出现后截图 - 登录入口
      */
     @Step("【我的】截图")
-    public void minePageScreenshot(){
-        PageAction.waitElementScreenshot(10,login);
+    @Attachment(value = "我的页面截图:",type = "image/jpg")
+    public byte[] minePageScreenshot(){
+        return PageAction.screenshot();
     }
 }

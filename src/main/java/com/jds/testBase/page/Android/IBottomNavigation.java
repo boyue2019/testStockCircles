@@ -12,7 +12,7 @@ public interface IBottomNavigation {
      * 点击进入"我的"
      * @return
      */
-    @Step("【底部导航】点击进入'我的'")
+    @Step("【底部导航】点击进入【我的】")
     default MinePage goToMinePage(){
         BottomNavigationPage bottomNavigationPage = new BottomNavigationPage();
         PageAction.click(10,BottomNavigationPage.mineTab);

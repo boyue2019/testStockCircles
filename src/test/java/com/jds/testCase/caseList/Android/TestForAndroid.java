@@ -1,37 +1,22 @@
 package com.jds.testCase.caseList.Android;
 
-import com.jds.testBase.driver.Driver;
-import com.jds.testBase.page.Android.HomePage;
-import com.jds.testBase.page.Android.LoginPage;
-import com.jds.testBase.page.Android.MinePage;
 import com.jds.testBase.util.Android.PageAction;
 import com.jds.testCase.caseRule.rule.RGroupName;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
+import io.qameta.allure.Story;
+import org.testng.annotations.*;
 
-public class TestForAndroid {
-    static HomePage homePage;
-    static MinePage minePage;
-    static LoginPage loginPage;
-
-    @BeforeTest
-    public void creatPath(){
-        Driver.createSavePath();
-    }
-
-    @Parameters({"port","udid"})
-    @BeforeMethod
-    public void preparation(String port,String udid) throws Exception{
-        homePage = PageAction.startAPP(port, udid);
-        //Thread.sleep(5000);
-    }
-
-    @Test(groups = {RGroupName.FT,RGroupName.RT})
+public class TestForAndroid extends BaseCase{
+    @Story("【模块】首页")
+    @Test(groups = {RGroupName.FT,RGroupName.RT}, description = "用例1_进入【我的】并截图")
     public void testCase1() throws Exception{
         minePage = homePage.goToMinePage();
-        minePage.minePageScreenshot();
+        minePage.PageScreenshot();
+        //minePage.minePageScreenshot();
+    }
+
+    @Story("【模块】首页")
+    @Test(groups = {RGroupName.FT,RGroupName.RT}, description = "用例2_点击进入登录页面然后退出APP")
+    public void testCase2() throws Exception{
         loginPage = minePage.goToLoginPage();
         PageAction.closeApp();
     }
