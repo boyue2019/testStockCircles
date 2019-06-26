@@ -26,12 +26,12 @@ public class PageAction {
     @Step("【系统】启动APP")
     public static HomePage startAPP(String port, String udid){
         try{
-           // Log4jUtils.logInfo("正在启动APP:大阳圈");
+            Log4jUtils.logInfo("启动投资易课APP");
             Driver.startAN(port, udid);
-            //Log4jUtils.logInfo("成功启动APP:大阳圈");
+            //Log4jUtils.logInfo("启动成功");
             return new HomePage();
         }catch (Exception e){
-            Log4jUtils.logError("APP启动失败:大阳圈");
+            Log4jUtils.logError("投资易课APP启动失败");
             Log4jUtils.logError(e.toString());
             return null;
         }
@@ -42,7 +42,7 @@ public class PageAction {
      */
     @Step("【系统】退出APP")
     public static void closeApp(){
-        //Log4jUtils.logInfo("退出APP:大阳圈");
+        Log4jUtils.logInfo("退出投资易课APP");
         Driver.getDriverAN().quit();
     }
 
@@ -52,14 +52,17 @@ public class PageAction {
      * @return
      */
     public static String subStringElement(WebElement element){
-        String elementString1 = element.
-                toString().
-                substring(element.
-                        toString().
-                        lastIndexOf("id: "));
-        String elementString2 = elementString1.
-                substring(0,elementString1.length() -1);
-        return elementString2;
+        try{
+            //System.out.println(element.toString());
+            String elementString1 = element.
+                    toString().
+                    substring(element.toString().lastIndexOf("id: "));
+            String elementString2 = elementString1.
+                    substring(0,elementString1.length() -1);
+            return elementString2;
+        }catch (Exception e){
+            return null;
+        }
     }
 
     /**
@@ -69,9 +72,7 @@ public class PageAction {
      */
     public static void click(int TIMEOUT,WebElement element){
         try{
-            System.out.println("111");
             waitElement(TIMEOUT, element);
-            System.out.println("222");
             Log4jUtils.logInfo("点击元素:" + subStringElement(element));
             element.click();  //点击指定元素
         }catch (NoSuchElementException ns){  //若找不到元素捕获异常
@@ -217,7 +218,7 @@ public class PageAction {
         if(!saveLogPath.exists()){
             saveLogPath.mkdirs();  //不存在则创建当日文件夹
             System.setProperty("logPath",filelogPath.toString());  //设置日志文件名称
-            System.out.println(System.getProperty("logPath"));
+            //System.out.println(System.getProperty("logPath"));
         }else {
         }
     }

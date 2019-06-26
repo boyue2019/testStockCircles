@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class RFailRetry implements IRetryAnalyzer{
-    private int retryCount = 1; //计数器
+    private int retryCount = 0; //计数器
     private static int maxRetryCount; //设置重跑次数
 
     /**

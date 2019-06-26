@@ -1,10 +1,5 @@
 package com.jds.testBase.page.Android;
 
-import com.jds.testBase.util.Android.PageAction;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.CacheLookup;
-import org.openqa.selenium.support.FindBy;
-
 /**
  * 页面：首页
  * 说明：1.提供页面元素

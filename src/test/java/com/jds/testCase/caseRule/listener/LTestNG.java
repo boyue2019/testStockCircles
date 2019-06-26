@@ -22,8 +22,8 @@ public class LTestNG implements ITestListener {
     @Override
     public void onTestFailure(ITestResult result){
         String failTestName = result.getMethod().getMethodName();
-        Log4jUtils.logError("用例执行失败:" + failTestName);
-        onFailureScreenshot();
+        Log4jUtils.logError("用例执行失败:" + failTestName); //错误日志
+        //onFailureScreenshot(); //截图上传至Allure
     };
 
     @Override

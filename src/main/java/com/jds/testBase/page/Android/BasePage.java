@@ -2,12 +2,9 @@ package com.jds.testBase.page.Android;
 
 import com.jds.testBase.driver.Driver;
 import com.jds.testBase.util.Android.PageAction;
+import io.qameta.allure.Attachment;
 import io.qameta.allure.Step;
 import org.openqa.selenium.support.PageFactory;
-
-import java.io.File;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 /**
  * Page基类，提供各页面间重复共
@@ -24,8 +21,9 @@ public class BasePage {
     /**
      * 页面截图
      */
-    @Step("【系统】屏幕截图")
-    public void PageScreenshot(){
-        PageAction.screenshot();
+    @Step("【系统】屏幕截图上传")
+    @Attachment(value = "屏幕截图:",type = "image/jpg")
+    public byte[] PageScreenshot(){
+        return PageAction.screenshot();
     }
 }
