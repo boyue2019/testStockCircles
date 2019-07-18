@@ -7,7 +7,7 @@ import io.qameta.allure.Step;
 import org.openqa.selenium.support.PageFactory;
 
 /**
- * Page基类，提供各页面间重复共
+ * Page基类，提供各页面间重复功能
  * 1.PageFactory页面元素初始化  2.页面截图（非等待）
  */
 public class BasePage {

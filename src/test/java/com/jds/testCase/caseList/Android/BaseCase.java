@@ -27,7 +27,7 @@ public class BaseCase {
     @Parameters({"port","udid"})
     @BeforeClass(description = "启动APP")
     public void start(String port,String udid) throws Exception{
-        homePage = PageAction.startAPP(port,udid);
+        //homePage = PageAction.startAPP(port,udid);
     }
 
     /**

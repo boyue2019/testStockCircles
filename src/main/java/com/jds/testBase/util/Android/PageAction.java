@@ -53,7 +53,7 @@ public class PageAction {
      */
     public static String subStringElement(WebElement element){
         try{
-            //System.out.println(element.toString());
+            System.out.println(element.toString());
             String elementString1 = element.
                     toString().
                     substring(element.toString().lastIndexOf("id: "));
