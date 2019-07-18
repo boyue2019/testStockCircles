@@ -31,11 +31,11 @@ public class STFDevices {
         int count = 0;                                             //连接数:计数器
         String[][] devicesList = new String[sum][4];               //定义二维数组 - 4代表设备信息数
 
-        //统计与STF连接且联网的设备
+        //采集与STF连接且联网的设备信息
         for (int i = 0;i < sum;i++){
             boolean isPresent = devices.get(i).isPresent();
             boolean isConnected = devices.get(i).getNetwork().isConnected();
-            if (isPresent && isConnected){                       //返回STF连接+联网的设备信息
+            if (isPresent && isConnected){                         //STF连接 && 联网
                 devicesList[i][0] = devices.get(i).getManufacturer();   //厂商
                 devicesList[i][1] = devices.get(i).getModel();          //型号
                 devicesList[i][2] = devices.get(i).getSerial();         //设备号
@@ -47,7 +47,7 @@ public class STFDevices {
                 Log4jUtils.logInfo("设备未连接STF:" + devices.get(i).getModel() + "<" + devices.get(i).getSerial() + ">");
             }
         }
-        this.setLinknum(count);
+        this.setLinknum(count);  //记录STF连接设备数
         return devicesList;
     }
 

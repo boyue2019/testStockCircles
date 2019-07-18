@@ -1,12 +1,8 @@
 package com.jds.testCase.caseRule.rule;
 
+import com.jds.testBase.util.CommonTools;
 import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;
-
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.Properties;
 
 public class RFailRetry implements IRetryAnalyzer{
     private int retryCount = 0; //计数器
@@ -20,12 +16,8 @@ public class RFailRetry implements IRetryAnalyzer{
     @Override
     public boolean retry(ITestResult result){
         //从config.properties中读取重跑次数
-        try{
-            Properties pFile = new Properties();
-            pFile.load(new FileInputStream("/Users/boyue/工作/StockCircles/src/config.properties"));
-            maxRetryCount = Integer.parseInt(pFile.getProperty("RetryCount"));
-        }catch (FileNotFoundException f){ }
-        catch (IOException I){ }
+        CommonTools commonTools = new CommonTools();
+        maxRetryCount = Integer.parseInt(commonTools.getConfigData("RetryCount"));
 
         if (retryCount < maxRetryCount){
             retryCount++;

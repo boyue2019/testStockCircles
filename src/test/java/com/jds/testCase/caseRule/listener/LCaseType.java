@@ -1,13 +1,11 @@
 package com.jds.testCase.caseRule.listener;
 
+import com.jds.testBase.util.CommonTools;
 import org.testng.IMethodInstance;
 import org.testng.IMethodInterceptor;
 import org.testng.ITestContext;
 import org.testng.ITestNGMethod;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.*;
 
 /**
@@ -22,12 +20,8 @@ public class LCaseType implements IMethodInterceptor{
         List<IMethodInstance> result = new ArrayList<IMethodInstance>();
 
         //从config.properties中读取用例类型
-        try{
-            Properties pFile = new Properties();
-            pFile.load(new FileInputStream("/Users/boyue/工作/StockCircles/src/config.properties"));
-            runType = pFile.getProperty("RunType");
-        }catch (FileNotFoundException f){ }
-        catch (IOException I){ }
+        CommonTools commonTools = new CommonTools();
+        runType = commonTools.getConfigData("RunType");
 
         //遍历所有Method
         for (IMethodInstance methodInstance : methodInstances) {

@@ -1,5 +1,7 @@
 package com.jds.testBase.stf;
 
+import com.jds.testBase.util.CommonTools;
+
 import java.io.*;
 import java.util.Properties;
 
@@ -28,13 +30,9 @@ public class STFService {
 
     //从配置文件中获取STF地址和密钥
     public void getSTFConfig(){
-        try{
-            Properties pFile = new Properties();
-            pFile.load(new FileInputStream("/Users/boyue/工作/StockCircles/src/config.properties"));
-            this.setStfUrl(pFile.getProperty("stfUrl"));
-            this.setAuthToken(pFile.getProperty("authToken"));
-        }catch (FileNotFoundException f){ }
-        catch (IOException I){ }
+        CommonTools commonTools = new CommonTools();
+        this.setStfUrl(commonTools.getConfigData("stfUrl"));
+        this.setAuthToken(commonTools.getConfigData("authToken"));
     }
 
     //获取所有设备信息
