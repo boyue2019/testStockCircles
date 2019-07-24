@@ -28,18 +28,18 @@ public class STFDevices {
         STFBean stfBean = gson.fromJson(stfService.STFDevicesList(), STFBean.class);
         List<STFBean.DevicesBean> devices = stfBean.getDevices();
         int sum = devices.size();                                  //总设备数
-        int count = 0;                                             //连接数:计数器
+        int count = 0;                                             //计数器:记录连接状态的设备数
         String[][] devicesList = new String[sum][4];               //定义二维数组 - 4代表设备信息数
 
         //采集与STF连接且联网的设备信息
         for (int i = 0;i < sum;i++){
-            boolean isPresent = devices.get(i).isPresent();
-            boolean isConnected = devices.get(i).getNetwork().isConnected();
+            boolean isPresent = devices.get(i).isPresent();        //是否连接
+            boolean isConnected = devices.get(i).getNetwork().isConnected();    //是否联网
             if (isPresent && isConnected){                         //STF连接 && 联网
-                devicesList[i][0] = devices.get(i).getManufacturer();   //厂商
-                devicesList[i][1] = devices.get(i).getModel();          //型号
-                devicesList[i][2] = devices.get(i).getSerial();         //设备号
-                devicesList[i][3] = devices.get(i).getVersion();        //Android版本
+                devicesList[count][0] = devices.get(i).getManufacturer();   //厂商
+                devicesList[count][1] = devices.get(i).getModel();          //型号
+                devicesList[count][2] = devices.get(i).getSerial();         //设备号
+                devicesList[count][3] = devices.get(i).getVersion();        //Android版本
                 count+=1;
             }else if(isPresent && !isConnected){
                 Log4jUtils.logInfo("设备网络异常:" + devices.get(i).getModel() + "<" + devices.get(i).getSerial() + ">");
@@ -54,7 +54,7 @@ public class STFDevices {
     public static void main(String[] args){
         STFDevices stfDevices = new STFDevices();
         String[][] a = stfDevices.devicesInfo();
-        int size = a.length;
+        int size = stfDevices.getLinknum();
         for (int i = 0;i < size;i++){
             System.out.println("【设备" + (i+1) + "】");
             System.out.println("厂商:" + a[i][0]);
