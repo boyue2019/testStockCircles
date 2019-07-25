@@ -24,11 +24,10 @@ public class PageAction {
      * @return
      */
     @Step("【系统】启动APP")
-    public static HomePage startAPP(String port, String udid){
+    public static HomePage start(String port, String udid){
         try{
             Log4jUtils.logInfo("启动投资易课APP");
             Driver.startAN(port, udid);
-            //Log4jUtils.logInfo("启动成功");
             return new HomePage();
         }catch (Exception e){
             Log4jUtils.logError("投资易课APP启动失败");
@@ -41,7 +40,7 @@ public class PageAction {
      * 退出APP
      */
     @Step("【系统】退出APP")
-    public static void closeApp(){
+    public static void close(){
         Log4jUtils.logInfo("退出投资易课APP");
         Driver.getDriverAN().quit();
     }

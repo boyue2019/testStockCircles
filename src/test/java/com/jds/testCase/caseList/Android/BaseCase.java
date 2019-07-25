@@ -52,6 +52,6 @@ public class BaseCase {
 
     @AfterClass(description = "退出APP")
     public void close(){
-        PageAction.closeApp();
+        PageAction.close();
     }
 }

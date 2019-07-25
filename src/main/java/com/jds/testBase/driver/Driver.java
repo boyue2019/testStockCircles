@@ -11,20 +11,20 @@ import java.net.URL;
 
 public class Driver {
 
-    public  static AndroidDriver<AndroidElement> driverAN = null;
-    public  static IOSDriver<IOSElement> driverIOS = null;
+    public static AndroidDriver<AndroidElement> driverAN = null;
+    public static IOSDriver<IOSElement> driverIOS = null;
 
     public static void startAN(String port,String udid){
-        DesiredCapabilities dc =  new DesiredCapabilities();
-        dc.setCapability("deviceName",udid);//Android设备ID - adb device
-        dc.setCapability("platformName","Android");//测试平台，Android/IOS
-        dc.setCapability("platformVersion","6.0");//Android版本
-        dc.setCapability("appPackage","com.jindashi.stockcircle");//测试的app包
-        dc.setCapability("appActivity","com.jindashi.stockcircle.business.common.activity.SplashingActivity");//测试的app的Activity名字
-        dc.setCapability("unicodeKeyboard","True");
-        dc.setCapability("resetKeyboard","True");
-        dc.setCapability("noSign","True");
-        dc.setCapability("noReset","True");
+        DesiredCapabilities desiredCapabilities =  new DesiredCapabilities();
+        desiredCapabilities.setCapability("deviceName",udid);   //设备ID
+        desiredCapabilities.setCapability("platformName","Android");    //测试平台
+        desiredCapabilities.setCapability("platformVersion","6.0");     //Android版本
+        desiredCapabilities.setCapability("appPackage","com.jindashi.stockcircle");   //APP包名
+        desiredCapabilities.setCapability("appActivity","com.jindashi.stockcircle.business.common.activity.SplashingActivity"); //ActivityName
+        desiredCapabilities.setCapability("unicodeKeyboard","True");
+        desiredCapabilities.setCapability("resetKeyboard","True");
+        desiredCapabilities.setCapability("noSign","True");
+        desiredCapabilities.setCapability("noReset","True");
 
         URL remoteUrl = null;
         try {
@@ -33,8 +33,7 @@ public class Driver {
             e.printStackTrace();
         }
 
-        driverAN = new AndroidDriver<AndroidElement>(remoteUrl, dc);
-        //driverAN.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driverAN = new AndroidDriver<AndroidElement>(remoteUrl, desiredCapabilities);
     }
 
     public static void startIOS(String port,String udid){

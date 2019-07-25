@@ -1,0 +1,7 @@
+!!com.jds.testBase.yaml.ModelBean
+modeldetails:
+- appiumParameters: {bp: '4724', port: '4723'}
+  deviceInfos: {manufacturer: XIAOMI, model: MI 9, serial: 6d4a5e0d, version: '9'}
+  dockerParameters: {containerName: '', image: ''}
+  serial: 6d4a5e0d
+  system: Android
