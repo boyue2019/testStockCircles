@@ -1,7 +1,6 @@
 package com.jds.testBase.stf;
 
 import com.google.gson.Gson;
-import com.jds.testBase.log.Log4jUtils;
 
 import java.util.List;
 

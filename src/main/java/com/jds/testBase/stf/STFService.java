@@ -3,7 +3,6 @@ package com.jds.testBase.stf;
 import com.jds.testBase.util.CommonTools;
 
 import java.io.*;
-import java.util.Properties;
 
 /**
  * 通过STF_API获取设备信息(json)
