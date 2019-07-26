@@ -35,28 +35,28 @@ public class ModelFactory {
     }
 
     /**
-     * 创建Yaml模版
+     * Yaml模版
      * @param source 获取STF设备信息(二维数组)
      */
-    public ModelBean CreateModel(String[][] source){
+    public ModelBean Model(String[][] source){
         int size = source.length;  //根据数组长度定义循环次数
         ModelBean modelBean = new ModelBean();
-        ModelBean.ServiceDetails serviceDetails = new ModelBean.ServiceDetails();
-        ModelBean.ServiceDetails
-                .DeviceInfo deviceInfo = new ModelBean
-                .ServiceDetails
-                .DeviceInfo();
-        ModelBean.ServiceDetails
-                .AppiumParameter appiumParameter = new ModelBean
-                .ServiceDetails
-                .AppiumParameter();
-        ModelBean.ServiceDetails
-                .DockerParameter dockerParameter = new ModelBean
-                .ServiceDetails
-                .DockerParameter();
         List<ModelBean.ServiceDetails> serviceDetailsList = new ArrayList<>();
 
         for(int i = 0;i < size;i++){
+            ModelBean.ServiceDetails serviceDetails = new ModelBean.ServiceDetails();
+            ModelBean.ServiceDetails
+                    .DeviceInfo deviceInfo = new ModelBean
+                    .ServiceDetails
+                    .DeviceInfo();
+            ModelBean.ServiceDetails
+                    .AppiumParameter appiumParameter = new ModelBean
+                    .ServiceDetails
+                    .AppiumParameter();
+            ModelBean.ServiceDetails
+                    .DockerParameter dockerParameter = new ModelBean
+                    .ServiceDetails
+                    .DockerParameter();
             // 添加设备信息
             deviceInfo.setManufacturer(source[i][0]);
             deviceInfo.setModel(source[i][1]);
@@ -65,36 +65,40 @@ public class ModelFactory {
             serviceDetails.setDeviceInfos(deviceInfo);
             serviceDetails.setSerial(source[i][2]);
             serviceDetails.setSystem(source[i][6]);
-
             // 添加Appium参数
             appiumParameter.setPort(source[i][4]);
             appiumParameter.setBp(source[i][5]);
             serviceDetails.setAppiumParameters(appiumParameter);
-
             // 添加Docker镜像参数
             dockerParameter.setImage("");
             dockerParameter.setContainerName("");
             serviceDetails.setDockerParameters(dockerParameter);
 
-            //将所有信息添加到Modeldetails数组中
             serviceDetailsList.add(serviceDetails);
         }
         modelBean.setModeldetails(serviceDetailsList);
         return modelBean;
     }
 
-    public static void main(String[] args){
-        ModelFactory modelFactory = new ModelFactory();
-        ModelBean model = modelFactory.CreateModel(modelFactory.ModelSource());
+    /**
+     * 创建Yaml模版
+     */
+    public void MakeModel(){
+        ModelBean modelBean = this.Model(this.ModelSource());
         try{
             Yaml yaml = new Yaml();
             File file = new File(System.getProperty("user.dir") + "/docker-compose.yaml");
             FileWriter fileWriter = new FileWriter(file);
-            fileWriter.write(yaml.dump(model));
+            fileWriter.write(yaml.dump(modelBean));
             fileWriter.flush();
             fileWriter.close();
         }catch (Exception e){
             e.printStackTrace();
         }
+    }
+
+    public static void main(String[] args){
+        ModelFactory modelFactory = new ModelFactory();
+        modelFactory.MakeModel();
     }
 }

@@ -37,15 +37,14 @@ public class STFService {
 
     //获取所有设备信息
     public String STFDevicesList(){
-        this.getSTFConfig();
-        String[] allDevices = {"curl",
-                "-H",
-                "Authorization: Bearer " + getAuthToken(),
-                getStfUrl() + "/api/v1/devices"};
-        ProcessBuilder processBuilder = new ProcessBuilder(allDevices);
-
-        Process p;
         try {
+            this.getSTFConfig();
+            String[] allDevices = {"curl",
+                    "-H",
+                    "Authorization: Bearer " + getAuthToken(),
+                    getStfUrl() + "/api/v1/devices"};
+            ProcessBuilder processBuilder = new ProcessBuilder(allDevices);
+            Process p;
             p = processBuilder.start();
             BufferedReader reader = new BufferedReader(new InputStreamReader(p.getInputStream()));
             StringBuilder builder = new StringBuilder();

@@ -48,10 +48,8 @@ public class STFDevices {
                 count+=1;
             }else if(isPresent && !isConnected){
                 System.out.println("设备网络异常:" + devices.get(i).getModel() + "<" + devices.get(i).getSerial() + ">");
-                //Log4jUtils.logInfo("设备网络异常:" + devices.get(i).getModel() + "<" + devices.get(i).getSerial() + ">");
             }else if(!isPresent){
                 System.out.println("设备未连接STF:" + devices.get(i).getModel() + "<" + devices.get(i).getSerial() + ">");
-                //Log4jUtils.logInfo("设备未连接STF:" + devices.get(i).getModel() + "<" + devices.get(i).getSerial() + ">");
             }
         }
         this.setLinknum(count);  //记录STF连接设备数
