@@ -3,8 +3,10 @@ package com.jds.testBase.util.Android;
 import com.jds.testBase.driver.Driver;
 import com.jds.testBase.log.Log4jUtils;
 import com.jds.testBase.page.Android.HomePage;
-import io.appium.java_client.android.AndroidTouchAction;
-import io.appium.java_client.ios.IOSTouchAction;
+import com.jds.testBase.page.WX.JMZB.WXHomePage;
+import io.appium.java_client.TouchAction;
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
 import io.qameta.allure.Step;
 import org.apache.commons.io.FileUtils;
@@ -14,6 +16,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
+import java.time.Duration;
 import java.util.Date;
 
 public class PageAction {
@@ -24,14 +27,29 @@ public class PageAction {
      * @return
      */
     @Step("【系统】启动APP")
-    public static HomePage start(String port, String udid){
+    public static void start(String port, String udid){
         try{
-            Log4jUtils.logInfo("启动投资易课APP");
+            Log4jUtils.logDebug("启动投资易课APP");
             Driver.startAN(port, udid);
-            return new HomePage();
         }catch (Exception e){
             Log4jUtils.logError("投资易课APP启动失败");
             Log4jUtils.logError(e.toString());
+        }
+    }
+
+    /**
+     * 启动微信
+     * @param port
+     * @param udid
+     * @return
+     */
+    @Step("【系统】启动APP")
+    public static WXHomePage startWX(String port, String udid){
+        try{
+            Driver.startWX(port, udid);
+            return new WXHomePage();
+        }catch (Exception e){
+            System.out.println("微信启动失败.");
             return null;
         }
     }
@@ -52,7 +70,7 @@ public class PageAction {
      */
     public static String subStringElement(WebElement element){
         try{
-            System.out.println(element.toString());
+            //System.out.println(element.toString());
             String elementString1 = element.
                     toString().
                     substring(element.toString().lastIndexOf("id: "));
@@ -69,14 +87,14 @@ public class PageAction {
      * @param TIMEOUT 设置超时时间
      * @param element 元素
      */
-    public static void click(int TIMEOUT,WebElement element){
+    public static void click(int TIMEOUT,WebElement element,String target){
         try{
-            waitElement(TIMEOUT, element);
-            Log4jUtils.logInfo("点击元素:" + subStringElement(element));
+            waitElement(TIMEOUT, element,target);
+            System.out.println("点击元素.");
             element.click();  //点击指定元素
-        }catch (NoSuchElementException ns){  //若找不到元素捕获异常
-            Log4jUtils.logWarn("找不到元素:" + subStringElement(element));
-            Log4jUtils.logWarn(ns.toString());
+        }catch (Exception e){  //若找不到元素退出程序
+            System.out.println("找不到元素.");
+            System.exit(0);
         }
     }
 
@@ -102,22 +120,39 @@ public class PageAction {
      * @param TIMEOUT 超时时间
      * @param element @FindBy标签元素
      */
-    public static void waitElement(int TIMEOUT,WebElement element){
-        try{
-            new WebDriverWait(Driver.getDriverAN(),TIMEOUT).
-                    until(new ExpectedCondition<Boolean>(){
-                        @Override
-                        public Boolean apply(WebDriver driver){
-                            Log4jUtils.logInfo("等待元素:" + subStringElement(element));
-                            Boolean isExist = element.isDisplayed();
-                            return isExist;
-                        }
-                    });
-        }catch (TimeoutException te){
-            Log4jUtils.logWarn("等待超时.");
-            Log4jUtils.logWarn(te.toString());
+    public static void waitElement(int TIMEOUT,WebElement element,String target){
+        if (target == "app"){
+            try{
+                new WebDriverWait(Driver.getDriverAN(),TIMEOUT).
+                        until(new ExpectedCondition<Boolean>(){
+                            @Override
+                            public Boolean apply(WebDriver driver){
+                                System.out.println("等待app元素..." + element.getText());
+                                //Log4jUtils.logInfo("等待元素:" + subStringElement(element));
+                                Boolean isExist = element.isDisplayed();
+                                return isExist;
+                            }
+                        });
+            }catch (TimeoutException te){
+                Log4jUtils.logWarn("等待超时.");
+                Log4jUtils.logWarn(te.toString());
+            }
+        }else{
+            try{
+                new WebDriverWait(Driver.getDriverWX(),TIMEOUT).
+                        until(new ExpectedCondition<Boolean>(){
+                            @Override
+                            public Boolean apply(WebDriver driver){
+                                System.out.println("等待wx元素..." + element.getTagName());
+                                Boolean isExist = element.isDisplayed();
+                                return isExist;
+                            }
+                        });
+            }catch (TimeoutException te){
+                Log4jUtils.logWarn("等待超时.");
+                Log4jUtils.logWarn(te.toString());
+            }
         }
-
     }
 
     /**
@@ -125,7 +160,7 @@ public class PageAction {
      * @param TIMEOUT
      * @param element
      */
-    public static void waitElementScreenshot(int TIMEOUT, WebElement element){
+    public static void waitElementScreenshot(int TIMEOUT, WebElement element,String target){
         Date date = new Date();
         SimpleDateFormat screen_name = new SimpleDateFormat("yyyyMMdd_HHmmss");
         String screenName = screen_name.format(date.getTime());   //获取精确时间
@@ -134,7 +169,7 @@ public class PageAction {
         File savePath = new File(System.getProperty("savePicPath"));
 
         //等待元素出现
-        waitElement(TIMEOUT,element);
+        waitElement(TIMEOUT,element,target);
 
         //App截屏
         try{
@@ -172,23 +207,23 @@ public class PageAction {
     }
 
     /**
-     * 屏幕点击坐标 - Android
-     * @param x
-     * @param y
+     * 等待元素出现后滑动屏幕
+     * @param TIMEOUT 超时时间
+     * @param px 点击x坐标
+     * @param py 点击y坐标
+     * @param mx 重点x坐标
+     * @param my
      */
-    public static void touchAndroid(int x,int y){
-        AndroidTouchAction action = new AndroidTouchAction(Driver.getDriverAN());
-        action.press(PointOption.point(x,y));
-    }
-
-    /**
-     * 屏幕点击坐标 - IOS
-     * @param x
-     * @param y
-     */
-    public static void touchIOS(int x,int y){
-        IOSTouchAction action = new IOSTouchAction(Driver.getDriverIOS());
-        action.press(PointOption.point(x,y));
+    public static void slide(int TIMEOUT,int px,int py,int mx,int my){
+        new TouchAction(Driver.getDriverWX())     //滑动屏幕
+                .press(PointOption.point(px,py))
+                .waitAction(WaitOptions.waitOptions(Duration.ofSeconds(3)))
+                .moveTo(PointOption.point(mx,my))
+                .release().perform();
+        try{
+            Thread.sleep(3000);
+        }catch (InterruptedException e) {
+        }
     }
 
     /**
@@ -219,6 +254,39 @@ public class PageAction {
             System.setProperty("logPath",filelogPath.toString());  //设置日志文件名称
             //System.out.println(System.getProperty("logPath"));
         }else {
+        }
+    }
+
+    /**
+     * 切换至'WEBVIEW_com.tencent.mm:appbrand0'
+     */
+    public static void switchToWebview(){
+        System.out.println("切换至WebView.");
+        Driver.getDriverWX().context("WEBVIEW_com.tencent.mm:appbrand0");
+    }
+
+    /**
+     * 切换至'NATIVE_APP'
+     */
+    public static void switchToNative(){
+        System.out.println("切换至NATIVE.");
+        Driver.getDriverWX().context("NATIVE_APP");
+    }
+
+    /**
+     * 【WebView】切换至包含指定元素的WindowHandle
+     * @param element
+     */
+    public static void jumpToWindowHandel(WebElement element){
+        for(String handle : Driver.getDriverWX().getWindowHandles()){
+            Driver.getDriverWX().switchTo().window(handle);  //遍历handel
+            try{
+                if (element.isDisplayed()){
+                    break;
+                }
+            }catch (NoSuchElementException n){
+                System.out.println("当前WindowHandle找不到对应元素.");
+            }
         }
     }
 }

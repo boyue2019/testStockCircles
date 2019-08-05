@@ -12,11 +12,11 @@
     -->
 
     <!-- Android -->
-    <test name="RegressionTesting_Android" verbose="2" enabled="false">
+    <test name="RegressionTesting_Android" verbose="2" enabled="true">
         <parameter name="port" value="4723"></parameter>
         <parameter name="udid" value="edd06f8e"></parameter>
         <classes>
-            <class name="com.jds.testCase.caseList.Android.test2"></class>
+            <class name="com.jds.testCase.caseList.Android.TestForAndroid"></class>
         </classes>
     </test>
 
@@ -33,8 +33,17 @@
         </classes>
     </test>
 
+    <!-- WX小程序 -->
+    <test name="WX" verbose="2" enabled="false">
+        <parameter name="port" value="4723"></parameter>
+        <parameter name="udid" value="edd06f8e"></parameter>
+        <classes>
+            <class name="com.jds.testCase.caseList.WX.test3"></class>
+        </classes>
+    </test>
+
     <!-- 测试 -->
-    <test name="CompatibilityTesting" enabled="true">
+    <test name="CompatibilityTesting" enabled="false">
         <classes>
             <class name="TestClass"></class>
         </classes>

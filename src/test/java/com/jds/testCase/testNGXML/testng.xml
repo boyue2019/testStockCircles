@@ -34,9 +34,9 @@
     </test>
 
     <!-- 测试 -->
-    <test name="CompatibilityTesting" enabled="true">
+    <test name="JMZB_Test" enabled="true">
         <classes>
-            <class name="TestClass"></class>
+            <class name="com.jds.testCase.caseList.WX.CHomePage"></class>
         </classes>
     </test>
 </suite>

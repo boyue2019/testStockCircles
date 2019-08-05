@@ -18,16 +18,19 @@ public class BaseCase {
     static LoginPage loginPage;
     static PersonalPage personalPage;
 
+    /**
     @BeforeSuite(description = "创建截图及日志目录")
     public void creatPath(){
         PageAction.createSavePath();
         System.out.println("-------------------------------创建截图及日志目录");
     }
+     */
 
     @Parameters({"port","udid"})
     @BeforeClass(description = "启动APP")
     public void start(String port,String udid) throws Exception{
-        //homePage = PageAction.startAPP(port,udid);
+        homePage = new HomePage();
+        PageAction.start(port,udid);
     }
 
     /**

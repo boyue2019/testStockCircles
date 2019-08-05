@@ -23,7 +23,7 @@ public class PersonalPage extends BasePage {
      */
     @Step("【个人中心】退出登录")
     public MinePage userLoginOut(){
-        PageAction.click(10,login_out);
+        PageAction.click(10,login_out,"app");
         return new MinePage();
     }
 

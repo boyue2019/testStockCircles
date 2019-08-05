@@ -2,7 +2,6 @@ package com.jds.testCase.caseList.Android;
 
 import com.jds.testCase.caseRule.rule.RGroupName;
 import io.qameta.allure.Story;
-import org.testng.Assert;
 import org.testng.annotations.*;
 
 public class TestForAndroid extends BaseCase{

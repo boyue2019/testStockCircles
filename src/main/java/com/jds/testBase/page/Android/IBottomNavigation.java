@@ -15,7 +15,7 @@ public interface IBottomNavigation {
     @Step("【底部导航】点击进入'我的'")
     default MinePage goToMinePage(){
         BottomNavigationPage bottomNavigationPage = new BottomNavigationPage();
-        PageAction.click(10,BottomNavigationPage.mineTab);
+        PageAction.click(10,BottomNavigationPage.mineTab,"wx");
         return new MinePage();
     }
 }

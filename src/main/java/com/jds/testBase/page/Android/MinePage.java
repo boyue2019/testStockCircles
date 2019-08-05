@@ -34,7 +34,7 @@ public class MinePage extends BasePage implements IBottomNavigation{
      * @return
      */
     public boolean isLogin(){
-        PageAction.waitElement(10,userLogin);  //等待登录信息出现
+        PageAction.waitElement(10,userLogin,"app");  //等待登录信息出现
         boolean islogin = PageAction.isElementExist(userName);  //若包含userName元素则为登录状态
         if (islogin){
             System.out.println("当前状态:登录");
@@ -51,7 +51,7 @@ public class MinePage extends BasePage implements IBottomNavigation{
      */
     @Step("我的】点击进入个人中心")
     public PersonalPage gotoPersonalPage(){
-        PageAction.click(5,userLogin);
+        PageAction.click(5,userLogin,"app");
         return new PersonalPage();
     }
 
@@ -61,7 +61,7 @@ public class MinePage extends BasePage implements IBottomNavigation{
      */
     @Step("【我的】点击进入登录页面")
     public LoginPage goToLoginPage(){
-        PageAction.click(5,userLogin);
+        PageAction.click(5,userLogin,"app");
         return new LoginPage();
     }
 

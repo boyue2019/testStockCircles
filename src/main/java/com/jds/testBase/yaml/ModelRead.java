@@ -26,11 +26,8 @@ public class ModelRead {
     }
 
     public static void main(String[] args){
-        ModelRead modelRead = new ModelRead();
-        ModelBean modelBean = modelRead.ReadYaml();
-        for(int i = 0;i < 2;i++){
-            System.out.println(modelBean.getModeldetails().get(i).getSerial());
-        }
-
+        ModelRead read = new ModelRead();
+        ModelBean bean = read.ReadYaml();
+        System.out.println(bean.getModeldetails().get(1).getSerial());
     }
 }
