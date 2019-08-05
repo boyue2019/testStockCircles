@@ -12,7 +12,7 @@
     -->
 
     <!-- Android -->
-    <test name="RegressionTesting_Android" verbose="2" enabled="true">
+    <test name="RegressionTesting_Android" verbose="2" enabled="false">
         <parameter name="port" value="4723"></parameter>
         <parameter name="udid" value="edd06f8e"></parameter>
         <classes>
@@ -43,7 +43,7 @@
     </test>
 
     <!-- 测试 -->
-    <test name="CompatibilityTesting" enabled="false">
+    <test name="CompatibilityTesting" enabled="true">
         <classes>
             <class name="TestClass"></class>
         </classes>

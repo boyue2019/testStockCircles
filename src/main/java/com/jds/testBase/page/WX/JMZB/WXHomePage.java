@@ -20,6 +20,11 @@ public class WXHomePage extends BasePage{
     @CacheLookup
     private WebElement BookTab;
 
+    //暂停 【NATIVE_APP】
+    @FindBy(xpath = "//*[@text='找不到']")
+    @CacheLookup
+    private WebElement stop1;
+
     /**
      * 等待页面加载成功后进入解码直播小程序
      * @return
@@ -27,6 +32,7 @@ public class WXHomePage extends BasePage{
     public JMHomePage openJMZB(){
         PageAction.waitElement(20,BookTab,"wx");   //等待元素出现
         PageAction.slide(20,500,733,500,1800);   //下拉屏幕
+        PageAction.waitElement(5,stop1,"wx");
         PageAction.waitElement(20,JMZBEnter,"wx");
         JMZBEnter.click();
         return new JMHomePage();

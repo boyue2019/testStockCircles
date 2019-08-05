@@ -12,7 +12,7 @@ public class BasePage {
      * 初始化页面元素
      */
     public BasePage(){
-        System.out.println("-------------初始化页面");
+        //System.out.println("-------------初始化页面");
         PageFactory.initElements(Driver.getDriverWX(),this);
     }
 }

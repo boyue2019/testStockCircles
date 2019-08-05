@@ -127,15 +127,13 @@ public class PageAction {
                         until(new ExpectedCondition<Boolean>(){
                             @Override
                             public Boolean apply(WebDriver driver){
-                                System.out.println("等待app元素..." + element.getText());
-                                //Log4jUtils.logInfo("等待元素:" + subStringElement(element));
+                                //System.out.println("等待APP元素...");
                                 Boolean isExist = element.isDisplayed();
                                 return isExist;
                             }
                         });
             }catch (TimeoutException te){
-                Log4jUtils.logWarn("等待超时.");
-                Log4jUtils.logWarn(te.toString());
+                System.out.println("等待超时.");
             }
         }else{
             try{
@@ -143,14 +141,13 @@ public class PageAction {
                         until(new ExpectedCondition<Boolean>(){
                             @Override
                             public Boolean apply(WebDriver driver){
-                                System.out.println("等待wx元素..." + element.getTagName());
+                                //System.out.println("等待WX元素...");
                                 Boolean isExist = element.isDisplayed();
                                 return isExist;
                             }
                         });
             }catch (TimeoutException te){
-                Log4jUtils.logWarn("等待超时.");
-                Log4jUtils.logWarn(te.toString());
+                System.out.println("等待超时.");
             }
         }
     }
@@ -220,10 +217,6 @@ public class PageAction {
                 .waitAction(WaitOptions.waitOptions(Duration.ofSeconds(3)))
                 .moveTo(PointOption.point(mx,my))
                 .release().perform();
-        try{
-            Thread.sleep(3000);
-        }catch (InterruptedException e) {
-        }
     }
 
     /**
@@ -261,16 +254,24 @@ public class PageAction {
      * 切换至'WEBVIEW_com.tencent.mm:appbrand0'
      */
     public static void switchToWebview(){
-        System.out.println("切换至WebView.");
-        Driver.getDriverWX().context("WEBVIEW_com.tencent.mm:appbrand0");
+        if(!Driver.getDriverWX().getContext().toString().equals("WEBVIEW_com.tencent.mm:appbrand0")){
+            System.out.println("切换至WebView.");
+            Driver.getDriverWX().context("WEBVIEW_com.tencent.mm:appbrand0");
+        }else {
+            System.out.println("当前Context:WEBVIEW_com.tencent.mm:appbrand0");
+        }
     }
 
     /**
      * 切换至'NATIVE_APP'
      */
     public static void switchToNative(){
-        System.out.println("切换至NATIVE.");
-        Driver.getDriverWX().context("NATIVE_APP");
+        if(!Driver.getDriverWX().getContext().toString().equals("NATIVE_APP")){
+            System.out.println("切换至NATIVE.");
+            Driver.getDriverWX().context("NATIVE_APP");
+        }else {
+            System.out.println("当前Context:NATIVE_APP");
+        }
     }
 
     /**
@@ -282,6 +283,7 @@ public class PageAction {
             Driver.getDriverWX().switchTo().window(handle);  //遍历handel
             try{
                 if (element.isDisplayed()){
+                    System.out.println("找到对应元素.");
                     break;
                 }
             }catch (NoSuchElementException n){

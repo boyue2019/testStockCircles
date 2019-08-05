@@ -13,8 +13,8 @@ public class JMHomePage extends WXHomePage implements IJMBottomNavigation{
     @CacheLookup
     private WebElement startPage;
 
-    //每日干货查看全部  WebView】
-    @FindBy(xpath = "/html/body/wx-scroll-view/div/div/div/wx-view[1]/wx-view[3]/wx-form/span/wx-button")
+    //每日干货查看全部  【WebView】
+    @FindBy(xpath = "//*[@id='bgscroll']/div/div/div/wx-view[1]/wx-view[3]/wx-form/span/wx-button")
     @CacheLookup
     private WebElement drycargoCheckall;
 
@@ -38,16 +38,10 @@ public class JMHomePage extends WXHomePage implements IJMBottomNavigation{
      * @return
      */
     public JMDrycargoPage gotoJMDrycargoCheckAll(){
+        this.waitHomeElement();
         PageAction.switchToWebview();
         PageAction.jumpToWindowHandel(drycargoCheckall);  //遍历WindowHandel查找'每日干后-查看全部'
         drycargoCheckall.click();
-        System.out.println(Driver.getDriverWX().getPageSource());
         return new JMDrycargoPage();
-    }
-
-    public void isUU(){
-        PageAction.switchToWebview();
-        PageAction.jumpToWindowHandel(drycargoCheckall);
-        System.out.println(drycargoCheckall.isDisplayed());
     }
 }

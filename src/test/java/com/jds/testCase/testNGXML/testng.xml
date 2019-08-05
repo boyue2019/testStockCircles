@@ -21,20 +21,15 @@
     </test>
 
     <!-- IOS -->
-    <test name="RegressionTesting_IOS" verbose="2" enabled="false">
-        <parameter name="port" value="4725"></parameter>
-        <parameter name="udid" value="1b00166a1d0b8363e8b40c4073d365d055d15bad"></parameter>
+    <test name="RegressionTesting_IOS" verbose="2" enabled="true">
         <classes>
-            <class name="com.jds.testCase.caseList.IOS.TestForIOS">
-                <methods>
-                    <include name="testCase1"></include>
-                </methods>
+            <class name="TestClass">
             </class>
         </classes>
     </test>
 
     <!-- 测试 -->
-    <test name="JMZB_Test" enabled="true">
+    <test name="JMZB_Test" enabled="false">
         <classes>
             <class name="com.jds.testCase.caseList.WX.CHomePage"></class>
         </classes>

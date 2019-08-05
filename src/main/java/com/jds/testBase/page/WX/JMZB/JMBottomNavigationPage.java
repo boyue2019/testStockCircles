@@ -19,4 +19,9 @@ public class JMBottomNavigationPage extends BasePage{
     @FindBy(xpath = "//*[@text='我的']")
     @CacheLookup
     static WebElement mine;  //底导"首页"
+
+    //暂停 【NATIVE_APP】
+    @FindBy(xpath = "//*[@text='找不到']")
+    @CacheLookup
+    static WebElement stop2;
 }
