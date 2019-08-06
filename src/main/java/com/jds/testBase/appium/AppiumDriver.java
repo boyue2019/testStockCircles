@@ -16,12 +16,11 @@ public class AppiumDriver {
      *   - port从生成对yaml文件中获取
      */
     public void startServer(){
-        CommonTools tools = new CommonTools();
         ModelRead read = new ModelRead();
         ModelBean bean = read.ReadYaml();
         String port = bean.getModeldetails().get(0).getAppiumParameters().getPort();   //获取appium端口
         AppiumServiceBuilder builder = new AppiumServiceBuilder();
-        builder.withIPAddress(tools.getConfigData("AppiumServerUrl"));            //添加启动
+        builder.withIPAddress(CommonTools.getConfigData("AppiumServerUrl"));            //添加启动
         builder.usingPort(Integer.parseInt(port));
         builder.withArgument(GeneralServerFlag.SESSION_OVERRIDE);
         service = AppiumDriverLocalService.buildService(builder);

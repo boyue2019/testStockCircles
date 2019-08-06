@@ -1,7 +1,6 @@
 package com.jds.testBase.page.WX.JMZB;
 
-import com.jds.testBase.driver.Driver;
-import com.jds.testBase.util.Android.PageAction;
+import com.jds.testBase.util.PageAction;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;

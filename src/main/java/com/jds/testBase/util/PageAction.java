@@ -1,9 +1,8 @@
-package com.jds.testBase.util.Android;
+package com.jds.testBase.util;
 
 import com.jds.testBase.driver.Driver;
 import com.jds.testBase.log.Log4jUtils;
 import com.jds.testBase.page.WX.JMZB.WXHomePage;
-import com.jds.testBase.util.CommonTools;
 import com.jds.testBase.yaml.ModelBean;
 import com.jds.testBase.yaml.ModelRead;
 import io.appium.java_client.TouchAction;
@@ -21,7 +20,37 @@ import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.*;
 
+/**
+ * Page事件类
+ */
 public class PageAction {
+    /**
+     * 启动微信
+     * @return
+     */
+    @Step("【系统】启动微信小程序")
+    public static WXHomePage startWX(){
+        ModelRead read = new ModelRead();
+        ModelBean bean = read.ReadYaml();   //读取docker-compose.yaml文件
+        Map dp = new HashMap();             //获取driver所需信息后添加到map
+        dp.put("port",bean.getModeldetails().get(0).getAppiumParameters().getPort());   //appium端口
+        dp.put("udid",bean.getModeldetails().get(0).getSerial());                       //设备号
+        dp.put("platformName",bean.getModeldetails().get(0).getSystem());               //Android/iOS
+        dp.put("version",bean.getModeldetails().get(0).getDeviceInfos().getVersion());  //手机系统版本
+        dp.put("ExperimentalOption",CommonTools.getConfigData("ExperimentalOption"));   //被测小程序进程名称
+        try{
+            Driver.startWX(dp.get("port").toString(),
+                    dp.get("udid").toString(),
+                    dp.get("platformName").toString(),
+                    dp.get("version").toString(),
+                    dp.get("ExperimentalOption").toString());
+            return new WXHomePage();      //返回微信首页对象
+        }catch (Exception e){
+            System.out.println("微信启动失败.");
+            return null;
+        }
+    }
+
     /**
      * 启动APP
      * @param port
@@ -36,34 +65,6 @@ public class PageAction {
         }catch (Exception e){
             Log4jUtils.logError("投资易课APP启动失败");
             Log4jUtils.logError(e.toString());
-        }
-    }
-
-    /**
-     * 启动微信
-     * @return
-     */
-    @Step("【系统】启动微信小程序")
-    public static WXHomePage startWX(){
-        CommonTools tools = new CommonTools();
-        ModelRead read = new ModelRead();
-        ModelBean bean = read.ReadYaml();   //读取docker-compose.yaml文件
-        Map dp = new HashMap();             //获取driver所需信息后添加到map
-        dp.put("port",bean.getModeldetails().get(0).getAppiumParameters().getPort());   //appium端口
-        dp.put("udid",bean.getModeldetails().get(0).getSerial());                       //设备号
-        dp.put("platformName",bean.getModeldetails().get(0).getSystem());               //Android/iOS
-        dp.put("version",bean.getModeldetails().get(0).getDeviceInfos().getVersion());  //手机系统版本
-        dp.put("ExperimentalOption",tools.getConfigData("ExperimentalOption"));   //被测小程序进程名称
-        try{
-            Driver.startWX(dp.get("port").toString(),
-                    dp.get("udid").toString(),
-                    dp.get("platformName").toString(),
-                    dp.get("version").toString(),
-                    dp.get("ExperimentalOption").toString());
-            return new WXHomePage();      //返回微信首页对象
-        }catch (Exception e){
-            System.out.println("微信启动失败.");
-            return null;
         }
     }
 
@@ -83,7 +84,6 @@ public class PageAction {
      */
     public static String subStringElement(WebElement element){
         try{
-            //System.out.println(element.toString());
             String elementString1 = element.
                     toString().
                     substring(element.toString().lastIndexOf("id: "));
@@ -230,37 +230,6 @@ public class PageAction {
                 .waitAction(WaitOptions.waitOptions(Duration.ofSeconds(3)))
                 .moveTo(PointOption.point(mx,my))
                 .release().perform();
-    }
-
-    /**
-     * 创建截图、日志目录
-     */
-    public static void createSavePath(){
-        Date date = new Date();
-        SimpleDateFormat datePath = new SimpleDateFormat("yyyy-MM-dd");
-        String datePathName = datePath.format(date.getTime());       //获取日期
-        SimpleDateFormat timePath = new SimpleDateFormat("HH_mm_ss");
-        String timePathName = timePath.format(date.getTime());       //获取时间
-        SimpleDateFormat fileName = new SimpleDateFormat("yyyyMMdd_HHmmss");
-        String logName = fileName.format(date.getTime());            //获取精确时间
-
-        //创建截图目录：文件夹名称为当天日期
-        File savePicPath = new File("/Users/boyue/工作/StockCircles/ScreenShot/" + datePathName + "/" + timePathName + "/");
-        if(!savePicPath.exists()){
-            savePicPath.mkdirs();  //不存在则创建当日文件夹
-            System.setProperty("savePicPath",savePicPath.toString());  //设置截图保存路径
-        }else {
-        }
-
-        //创建日志目录：文件夹名称为当天日期
-        File saveLogPath = new File("/Users/boyue/工作/StockCircles/Log/" + datePathName + "/" + timePathName + "/");
-        File filelogPath = new File(  "Log/" + datePathName + "/" + timePathName + "/" + logName);
-        if(!saveLogPath.exists()){
-            saveLogPath.mkdirs();  //不存在则创建当日文件夹
-            System.setProperty("logPath",filelogPath.toString());  //设置日志文件名称
-            //System.out.println(System.getProperty("logPath"));
-        }else {
-        }
     }
 
     /**

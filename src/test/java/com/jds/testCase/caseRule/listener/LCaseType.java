@@ -20,8 +20,7 @@ public class LCaseType implements IMethodInterceptor{
         List<IMethodInstance> result = new ArrayList<IMethodInstance>();
 
         //从config.properties中读取用例类型
-        CommonTools commonTools = new CommonTools();
-        runType = commonTools.getConfigData("RunType");
+        runType = CommonTools.getConfigData("RunType");
 
         //遍历所有Method
         for (IMethodInstance methodInstance : methodInstances) {

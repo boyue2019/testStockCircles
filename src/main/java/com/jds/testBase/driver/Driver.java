@@ -13,7 +13,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class Driver {
-
     public static AndroidDriver<AndroidElement> driverAN = null;
     public static AndroidDriver<AndroidElement> driverWX = null;
     public static IOSDriver<IOSElement> driverIOS = null;
@@ -34,6 +33,14 @@ public class Driver {
         return driverIOS;
     }
 
+    /**
+     * 启动微信,返回driver
+     * @param port appium端口
+     * @param udid 设备id
+     * @param platformName 设备系统
+     * @param version      系统版本
+     * @param ExperimentalOption 被测小程序进程名称
+     */
     public static void startWX(String port,
                                String udid,
                                String platformName,
@@ -44,8 +51,8 @@ public class Driver {
         cap.setCapability("platformName",platformName);    //测试平台
         cap.setCapability("platformVersion",version);     //Android版本
         cap.setCapability("appPackage","com.tencent.mm");   //APP包名
-        cap.setCapability("appActivity","com.tencent.mm.ui.LauncherUI"); //ActivityName
-        cap.setCapability("appWaitActivity", "com.tencent.mm.app.WeChatSplashActivity");
+        cap.setCapability("appActivity","com.tencent.mm.ui.LauncherUI"); //ActivityName:微信
+        cap.setCapability("appWaitActivity", "com.tencent.mm.app.WeChatSplashActivity");  //等待页
         cap.setCapability("newCommandTimeout","120");
         cap.setCapability("unicodeKeyboard",true);
         cap.setCapability("resetKeyboard",true);
@@ -54,7 +61,7 @@ public class Driver {
         cap.setCapability("noReset",true);
         cap.setCapability("recreateChromeDriverSessions", true);
 
-        File chromedriver = new File(System.getProperty("user.dir") + "/chromedriver");
+        File chromedriver = new File(System.getProperty("user.dir") + "/chromedriver");  //加载chrome驱动
         cap.setCapability(AndroidMobileCapabilityType.CHROMEDRIVER_EXECUTABLE,chromedriver.getAbsolutePath());
 
         ChromeOptions chromeOptions = new ChromeOptions();
@@ -70,6 +77,13 @@ public class Driver {
         }
 
         driverWX = new AndroidDriver<AndroidElement>(remoteUrl, cap);
+    }
+
+    /**
+     * 关闭微信
+     */
+    public static void closeWX(){
+        driverWX.close();
     }
 
     public static void startAN(String port,String udid){

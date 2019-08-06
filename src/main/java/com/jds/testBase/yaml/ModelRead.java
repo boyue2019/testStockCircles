@@ -31,7 +31,6 @@ public class ModelRead {
     }
 
     public static void main(String[] args){
-        CommonTools commonTools = new CommonTools();
         ModelRead read = new ModelRead();
         ModelBean bean = read.ReadYaml();
         Map driverparameter = new HashMap();
@@ -39,7 +38,7 @@ public class ModelRead {
         driverparameter.put("udid",bean.getModeldetails().get(0).getSerial());
         driverparameter.put("platformName",bean.getModeldetails().get(0).getSystem());
         driverparameter.put("version",bean.getModeldetails().get(0).getDeviceInfos().getVersion());
-        driverparameter.put("ExperimentalOption",commonTools.getConfigData("ExperimentalOption"));
+        driverparameter.put("ExperimentalOption",CommonTools.getConfigData("ExperimentalOption"));
         System.out.println(driverparameter.get("ExperimentalOption"));
     }
 }

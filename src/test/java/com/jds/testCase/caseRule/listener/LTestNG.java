@@ -1,7 +1,7 @@
 package com.jds.testCase.caseRule.listener;
 
 import com.jds.testBase.log.Log4jUtils;
-import com.jds.testBase.util.Android.PageAction;
+import com.jds.testBase.util.PageAction;
 import io.qameta.allure.Attachment;
 import io.qameta.allure.Step;
 import org.testng.ITestContext;

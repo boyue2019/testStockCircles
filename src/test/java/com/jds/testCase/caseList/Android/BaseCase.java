@@ -4,7 +4,7 @@ import com.jds.testBase.page.Android.HomePage;
 import com.jds.testBase.page.Android.LoginPage;
 import com.jds.testBase.page.Android.MinePage;
 import com.jds.testBase.page.Android.PersonalPage;
-import com.jds.testBase.util.Android.PageAction;
+import com.jds.testBase.util.PageAction;
 import org.testng.annotations.*;
 
 /**

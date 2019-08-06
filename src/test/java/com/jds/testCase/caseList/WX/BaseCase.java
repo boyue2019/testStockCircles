@@ -3,7 +3,8 @@ package com.jds.testCase.caseList.WX;
 import com.jds.testBase.appium.AppiumDriver;
 import com.jds.testBase.driver.Driver;
 import com.jds.testBase.page.WX.JMZB.*;
-import com.jds.testBase.util.Android.PageAction;
+import com.jds.testBase.util.PageAction;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 
@@ -40,6 +41,7 @@ public class BaseCase {
     /**
      *  Case执行完毕后关闭微信及Appium服务
      */
+    @AfterSuite
     public void stopAppium(){
         Driver.getDriverWX().close();
         appiumDriver.stopServer();

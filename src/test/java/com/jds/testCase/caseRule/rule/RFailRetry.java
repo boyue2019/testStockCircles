@@ -16,8 +16,7 @@ public class RFailRetry implements IRetryAnalyzer{
     @Override
     public boolean retry(ITestResult result){
         //从config.properties中读取重跑次数
-        CommonTools commonTools = new CommonTools();
-        maxRetryCount = Integer.parseInt(commonTools.getConfigData("RetryCount"));
+        maxRetryCount = Integer.parseInt(CommonTools.getConfigData("RetryCount"));
 
         if (retryCount < maxRetryCount){
             retryCount++;

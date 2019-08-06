@@ -29,9 +29,8 @@ public class STFService {
 
     //从config.properties配置文件中获取STF地址和密钥
     public void getSTFConfig(){
-        CommonTools commonTools = new CommonTools();
-        this.setStfUrl(commonTools.getConfigData("stfUrl"));
-        this.setAuthToken(commonTools.getConfigData("authToken"));
+        this.setStfUrl(CommonTools.getConfigData("stfUrl"));
+        this.setAuthToken(CommonTools.getConfigData("authToken"));
     }
 
     //获取所有设备信息

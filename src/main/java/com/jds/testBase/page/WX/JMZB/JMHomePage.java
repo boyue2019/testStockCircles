@@ -1,6 +1,6 @@
 package com.jds.testBase.page.WX.JMZB;
 
-import com.jds.testBase.util.Android.PageAction;
+import com.jds.testBase.util.PageAction;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
