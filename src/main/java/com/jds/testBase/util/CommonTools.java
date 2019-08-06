@@ -24,7 +24,7 @@ public class CommonTools {
     public String getConfigData(String key){
         try{
             Properties pFile = new Properties();
-            pFile.load(new FileInputStream(System.getProperty("user.dir") + "/src/config.properties"));
+            pFile.load(new FileInputStream(System.getProperty("user.dir") + "/config/config.properties"));
             String value =  pFile.getProperty(key);
             this.setValue(value);
         }catch (FileNotFoundException f){ }

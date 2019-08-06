@@ -8,7 +8,7 @@ public class Log4jUtils {
      private static Logger logger(){
         Logger logger = Logger.getLogger(Log4jUtils.class);
         BasicConfigurator.configure();
-        PropertyConfigurator.configure(System.getProperty("user.dir") + "/src/log4j.properties");
+        PropertyConfigurator.configure(System.getProperty("user.dir") + "/config/log4j.properties");
         return logger;
     }
 

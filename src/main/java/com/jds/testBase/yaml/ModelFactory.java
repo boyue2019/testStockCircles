@@ -87,7 +87,7 @@ public class ModelFactory {
         ModelBean modelBean = this.Model(this.ModelSource());
         try{
             Yaml yaml = new Yaml();
-            File file = new File(System.getProperty("user.dir") + "/docker-compose.yaml");
+            File file = new File(System.getProperty("user.dir") + "/config/docker-compose.yaml");
             FileWriter fileWriter = new FileWriter(file);
             fileWriter.write(yaml.dump(modelBean));
             fileWriter.flush();

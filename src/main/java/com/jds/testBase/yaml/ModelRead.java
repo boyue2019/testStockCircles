@@ -21,7 +21,7 @@ public class ModelRead {
             Yaml yaml = new Yaml();
             File file = new File(System
                     .getProperty("user.dir")
-                    + "/docker-compose.yaml");
+                    + "/config/docker-compose.yaml");
             FileInputStream fileInputStream = new FileInputStream(file);
             modelBean = yaml.loadAs(fileInputStream,ModelBean.class);
         }catch (FileNotFoundException f){
