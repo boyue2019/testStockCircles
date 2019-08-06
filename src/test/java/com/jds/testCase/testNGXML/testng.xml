@@ -11,6 +11,13 @@
     </listeners>
     -->
 
+    <!-- WX解码直播小程序 -->
+    <test name="WX_JMZB" verbose="2" enabled="false">
+        <classes>
+            <class name="com.jds.testCase.caseList.WX.CHomePage"></class>
+        </classes>
+    </test>
+
     <!-- Android -->
     <test name="RegressionTesting_Android" verbose="2" enabled="false">
         <parameter name="port" value="4723"></parameter>
@@ -25,13 +32,6 @@
         <classes>
             <class name="TestClass">
             </class>
-        </classes>
-    </test>
-
-    <!-- 测试 -->
-    <test name="JMZB_Test" enabled="false">
-        <classes>
-            <class name="com.jds.testCase.caseList.WX.CHomePage"></class>
         </classes>
     </test>
 </suite>

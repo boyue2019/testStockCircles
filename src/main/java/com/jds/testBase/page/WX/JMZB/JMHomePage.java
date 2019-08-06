@@ -1,6 +1,5 @@
 package com.jds.testBase.page.WX.JMZB;
 
-import com.jds.testBase.driver.Driver;
 import com.jds.testBase.util.Android.PageAction;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;

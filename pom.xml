@@ -113,7 +113,7 @@
                         -javaagent:"${project.basedir}/lib/aspectjweaver-1.9.2.jar"
                     </argLine>
                     <suiteXmlFiles>
-                        <suiteXmlFile>testng.xml</suiteXmlFile>
+                        <suiteXmlFile>src/test/java/com/jds/testCase/testNGXML/testng.xml</suiteXmlFile>
                     </suiteXmlFiles>
                     <workingDirectory>target/</workingDirectory>
                     <testFailureIgnore>true</testFailureIgnore>

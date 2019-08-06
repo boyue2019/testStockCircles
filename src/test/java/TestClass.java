@@ -1,8 +1,3 @@
-import com.jds.testCase.caseRule.rule.RGroupName;
-import io.qameta.allure.Description;
-import io.qameta.allure.Stories;
-import io.qameta.allure.Story;
-import org.testng.Assert;
 import org.testng.annotations.*;
 
 public class TestClass{@BeforeSuite

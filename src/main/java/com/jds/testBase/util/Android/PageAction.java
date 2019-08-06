@@ -2,13 +2,11 @@ package com.jds.testBase.util.Android;
 
 import com.jds.testBase.driver.Driver;
 import com.jds.testBase.log.Log4jUtils;
-import com.jds.testBase.page.Android.HomePage;
 import com.jds.testBase.page.WX.JMZB.WXHomePage;
 import com.jds.testBase.util.CommonTools;
 import com.jds.testBase.yaml.ModelBean;
 import com.jds.testBase.yaml.ModelRead;
 import io.appium.java_client.TouchAction;
-import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
 import io.qameta.allure.Step;
@@ -45,24 +43,24 @@ public class PageAction {
      * 启动微信
      * @return
      */
-    @Step("【系统】启动APP")
+    @Step("【系统】启动微信小程序")
     public static WXHomePage startWX(){
-        CommonTools commonTools = new CommonTools();
+        CommonTools tools = new CommonTools();
         ModelRead read = new ModelRead();
-        ModelBean bean = read.ReadYaml();
-        Map dp = new HashMap();
-        dp.put("port",bean.getModeldetails().get(0).getAppiumParameters().getPort());
-        dp.put("udid",bean.getModeldetails().get(0).getSerial());
-        dp.put("platformName",bean.getModeldetails().get(0).getSystem());
-        dp.put("version",bean.getModeldetails().get(0).getDeviceInfos().getVersion());
-        dp.put("ExperimentalOption",commonTools.getConfigData("ExperimentalOption"));
+        ModelBean bean = read.ReadYaml();   //读取docker-compose.yaml文件
+        Map dp = new HashMap();             //获取driver所需信息后添加到map
+        dp.put("port",bean.getModeldetails().get(0).getAppiumParameters().getPort());   //appium端口
+        dp.put("udid",bean.getModeldetails().get(0).getSerial());                       //设备号
+        dp.put("platformName",bean.getModeldetails().get(0).getSystem());               //Android/iOS
+        dp.put("version",bean.getModeldetails().get(0).getDeviceInfos().getVersion());  //手机系统版本
+        dp.put("ExperimentalOption",tools.getConfigData("ExperimentalOption"));   //被测小程序进程名称
         try{
             Driver.startWX(dp.get("port").toString(),
                     dp.get("udid").toString(),
                     dp.get("platformName").toString(),
                     dp.get("version").toString(),
                     dp.get("ExperimentalOption").toString());
-            return new WXHomePage();
+            return new WXHomePage();      //返回微信首页对象
         }catch (Exception e){
             System.out.println("微信启动失败.");
             return null;
@@ -189,7 +187,7 @@ public class PageAction {
                     getDriverAN().
                     getScreenshotAs(OutputType.FILE);
             FileUtils.copyFile(screenFile,new File(savePath + "/" + screenName + ".jpg"));
-            Log4jUtils.logInfo("截图成功:" + savePath + "/" + screenName + ".jpg");
+            //Log4jUtils.logInfo("截图成功:" + savePath + "/" + screenName + ".jpg");
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -210,7 +208,7 @@ public class PageAction {
             File screenFile = Driver.getDriverAN().getScreenshotAs(OutputType.FILE);  //保存本地
             byte[] screenShot = Driver.getDriverAN().getScreenshotAs(OutputType.BYTES);  //返回screenShot,用于上传Allure附件
             FileUtils.copyFile(screenFile,new File(savePath + "/" + screenName + ".jpg"));
-            Log4jUtils.logInfo("截图成功:" + savePath + "/" + screenName + ".jpg");
+            //Log4jUtils.logInfo("截图成功:" + savePath + "/" + screenName + ".jpg");
             return screenShot;
         }catch (Exception e){
             e.printStackTrace();
@@ -269,6 +267,7 @@ public class PageAction {
      * 切换至'WEBVIEW_com.tencent.mm:appbrand0'
      */
     public static void switchToWebview(){
+        //若当前context不是webview则切换至webview
         if(!Driver.getDriverWX().getContext().toString().equals("WEBVIEW_com.tencent.mm:appbrand0")){
             System.out.println("切换至WebView.");
             Driver.getDriverWX().context("WEBVIEW_com.tencent.mm:appbrand0");
@@ -295,7 +294,7 @@ public class PageAction {
      */
     public static void jumpToWindowHandel(WebElement element){
         for(String handle : Driver.getDriverWX().getWindowHandles()){
-            Driver.getDriverWX().switchTo().window(handle);  //遍历handel
+            Driver.getDriverWX().switchTo().window(handle);  //遍历handel直到找到相应元素
             try{
                 if (element.isDisplayed()){
                     System.out.println("找到对应元素;当前WindowHandle:" + handle);
