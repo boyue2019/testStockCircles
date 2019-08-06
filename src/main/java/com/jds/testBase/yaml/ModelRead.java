@@ -1,10 +1,15 @@
 package com.jds.testBase.yaml;
 
+import com.jds.testBase.util.CommonTools;
 import org.yaml.snakeyaml.Yaml;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class ModelRead {
     /**
@@ -26,8 +31,15 @@ public class ModelRead {
     }
 
     public static void main(String[] args){
+        CommonTools commonTools = new CommonTools();
         ModelRead read = new ModelRead();
         ModelBean bean = read.ReadYaml();
-        System.out.println(bean.getModeldetails().get(1).getSerial());
+        Map driverparameter = new HashMap();
+        driverparameter.put("port",bean.getModeldetails().get(0).getAppiumParameters().getPort());
+        driverparameter.put("udid",bean.getModeldetails().get(0).getSerial());
+        driverparameter.put("platformName",bean.getModeldetails().get(0).getSystem());
+        driverparameter.put("version",bean.getModeldetails().get(0).getDeviceInfos().getVersion());
+        driverparameter.put("ExperimentalOption",commonTools.getConfigData("ExperimentalOption"));
+        System.out.println(driverparameter.get("ExperimentalOption"));
     }
 }

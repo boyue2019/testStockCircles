@@ -13,7 +13,7 @@ public interface IJMBottomNavigation {
     default JMHomePage goToHomePage(){
         JMBottomNavigationPage bottomNavigationPage = new JMBottomNavigationPage();
         PageAction.switchToNative();
-        PageAction.click(10,JMBottomNavigationPage.home,"wx");
+        PageAction.click(15,JMBottomNavigationPage.home,"wx");
         return new JMHomePage();
     }
 
@@ -26,7 +26,7 @@ public interface IJMBottomNavigation {
     default JMWeiKePage goToWeiKePage(){
         PageAction.switchToNative();
         JMBottomNavigationPage bottomNavigationPage = new JMBottomNavigationPage();
-        PageAction.click(10,JMBottomNavigationPage.WeiKe,"wx");
+        PageAction.click(15,JMBottomNavigationPage.WeiKe,"wx");
         return new JMWeiKePage();
     }
 
@@ -39,16 +39,16 @@ public interface IJMBottomNavigation {
     default JMMinePage goToMinePage(){
         PageAction.switchToNative();
         JMBottomNavigationPage bottomNavigationPage = new JMBottomNavigationPage();
-        PageAction.click(10,JMBottomNavigationPage.mine,"wx");
+        PageAction.click(15,JMBottomNavigationPage.mine,"wx");
         return new JMMinePage();
     }
 
     /**
      * 等待首页底导出现
      */
-    default void waitHomeElement(){
+    default void waitBottomElement(){
         JMBottomNavigationPage bottomNavigationPage = new JMBottomNavigationPage();
-        PageAction.waitElement(20,JMBottomNavigationPage.home,"wx");  //等待页面元素加载
-        PageAction.waitElement(10,JMBottomNavigationPage.stop2,"wx");  //等待5秒页面渲染
+        PageAction.waitElement(20,JMBottomNavigationPage.home,"wx");  //等待底部导航元素加载成功
+        PageAction.waitElement(10,JMBottomNavigationPage.stop2,"wx");  //继续等待5秒 - 页面渲染
     }
 }

@@ -15,7 +15,7 @@ public class BaseCase {
      */
     @BeforeClass(description = "【前置】启动微信")
     public void startWX(){
-        wxHomePage = PageAction.startWX("4723","edd06f8e");
+        wxHomePage = PageAction.startWX();
     }
 
     /**

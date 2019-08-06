@@ -4,6 +4,9 @@ import com.jds.testBase.driver.Driver;
 import com.jds.testBase.log.Log4jUtils;
 import com.jds.testBase.page.Android.HomePage;
 import com.jds.testBase.page.WX.JMZB.WXHomePage;
+import com.jds.testBase.util.CommonTools;
+import com.jds.testBase.yaml.ModelBean;
+import com.jds.testBase.yaml.ModelRead;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.touch.WaitOptions;
@@ -11,13 +14,14 @@ import io.appium.java_client.touch.offset.PointOption;
 import io.qameta.allure.Step;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
-import java.util.Date;
+import java.util.*;
 
 public class PageAction {
     /**
@@ -39,14 +43,25 @@ public class PageAction {
 
     /**
      * 启动微信
-     * @param port
-     * @param udid
      * @return
      */
     @Step("【系统】启动APP")
-    public static WXHomePage startWX(String port, String udid){
+    public static WXHomePage startWX(){
+        CommonTools commonTools = new CommonTools();
+        ModelRead read = new ModelRead();
+        ModelBean bean = read.ReadYaml();
+        Map dp = new HashMap();
+        dp.put("port",bean.getModeldetails().get(0).getAppiumParameters().getPort());
+        dp.put("udid",bean.getModeldetails().get(0).getSerial());
+        dp.put("platformName",bean.getModeldetails().get(0).getSystem());
+        dp.put("version",bean.getModeldetails().get(0).getDeviceInfos().getVersion());
+        dp.put("ExperimentalOption",commonTools.getConfigData("ExperimentalOption"));
         try{
-            Driver.startWX(port, udid);
+            Driver.startWX(dp.get("port").toString(),
+                    dp.get("udid").toString(),
+                    dp.get("platformName").toString(),
+                    dp.get("version").toString(),
+                    dp.get("ExperimentalOption").toString());
             return new WXHomePage();
         }catch (Exception e){
             System.out.println("微信启动失败.");
@@ -59,7 +74,7 @@ public class PageAction {
      */
     @Step("【系统】退出APP")
     public static void close(){
-        Log4jUtils.logInfo("退出投资易课APP");
+        System.out.println("退出APP");
         Driver.getDriverAN().quit();
     }
 
@@ -283,11 +298,11 @@ public class PageAction {
             Driver.getDriverWX().switchTo().window(handle);  //遍历handel
             try{
                 if (element.isDisplayed()){
-                    System.out.println("找到对应元素.");
+                    System.out.println("找到对应元素;当前WindowHandle:" + handle);
                     break;
                 }
             }catch (NoSuchElementException n){
-                System.out.println("当前WindowHandle找不到对应元素.");
+                System.out.println("未找到对应元素;当前WindowHandle:" + handle);
             }
         }
     }

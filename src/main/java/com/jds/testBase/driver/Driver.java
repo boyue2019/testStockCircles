@@ -34,11 +34,15 @@ public class Driver {
         return driverIOS;
     }
 
-    public static void startWX(String port,String udid){
+    public static void startWX(String port,
+                               String udid,
+                               String platformName,
+                               String version,
+                               String ExperimentalOption){
         DesiredCapabilities cap =  new DesiredCapabilities();
         cap.setCapability("deviceName",udid);   //设备ID
-        cap.setCapability("platformName","Android");    //测试平台
-        cap.setCapability("platformVersion","6.0");     //Android版本
+        cap.setCapability("platformName",platformName);    //测试平台
+        cap.setCapability("platformVersion",version);     //Android版本
         cap.setCapability("appPackage","com.tencent.mm");   //APP包名
         cap.setCapability("appActivity","com.tencent.mm.ui.LauncherUI"); //ActivityName
         cap.setCapability("appWaitActivity", "com.tencent.mm.app.WeChatSplashActivity");
@@ -54,7 +58,7 @@ public class Driver {
         cap.setCapability(AndroidMobileCapabilityType.CHROMEDRIVER_EXECUTABLE,chromedriver.getAbsolutePath());
 
         ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.setExperimentalOption("androidProcess", "com.tencent.mm:appbrand0");
+        chromeOptions.setExperimentalOption("androidProcess", ExperimentalOption);
         cap.setCapability(ChromeOptions.CAPABILITY,chromeOptions);
         cap.setBrowserName("");
 

@@ -2,7 +2,6 @@ package com.jds.testCase.caseList.WX;
 
 import com.jds.testBase.driver.Driver;
 import io.qameta.allure.Story;
-import org.openqa.selenium.NoSuchElementException;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -19,6 +18,5 @@ public class CHomePage extends BaseCase {
     public void Case001() {
         jmDrycargoPage = jmHomePage.gotoJMDrycargoCheckAll();  //进入每日干货-查看全部
         System.out.println(Driver.getDriverWX().getContext());
-        System.out.println(Driver.getDriverWX().findElementByXPath("//*"));
     }
 }

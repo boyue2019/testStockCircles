@@ -38,7 +38,7 @@ public class JMHomePage extends WXHomePage implements IJMBottomNavigation{
      * @return
      */
     public JMDrycargoPage gotoJMDrycargoCheckAll(){
-        this.waitHomeElement();
+        this.waitBottomElement();
         PageAction.switchToWebview();
         PageAction.jumpToWindowHandel(drycargoCheckall);  //遍历WindowHandel查找'每日干后-查看全部'
         drycargoCheckall.click();
