@@ -12,9 +12,9 @@
     -->
 
     <!-- WX解码直播小程序 -->
-    <test name="WX_JMZB" verbose="2" enabled="false">
+    <test name="WX_JMZB" verbose="2" enabled="true">
         <classes>
-            <class name="com.jds.testCase.caseList.WX.CHomePage"></class>
+            <class name="com.jds.testCase.caseList.WX.CDrycargoPage"></class>
         </classes>
     </test>
 
@@ -24,14 +24,6 @@
         <parameter name="udid" value="edd06f8e"></parameter>
         <classes>
             <class name="com.jds.testCase.caseList.Android.test2"></class>
-        </classes>
-    </test>
-
-    <!-- IOS -->
-    <test name="RegressionTesting_IOS" verbose="2" enabled="true">
-        <classes>
-            <class name="TestClass">
-            </class>
         </classes>
     </test>
 </suite>

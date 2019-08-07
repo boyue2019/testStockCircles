@@ -49,6 +49,6 @@ public interface IJMBottomNavigation {
     default void waitBottomElement(){
         JMBottomNavigationPage bottomNavigationPage = new JMBottomNavigationPage();
         PageAction.waitElement(20,JMBottomNavigationPage.home,"wx");  //等待底部导航元素加载成功
-        PageAction.waitElement(10,JMBottomNavigationPage.stop2,"wx");  //继续等待5秒 - 页面渲染
+        bottomNavigationPage.waitLoading(5);  //继续等待5秒 - 页面渲染
     }
 }

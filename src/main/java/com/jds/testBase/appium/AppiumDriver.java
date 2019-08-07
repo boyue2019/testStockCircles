@@ -8,14 +8,14 @@ import io.appium.java_client.service.local.AppiumServiceBuilder;
 import io.appium.java_client.service.local.flags.GeneralServerFlag;
 
 public class AppiumDriver {
-    private AppiumDriverLocalService service;
+    static AppiumDriverLocalService service;
 
     /**
      * 启动Appium服务
      *   - 域名从config.properties配置文件中获取
      *   - port从生成对yaml文件中获取
      */
-    public void startServer(){
+    public static void startServer(){
         ModelRead read = new ModelRead();
         ModelBean bean = read.ReadYaml();
         String port = bean.getModeldetails().get(0).getAppiumParameters().getPort();   //获取appium端口
@@ -36,11 +36,22 @@ public class AppiumDriver {
     /**
      * 关闭Appium服务
      */
-    public void stopServer(){
+    public static void stopServer(){
         if (service.isRunning()){
+            System.out.println("关闭Appium服务.");
             service.stop();
         }else {
             System.out.println("Appium服务未启用.");
         }
+    }
+
+    public static void main(String[] args){
+        AppiumDriver.startServer();
+        try{
+            Thread.sleep(10000);
+        }catch (InterruptedException i){
+
+        }
+        AppiumDriver.stopServer();
     }
 }

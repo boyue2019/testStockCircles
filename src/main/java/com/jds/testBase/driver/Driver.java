@@ -77,6 +77,7 @@ public class Driver {
         }
 
         driverWX = new AndroidDriver<AndroidElement>(remoteUrl, cap);
+        setDriverWX(driverWX);
     }
 
     /**

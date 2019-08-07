@@ -4,6 +4,7 @@ import com.jds.testBase.appium.AppiumDriver;
 import com.jds.testBase.driver.Driver;
 import com.jds.testBase.page.WX.JMZB.*;
 import com.jds.testBase.util.PageAction;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
@@ -13,14 +14,13 @@ public class BaseCase {
     static JMHomePage jmHomePage;
     static JMMinePage jmMinePage;
     static JMDrycargoPage jmDrycargoPage;
-    static AppiumDriver appiumDriver;
 
     /**
      * 启动Appium服务
      */
     @BeforeSuite
     public void startAppium(){
-        appiumDriver.startServer();
+        AppiumDriver.startServer();
     }
 
     /**
@@ -39,11 +39,18 @@ public class BaseCase {
     }
 
     /**
-     *  Case执行完毕后关闭微信及Appium服务
+     * 关闭微信
+     */
+    @AfterClass
+    public void closeWX(){
+        PageAction.closeWX();
+    }
+
+    /**
+     * 关闭Appium服务
      */
     @AfterSuite
     public void stopAppium(){
-        Driver.getDriverWX().close();
-        appiumDriver.stopServer();
+        AppiumDriver.stopServer();
     }
 }

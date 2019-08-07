@@ -39,6 +39,7 @@ public class PageAction {
         dp.put("version",bean.getModeldetails().get(0).getDeviceInfos().getVersion());  //手机系统版本
         dp.put("ExperimentalOption",CommonTools.getConfigData("ExperimentalOption"));   //被测小程序进程名称
         try{
+            System.out.println("启动微信.");
             Driver.startWX(dp.get("port").toString(),
                     dp.get("udid").toString(),
                     dp.get("platformName").toString(),
@@ -49,6 +50,16 @@ public class PageAction {
             System.out.println("微信启动失败.");
             return null;
         }
+    }
+
+    /**
+     * 退出WX
+     */
+    @Step("【系统】退出APP")
+    public static void closeWX(){
+        PageAction.switchToNative(); //先切换至NATIVE
+        System.out.println("退出微信.");
+        Driver.getDriverWX().quit();
     }
 
     /**
@@ -261,17 +272,22 @@ public class PageAction {
      * 【WebView】切换至包含指定元素的WindowHandle
      * @param element
      */
-    public static void jumpToWindowHandel(WebElement element){
+    public static Boolean jumpToWindowHandel(WebElement element){
+        Boolean isHave;
         for(String handle : Driver.getDriverWX().getWindowHandles()){
+
             Driver.getDriverWX().switchTo().window(handle);  //遍历handel直到找到相应元素
             try{
                 if (element.isDisplayed()){
                     System.out.println("找到对应元素;当前WindowHandle:" + handle);
+                    isHave = true;
                     break;
                 }
             }catch (NoSuchElementException n){
                 System.out.println("未找到对应元素;当前WindowHandle:" + handle);
+                isHave = false;
             }
         }
+        return true;
     }
 }

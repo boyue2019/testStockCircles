@@ -6,6 +6,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 
+/**
+ * 解码直播首页
+ */
 public class JMHomePage extends WXHomePage implements IJMBottomNavigation{
     //启动页 【WebView】
     @FindBy(xpath = "/html/body/wx-comdialog/wx-view/wx-image/div")
@@ -13,7 +16,8 @@ public class JMHomePage extends WXHomePage implements IJMBottomNavigation{
     private WebElement startPage;
 
     //每日干货查看全部  【WebView】
-    @FindBy(xpath = "//*[@id='bgscroll']/div/div/div/wx-view[1]/wx-view[3]/wx-form/span/wx-button")
+    //*[@id="bgscroll"]/div/div/div/wx-view/wx-view[4]/wx-form/span/wx-button
+    @FindBy(xpath = "//wx-view[@class='masteritemstrategy'][2]/wx-form/span/wx-button")
     @CacheLookup
     private WebElement drycargoCheckall;
 
@@ -40,7 +44,7 @@ public class JMHomePage extends WXHomePage implements IJMBottomNavigation{
         this.waitBottomElement();
         PageAction.switchToWebview();
         PageAction.jumpToWindowHandel(drycargoCheckall);  //遍历WindowHandel查找'每日干后-查看全部'
-        drycargoCheckall.click();
+        PageAction.click(1,drycargoCheckall,"wx");
         return new JMDrycargoPage();
     }
 }
