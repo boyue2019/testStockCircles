@@ -15,7 +15,7 @@ public class CDrycargoPage extends BaseCase {
 
     @Story("【测试】进入'每日干货-查看全部'页面")
     @Test
-    public void Case001() {
+    public void DrycargoPage_Case_001() {
         jmDrycargoPage = jmHomePage.gotoJMDrycargoCheckAll();  //进入每日干货-查看全部
         Assert.assertTrue(jmDrycargoPage.isIncludeArticleType());  //校验:每日干货列表是否包含"师说"Tab元素
     }
