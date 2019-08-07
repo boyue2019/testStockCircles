@@ -1,7 +1,6 @@
 package com.jds.testBase.page.WX.JMZB;
 
 import com.jds.testBase.util.PageAction;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
@@ -11,17 +10,17 @@ import org.openqa.selenium.support.FindBy;
  */
 public class JMDrycargoPage extends BasePage {
     //每日听干货-师说Tab 【WebView】
-    @FindBy(xpath = "//wx-view[@class='category_view'//wx-view/wx-text[span='师说']")
+    @FindBy(xpath = "//wx-view[@class='category_item']/wx-text[1][span[2]='师说']")
     @CacheLookup
     private WebElement tab_ss;
 
     //每日听干货-为民观天下Tab 【WebView】
-    @FindBy(xpath = "//wx-view[@class='category_view'//wx-view/wx-text[span='为民观天下']")
+    @FindBy(xpath = "/html/body/wx-view/wx-view/wx-view[2]")
     @CacheLookup
     private WebElement tab_wmgtx;
 
     //每日听干货-财经早班车Tab 【WebView】
-    @FindBy(xpath = "//wx-view[@class='category_view'//wx-view/wx-text[span='财经早班车']")
+    @FindBy(xpath = "/html/body/wx-view/wx-view/wx-view[3]")
     @CacheLookup
     private WebElement tab_cjzbc;
 

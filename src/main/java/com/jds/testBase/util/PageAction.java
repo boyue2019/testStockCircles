@@ -273,9 +273,8 @@ public class PageAction {
      * @param element
      */
     public static Boolean jumpToWindowHandel(WebElement element){
-        Boolean isHave;
+        Boolean isHave = null;
         for(String handle : Driver.getDriverWX().getWindowHandles()){
-
             Driver.getDriverWX().switchTo().window(handle);  //遍历handel直到找到相应元素
             try{
                 if (element.isDisplayed()){
@@ -288,6 +287,6 @@ public class PageAction {
                 isHave = false;
             }
         }
-        return true;
+        return isHave;
     }
 }
