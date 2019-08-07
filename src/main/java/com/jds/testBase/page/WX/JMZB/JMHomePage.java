@@ -17,7 +17,7 @@ public class JMHomePage extends WXHomePage implements IJMBottomNavigation{
 
     //每日干货查看全部  【WebView】
     //*[@id="bgscroll"]/div/div/div/wx-view/wx-view[4]/wx-form/span/wx-button
-    @FindBy(xpath = "//wx-view[@class='masteritemstrategy'][2]/wx-form/span/wx-button")
+    @FindBy(xpath = "//wx-view[@class='masteritemstrategy'][1]/wx-form/span/wx-button")
     @CacheLookup
     private WebElement drycargoCheckall;
 

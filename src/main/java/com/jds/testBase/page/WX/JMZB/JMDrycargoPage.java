@@ -24,13 +24,52 @@ public class JMDrycargoPage extends BasePage {
     @CacheLookup
     private WebElement tab_cjzbc;
 
+    //每日听干货-文章列表 【WebView】
+    @FindBy(xpath = "//wx-complisten[5]")
+    @CacheLookup
+    private WebElement articlelist;
+
     /**
      * 【测试点】判断页面是否包含文章类型元素
      * @return
      */
     public Boolean isIncludeArticleType(){
+        Boolean isHave = false;
         this.waitLoading(3);  //等待3秒加载页面
-        Boolean isHave = PageAction.jumpToWindowHandel(tab_ss);
+        for (int i =0;i < 3;i++){
+            switch (i){
+                case 0:
+                    Boolean a = PageAction.jumpToWindowHandel(tab_ss);
+                    if (a){
+                        isHave = a;
+                    }else {
+                        isHave = false;
+                        break;
+                    }
+                case 1:
+                    Boolean b = PageAction.jumpToWindowHandel(tab_wmgtx);
+                    if (b){
+                        isHave = b;
+                    }else {
+                        isHave = false;
+                        break;
+                    }
+                case 2:
+                    Boolean c = PageAction.jumpToWindowHandel(tab_cjzbc);
+                    if (c){
+                        isHave = c;
+                    }else {
+                        isHave = false;
+                        break;
+                    }
+            }
+        }
         return isHave;
+    }
+
+    public String articleCount(){
+        PageAction.jumpToWindowHandel(articlelist);
+        String count = articlelist.getText().toString();
+        return count;
     }
 }
