@@ -5,8 +5,3 @@ modeldetails:
   dockerParameters: {containerName: '', image: ''}
   serial: edd06f8e
   system: Android
-- appiumParameters: {bp: '4726', port: '4725'}
-  deviceInfos: {manufacturer: XIAOMI, model: MI 9, serial: 6d4a5e0d, version: '9'}
-  dockerParameters: {containerName: '', image: ''}
-  serial: 6d4a5e0d
-  system: Android

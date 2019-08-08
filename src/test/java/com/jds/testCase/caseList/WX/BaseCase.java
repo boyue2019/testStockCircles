@@ -1,9 +1,9 @@
 package com.jds.testCase.caseList.WX;
 
 import com.jds.testBase.appium.AppiumDriver;
-import com.jds.testBase.driver.Driver;
 import com.jds.testBase.page.WX.JMZB.*;
 import com.jds.testBase.util.PageAction;
+import com.jds.testBase.yaml.ModelFactory;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
@@ -12,7 +12,6 @@ import org.testng.annotations.BeforeSuite;
 public class BaseCase {
     static WXHomePage wxHomePage;
     static JMHomePage jmHomePage;
-    static JMMinePage jmMinePage;
     static JMDrycargoPage jmDrycargoPage_ss;
     static JMDrycargoPage jmDrycargoPage_wm;
     static JMDrycargoPage jmDrycargoPage_cj;
@@ -22,6 +21,8 @@ public class BaseCase {
      */
     @BeforeSuite
     public void startAppium(){
+        ModelFactory modelFactory = new ModelFactory();
+        modelFactory.MakeModel();
         AppiumDriver.startServer();
     }
 

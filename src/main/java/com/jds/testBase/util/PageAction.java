@@ -55,7 +55,7 @@ public class PageAction {
     /**
      * 退出WX
      */
-    @Step("【系统】退出APP")
+    @Step("【系统】退出微信")
     public static void closeWX(){
         PageAction.switchToNative(); //先切换至NATIVE
         System.out.println("退出微信.");
