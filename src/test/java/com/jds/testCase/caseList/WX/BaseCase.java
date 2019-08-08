@@ -13,7 +13,9 @@ public class BaseCase {
     static WXHomePage wxHomePage;
     static JMHomePage jmHomePage;
     static JMMinePage jmMinePage;
-    static JMDrycargoPage jmDrycargoPage;
+    static JMDrycargoPage jmDrycargoPage_ss;
+    static JMDrycargoPage jmDrycargoPage_wm;
+    static JMDrycargoPage jmDrycargoPage_cj;
 
     /**
      * 启动Appium服务

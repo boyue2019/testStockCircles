@@ -24,10 +24,10 @@ public class CommonTools {
             String value =  pFile.getProperty(key);
             return value;
         }catch (FileNotFoundException f){
-            System.out.println("找不到文件.");
+            System.out.println("找不到文件;【Method】getConfigData");
         }
         catch (IOException I){
-            System.out.println("读取文件失败.");
+            System.out.println("读取文件失败;【Method】getConfigData");
         }
         return null;
     }

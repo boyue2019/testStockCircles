@@ -15,6 +15,6 @@ public class CHomePage extends BaseCase {
     @Story("【测试】进入'每日干货-查看全部'页面")
     @Test
     public void Case001() {
-        jmDrycargoPage = jmHomePage.gotoJMDrycargoCheckAll();  //进入每日干货-查看全部
+        jmDrycargoPage_ss = jmHomePage.gotoJMDrycargoCheckAll();  //进入每日干货-查看全部
     }
 }

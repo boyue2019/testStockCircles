@@ -12,7 +12,7 @@ import org.openqa.selenium.support.PageFactory;
  * 1.PageFactory页面元素初始化  2.页面截图（非等待）
  */
 public class BasePage {
-    //暂停 【NATIVE_APP】
+    //暂停
     @FindBy(xpath = "//*[@text='找到算我输']")
     @CacheLookup
     static WebElement stop2;
@@ -26,10 +26,10 @@ public class BasePage {
     }
 
     /**
-     * 等待页面加载
-     * @param TIMEOUT
+     * 等待页面加载,自定义等待时长
+     * @param waitingTime
      */
-    public void waitLoading(int TIMEOUT){
-        PageAction.waitElement(TIMEOUT,stop2,"wx");
+    public void waitLoading(int waitingTime){
+        PageAction.waitElement(waitingTime,stop2,"wx");
     }
 }

@@ -20,7 +20,7 @@ public class WXHomePage extends BasePage{
     private WebElement BookTab;
 
     //暂停 【NATIVE_APP】
-    @FindBy(xpath = "//*[@text='找不到']")
+    @FindBy(xpath = "//*[@text='找到算我输']")
     @CacheLookup
     private WebElement stop1;
 

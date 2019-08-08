@@ -117,7 +117,7 @@ public class PageAction {
             System.out.println("点击元素.");
             element.click();  //点击指定元素
         }catch (Exception e){  //若找不到元素退出程序
-            System.out.println("找不到元素.");
+            System.out.println("找不到对应元素;【Method】skiclickpWMGTX");
             System.exit(0);
         }
     }
@@ -273,9 +273,10 @@ public class PageAction {
      * @param element
      */
     public static Boolean jumpToWindowHandel(WebElement element){
-        Boolean isHave = null;
+        Boolean isHave = false;
         for(String handle : Driver.getDriverWX().getWindowHandles()){
             Driver.getDriverWX().switchTo().window(handle);  //遍历handel直到找到相应元素
+            waitElement(10,element,"wx");
             try{
                 if (element.isDisplayed()){
                     System.out.println("找到对应元素;当前WindowHandle:" + handle);
@@ -284,6 +285,9 @@ public class PageAction {
                 }
             }catch (NoSuchElementException n){
                 System.out.println("未找到对应元素;当前WindowHandle:" + handle);
+                isHave = false;
+            }catch (StaleElementReferenceException s){
+                System.out.println("页面元素过时;当前WindowHandle:" + handle);
                 isHave = false;
             }
         }
