@@ -32,7 +32,7 @@ public class STFDevices {
         List<STFBean.DevicesBean> devices = stfBean.getDevices();
         int sum = devices.size();                                  //总设备数
         int count = 0;                                             //计数器:记录连接状态的设备数
-        String[][] devicesList = new String[sum][5];               //定义二维数组 - 5代表设备信息数
+        String[][] devicesList = new String[sum][7];               //定义二维数组 - 7代表设备信息数
 
         //采集与STF连接且联网的设备信息
         for (int i = 0;i < sum;i++){
@@ -44,6 +44,8 @@ public class STFDevices {
                 devicesList[count][2] = devices.get(i).getSerial();         //设备号
                 devicesList[count][3] = devices.get(i).getVersion();        //系统版本
                 devicesList[count][4] = devices.get(i).getPlatform();       //Android或iOS
+                devicesList[count][5] = Integer.toString(devices.get(i).getDisplay().getHeight());   //设备屏幕高度
+                devicesList[count][6] = Integer.toString(devices.get(i).getDisplay().getWidth());    //设备屏幕宽度
                 count+=1;
             }else if(isPresent && !isConnected){
                 System.out.println("设备网络异常:" + devices.get(i).getModel() + "<" + devices.get(i).getSerial() + ">");

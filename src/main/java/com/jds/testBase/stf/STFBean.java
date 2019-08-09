@@ -6,7 +6,7 @@ public class STFBean {
 
     /**
      * success : true
-     * devices : [{"abi":"arm64-v8a","airplaneMode":false,"battery":{"health":"good","level":42,"scale":100,"source":"usb","status":"charging","temp":36,"voltage":3.81},"browser":{"apps":[{"id":"com.android.browser/.BrowserActivity","name":"Browser","selected":false,"system":true,"type":"android-browser","developer":"Google Inc."}],"selected":false},"channel":"ifHjSc1spCJ/HBvCHPkxICWoTUY=","cpuPlatform":"msm8996","createdAt":"2019-07-11T05:52:20.018Z","display":{"density":3,"fps":60.000003814697266,"height":1920,"id":0,"rotation":0,"secure":true,"size":5.147105693817139,"url":"ws://localhost:7412","width":1080,"xdpi":428.625,"ydpi":427.78900146484375},"manufacturer":"XIAOMI","model":"MI 5","network":{"connected":true,"failover":false,"roaming":false,"subtype":"","type":"WIFI"},"openGLESVersion":"3.1","operator":",","owner":null,"phone":{"iccid":null,"imei":"862033032250027","imsi":null,"network":"UNKNOWN","phoneNumber":null},"platform":"Android","presenceChangedAt":"2019-07-17T06:51:05.368Z","present":false,"product":"gemini","provider":{"channel":"OVNcX4Y4QWqDWm51EKC1AA==","name":"boyuedeMacBook-Pro.local"},"ready":true,"remoteConnect":false,"remoteConnectUrl":null,"reverseForwards":[],"sdk":"23","serial":"edd06f8e","status":3,"statusChangedAt":"2019-07-17T06:47:28.639Z","usage":null,"usageChangedAt":"2019-07-17T06:46:25.949Z","version":"6.0","using":false},{"abi":"arm64-v8a","airplaneMode":false,"battery":{"health":"good","level":56,"scale":100,"source":"usb","status":"charging","temp":26.5,"voltage":3.943},"browser":{"apps":[{"id":"com.android.browser/.BrowserActivity","name":"Browser","selected":true,"system":true,"type":"android-browser","developer":"Google Inc."}],"selected":true},"channel":"iTprhZ8qSm0wysEnm64Cu/FveQU=","cpuPlatform":"msmnile","createdAt":"2019-07-11T05:45:14.685Z","display":{"density":2.75,"fps":60.000003814697266,"height":2340,"id":0,"rotation":0,"secure":true,"size":6.376625061035156,"url":"ws://localhost:7412","width":1080,"xdpi":403.4110107421875,"ydpi":404.32598876953125},"manufacturer":"XIAOMI","model":"MI 9","network":{"connected":true,"failover":false,"roaming":false,"subtype":"","type":"WIFI"},"openGLESVersion":"3.2","operator":",中国移动","owner":null,"phone":{"iccid":"898600790916F4008071","imei":"860682040008850","imsi":"460005462978710","network":"LTE","phoneNumber":null},"platform":"Android","presenceChangedAt":"2019-07-15T11:35:18.704Z","present":false,"product":"cepheus","provider":{"channel":"S1r3jhGpQ5uLdWGoTAMfnA==","name":"boyuedeMacBook-Pro.local"},"ready":true,"remoteConnect":false,"remoteConnectUrl":null,"reverseForwards":[],"sdk":"28","serial":"6d4a5e0d","status":3,"statusChangedAt":"2019-07-15T11:24:04.356Z","usage":null,"usageChangedAt":"2019-07-15T11:34:41.387Z","version":"9","using":false}]
+     * devices : [{"abi":"arm64-v8a","airplaneMode":false,"battery":{"health":"good","level":75,"scale":100,"source":"usb","status":"charging","temp":30.5,"voltage":4.071},"browser":{"apps":[{"id":"com.android.browser/.BrowserActivity","name":"Browser","selected":false,"system":true,"type":"android-browser","developer":"Google Inc."}],"selected":false},"channel":"ifHjSc1spCJ/HBvCHPkxICWoTUY=","cpuPlatform":"msm8996","createdAt":"2019-07-11T05:52:20.018Z","display":{"density":3,"fps":60.000003814697266,"height":1920,"id":0,"rotation":0,"secure":true,"size":5.147105693817139,"url":"ws://localhost:7400","width":1080,"xdpi":428.625,"ydpi":427.78900146484375},"manufacturer":"XIAOMI","model":"MI 5","network":{"connected":true,"failover":false,"roaming":false,"subtype":"","type":"WIFI"},"openGLESVersion":"3.1","operator":",","owner":null,"phone":{"iccid":null,"imei":"862033032250027","imsi":null,"network":"UNKNOWN","phoneNumber":null},"platform":"Android","presenceChangedAt":"2019-08-09T08:01:57.264Z","present":true,"product":"gemini","provider":{"channel":"lzwPN8AJRJi109wMxYlqfg==","name":"boyuedeMacBook-Pro.local"},"ready":true,"remoteConnect":false,"remoteConnectUrl":null,"reverseForwards":[],"sdk":"23","serial":"edd06f8e","status":3,"statusChangedAt":"2019-08-09T08:01:57.218Z","usage":null,"usageChangedAt":"2019-07-17T06:46:25.949Z","version":"6.0","using":false},{"abi":"arm64-v8a","airplaneMode":false,"battery":{"health":"good","level":66,"scale":100,"source":"usb","status":"charging","temp":26.2,"voltage":4.037},"browser":{"apps":[{"id":"com.android.browser/.BrowserActivity","name":"Browser","selected":true,"system":true,"type":"android-browser","developer":"Google Inc."}],"selected":true},"channel":"iTprhZ8qSm0wysEnm64Cu/FveQU=","cpuPlatform":"msmnile","createdAt":"2019-07-11T05:45:14.685Z","display":{"density":2.75,"fps":60.000003814697266,"height":2340,"id":0,"rotation":0,"secure":true,"size":6.376625061035156,"url":"ws://localhost:7400","width":1080,"xdpi":403.4110107421875,"ydpi":404.32598876953125},"manufacturer":"XIAOMI","model":"MI 9","network":{"connected":true,"failover":false,"roaming":false,"subtype":"","type":"WIFI"},"openGLESVersion":"3.2","operator":",中国移动","owner":null,"phone":{"iccid":"898600790916F4008071","imei":"860682040008850","imsi":"460005462978710","network":"LTE","phoneNumber":null},"platform":"Android","presenceChangedAt":"2019-07-26T08:48:39.953Z","present":false,"product":"cepheus","provider":{"channel":"lK86dUZSRwmMtR3hI5I/SQ==","name":"boyuedeMacBook-Pro.local"},"ready":true,"remoteConnect":false,"remoteConnectUrl":null,"reverseForwards":[],"sdk":"28","serial":"6d4a5e0d","status":1,"statusChangedAt":"2019-07-26T08:48:39.938Z","usage":null,"usageChangedAt":"2019-07-15T11:34:41.387Z","version":"9","using":false},{"abi":"arm64-v8a","airplaneMode":false,"battery":{"health":"good","level":79,"scale":100,"source":"usb","status":"charging","temp":31,"voltage":4.152},"browser":{"apps":[{"id":"com.android.browser/.BrowserActivity","name":"Browser","selected":true,"system":true,"type":"android-browser","developer":"Google Inc."}],"selected":true},"channel":"edI+2NAr0t9vHm3OvdSfJsVE5b0=","cpuPlatform":"msm8998","createdAt":"2019-07-24T09:40:32.942Z","display":{"density":3,"fps":60.000003814697266,"height":1920,"id":0,"rotation":0,"secure":true,"size":5.147105693817139,"url":"ws://localhost:7480","width":1080,"xdpi":428.625,"ydpi":427.78900146484375},"manufacturer":"XIAOMI","model":"MI 6","network":{"connected":true,"failover":false,"roaming":false,"subtype":"","type":"WIFI"},"openGLESVersion":"3.2","operator":"中国联通,中国联通","owner":null,"phone":{"iccid":"89860113353020825434","imei":"863254030269509","imsi":"460015675353680","network":"LTE","phoneNumber":null},"platform":"Android","presenceChangedAt":"2019-07-26T03:20:30.481Z","present":false,"product":"sagit","provider":{"channel":"UnKTzLdBQuOYTCCu/yaibg==","name":"boyuedeMacBook-Pro.local"},"ready":true,"remoteConnect":false,"remoteConnectUrl":null,"reverseForwards":[],"sdk":"28","serial":"ded25b9","status":3,"statusChangedAt":"2019-07-26T02:34:48.984Z","usage":null,"version":"9","using":false}]
      */
 
     private boolean success;
@@ -32,12 +32,12 @@ public class STFBean {
         /**
          * abi : arm64-v8a
          * airplaneMode : false
-         * battery : {"health":"good","level":42,"scale":100,"source":"usb","status":"charging","temp":36,"voltage":3.81}
+         * battery : {"health":"good","level":75,"scale":100,"source":"usb","status":"charging","temp":30.5,"voltage":4.071}
          * browser : {"apps":[{"id":"com.android.browser/.BrowserActivity","name":"Browser","selected":false,"system":true,"type":"android-browser","developer":"Google Inc."}],"selected":false}
          * channel : ifHjSc1spCJ/HBvCHPkxICWoTUY=
          * cpuPlatform : msm8996
          * createdAt : 2019-07-11T05:52:20.018Z
-         * display : {"density":3,"fps":60.000003814697266,"height":1920,"id":0,"rotation":0,"secure":true,"size":5.147105693817139,"url":"ws://localhost:7412","width":1080,"xdpi":428.625,"ydpi":427.78900146484375}
+         * display : {"density":3,"fps":60.000003814697266,"height":1920,"id":0,"rotation":0,"secure":true,"size":5.147105693817139,"url":"ws://localhost:7400","width":1080,"xdpi":428.625,"ydpi":427.78900146484375}
          * manufacturer : XIAOMI
          * model : MI 5
          * network : {"connected":true,"failover":false,"roaming":false,"subtype":"","type":"WIFI"}
@@ -46,17 +46,18 @@ public class STFBean {
          * owner : null
          * phone : {"iccid":null,"imei":"862033032250027","imsi":null,"network":"UNKNOWN","phoneNumber":null}
          * platform : Android
-         * presenceChangedAt : 2019-07-17T06:51:05.368Z
-         * present : false
+         * presenceChangedAt : 2019-08-09T08:01:57.264Z
+         * present : true
          * product : gemini
-         * provider : {"channel":"OVNcX4Y4QWqDWm51EKC1AA==","name":"boyuedeMacBook-Pro.local"}
+         * provider : {"channel":"lzwPN8AJRJi109wMxYlqfg==","name":"boyuedeMacBook-Pro.local"}
          * ready : true
          * remoteConnect : false
          * remoteConnectUrl : null
+         * reverseForwards : []
          * sdk : 23
          * serial : edd06f8e
          * status : 3
-         * statusChangedAt : 2019-07-17T06:47:28.639Z
+         * statusChangedAt : 2019-08-09T08:01:57.218Z
          * usage : null
          * usageChangedAt : 2019-07-17T06:46:25.949Z
          * version : 6.0
@@ -65,10 +66,12 @@ public class STFBean {
 
         private String abi;
         private boolean airplaneMode;
+        private BatteryBean battery;
         private BrowserBean browser;
         private String channel;
         private String cpuPlatform;
         private String createdAt;
+        private DisplayBean display;
         private String manufacturer;
         private String model;
         private NetworkBean network;
@@ -92,6 +95,7 @@ public class STFBean {
         private String usageChangedAt;
         private String version;
         private boolean using;
+        private List<?> reverseForwards;
 
         public String getAbi() {
             return abi;
@@ -107,6 +111,14 @@ public class STFBean {
 
         public void setAirplaneMode(boolean airplaneMode) {
             this.airplaneMode = airplaneMode;
+        }
+
+        public BatteryBean getBattery() {
+            return battery;
+        }
+
+        public void setBattery(BatteryBean battery) {
+            this.battery = battery;
         }
 
         public BrowserBean getBrowser() {
@@ -139,6 +151,14 @@ public class STFBean {
 
         public void setCreatedAt(String createdAt) {
             this.createdAt = createdAt;
+        }
+
+        public DisplayBean getDisplay() {
+            return display;
+        }
+
+        public void setDisplay(DisplayBean display) {
+            this.display = display;
         }
 
         public String getManufacturer() {
@@ -325,6 +345,90 @@ public class STFBean {
             this.using = using;
         }
 
+        public List<?> getReverseForwards() {
+            return reverseForwards;
+        }
+
+        public void setReverseForwards(List<?> reverseForwards) {
+            this.reverseForwards = reverseForwards;
+        }
+
+        public static class BatteryBean {
+            /**
+             * health : good
+             * level : 75
+             * scale : 100
+             * source : usb
+             * status : charging
+             * temp : 30.5
+             * voltage : 4.071
+             */
+
+            private String health;
+            private int level;
+            private int scale;
+            private String source;
+            private String status;
+            private double temp;
+            private double voltage;
+
+            public String getHealth() {
+                return health;
+            }
+
+            public void setHealth(String health) {
+                this.health = health;
+            }
+
+            public int getLevel() {
+                return level;
+            }
+
+            public void setLevel(int level) {
+                this.level = level;
+            }
+
+            public int getScale() {
+                return scale;
+            }
+
+            public void setScale(int scale) {
+                this.scale = scale;
+            }
+
+            public String getSource() {
+                return source;
+            }
+
+            public void setSource(String source) {
+                this.source = source;
+            }
+
+            public String getStatus() {
+                return status;
+            }
+
+            public void setStatus(String status) {
+                this.status = status;
+            }
+
+            public double getTemp() {
+                return temp;
+            }
+
+            public void setTemp(double temp) {
+                this.temp = temp;
+            }
+
+            public double getVoltage() {
+                return voltage;
+            }
+
+            public void setVoltage(double voltage) {
+                this.voltage = voltage;
+            }
+        }
+
         public static class BrowserBean {
             /**
              * apps : [{"id":"com.android.browser/.BrowserActivity","name":"Browser","selected":false,"system":true,"type":"android-browser","developer":"Google Inc."}]
@@ -414,6 +518,122 @@ public class STFBean {
                 public void setDeveloper(String developer) {
                     this.developer = developer;
                 }
+            }
+        }
+
+        public static class DisplayBean {
+            /**
+             * density : 3
+             * fps : 60.000003814697266
+             * height : 1920
+             * id : 0
+             * rotation : 0
+             * secure : true
+             * size : 5.147105693817139
+             * url : ws://localhost:7400
+             * width : 1080
+             * xdpi : 428.625
+             * ydpi : 427.78900146484375
+             */
+
+            private double density;
+            private double fps;
+            private int height;
+            private int id;
+            private int rotation;
+            private boolean secure;
+            private double size;
+            private String url;
+            private int width;
+            private double xdpi;
+            private double ydpi;
+
+            public double getDensity() {
+                return density;
+            }
+
+            public void setDensity(double density) {
+                this.density = density;
+            }
+
+            public double getFps() {
+                return fps;
+            }
+
+            public void setFps(double fps) {
+                this.fps = fps;
+            }
+
+            public int getHeight() {
+                return height;
+            }
+
+            public void setHeight(int height) {
+                this.height = height;
+            }
+
+            public int getId() {
+                return id;
+            }
+
+            public void setId(int id) {
+                this.id = id;
+            }
+
+            public int getRotation() {
+                return rotation;
+            }
+
+            public void setRotation(int rotation) {
+                this.rotation = rotation;
+            }
+
+            public boolean isSecure() {
+                return secure;
+            }
+
+            public void setSecure(boolean secure) {
+                this.secure = secure;
+            }
+
+            public double getSize() {
+                return size;
+            }
+
+            public void setSize(double size) {
+                this.size = size;
+            }
+
+            public String getUrl() {
+                return url;
+            }
+
+            public void setUrl(String url) {
+                this.url = url;
+            }
+
+            public int getWidth() {
+                return width;
+            }
+
+            public void setWidth(int width) {
+                this.width = width;
+            }
+
+            public double getXdpi() {
+                return xdpi;
+            }
+
+            public void setXdpi(double xdpi) {
+                this.xdpi = xdpi;
+            }
+
+            public double getYdpi() {
+                return ydpi;
+            }
+
+            public void setYdpi(double ydpi) {
+                this.ydpi = ydpi;
             }
         }
 
@@ -531,7 +751,7 @@ public class STFBean {
 
         public static class ProviderBean {
             /**
-             * channel : OVNcX4Y4QWqDWm51EKC1AA==
+             * channel : lzwPN8AJRJi109wMxYlqfg==
              * name : boyuedeMacBook-Pro.local
              */
 

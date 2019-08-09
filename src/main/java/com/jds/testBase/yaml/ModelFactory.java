@@ -20,7 +20,7 @@ public class ModelFactory {
         STFDevices stfDevices = new STFDevices();
         String[][] devicesInfo = stfDevices.devicesInfo();
         int size = stfDevices.getLinknum();  //连接设备数==循环次数
-        String[][] imageModel = new String[size][7];
+        String[][] imageModel = new String[size][9];
         for (int i = 0;i < size;i++){
             imageModel[i][0] = devicesInfo[i][0];       //厂商
             imageModel[i][1] = devicesInfo[i][1];       //型号
@@ -29,6 +29,8 @@ public class ModelFactory {
             imageModel[i][4] = String.valueOf(port);    //port
             imageModel[i][5] = String.valueOf(port+1);  //bp端口
             imageModel[i][6] = devicesInfo[i][4];       //设备系统:Android或iOS
+            imageModel[i][7] = devicesInfo[i][5];       //设备屏幕高度
+            imageModel[i][8] = devicesInfo[i][6];       //设备屏幕宽度
             port+=2;
         }
         return imageModel;
@@ -62,6 +64,8 @@ public class ModelFactory {
             deviceInfo.setModel(source[i][1]);
             deviceInfo.setSerial(source[i][2]);
             deviceInfo.setVersion(source[i][3]);
+            deviceInfo.setHeight(source[i][7]);
+            deviceInfo.setWidth(source[i][8]);
             serviceDetails.setDeviceInfos(deviceInfo);
             serviceDetails.setSerial(source[i][2]);
             serviceDetails.setSystem(source[i][6]);

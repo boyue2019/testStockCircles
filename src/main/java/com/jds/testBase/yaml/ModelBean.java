@@ -71,7 +71,8 @@ public class ModelBean {
             private String Manufacturer;
             private String Model;
             private String Version;
-
+            private String Height;
+            private String Width;
 
             public void setSerial(String serial) {
                 Serial = serial;
@@ -89,6 +90,14 @@ public class ModelBean {
                 Version = version;
             }
 
+            public void setHeight(String height) {
+                Height = height;
+            }
+
+            public void setWidth(String width) {
+                Width = width;
+            }
+
             public String getSerial() {
                 return Serial;
             }
@@ -103,6 +112,14 @@ public class ModelBean {
 
             public String getVersion() {
                 return Version;
+            }
+
+            public String getHeight() {
+                return Height;
+            }
+
+            public String getWidth() {
+                return Width;
             }
         }
 

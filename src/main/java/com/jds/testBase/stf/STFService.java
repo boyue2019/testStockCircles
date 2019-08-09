@@ -33,7 +33,7 @@ public class STFService {
         this.setAuthToken(CommonTools.getConfigData("authToken"));
     }
 
-    //获取所有设备信息
+    //获取设备信息json
     public String STFDevicesList(){
         try {
             this.getSTFConfig();
