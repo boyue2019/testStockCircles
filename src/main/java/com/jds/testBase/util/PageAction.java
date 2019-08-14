@@ -28,7 +28,7 @@ public class PageAction {
      * 启动微信
      * @return
      */
-    @Step("【系统】启动微信小程序")
+    @Step("【系统】启动微信解码直播小程序")
     public static WXHomePage startWX(){
         ModelRead read = new ModelRead();
         ModelBean bean = read.ReadYaml();   //读取docker-compose.yaml文件
@@ -228,18 +228,23 @@ public class PageAction {
     }
 
     /**
-     * 等待元素出现后滑动屏幕
-     * @param TIMEOUT 超时时间
-     * @param px 点击x坐标
-     * @param py 点击y坐标
-     * @param mx 重点x坐标
-     * @param my
+     * 滑动屏幕
+     * @param px 按压x坐标(屏宽百分比) px=(x*100)/总屏宽
+     * @param py 按压y坐标(屏高百分比) py=(y*100)/总屏高
+     * @param mx 终点x坐标(屏宽百分比)
+     * @param my 终点y坐标(屏高百分比)
      */
-    public static void slide(int TIMEOUT,int px,int py,int mx,int my){
+    public static void slide(int px,int py,int mx,int my){
+        //ModelRead read = new ModelRead();
+        //ModelBean bean = read.ReadYaml();
+        int x1 = (1080 * px) / 100;
+        int y1 = (1920 * py) / 100;
+        int x2 = (1080 * mx) / 100;
+        int y2 = (1920 * my) / 100;
         new TouchAction(Driver.getDriverWX())     //滑动屏幕
-                .press(PointOption.point(px,py))
+                .press(PointOption.point(x1,y1))
                 .waitAction(WaitOptions.waitOptions(Duration.ofSeconds(3)))
-                .moveTo(PointOption.point(mx,my))
+                .moveTo(PointOption.point(x2,y2))
                 .release().perform();
     }
 

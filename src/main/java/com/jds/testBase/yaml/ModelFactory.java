@@ -47,8 +47,7 @@ public class ModelFactory {
 
         for(int i = 0;i < size;i++){
             ModelBean.ServiceDetails serviceDetails = new ModelBean.ServiceDetails();
-            ModelBean.ServiceDetails
-                    .DeviceInfo deviceInfo = new ModelBean
+            ModelBean.ServiceDetails.DeviceInfo deviceInfo = new ModelBean
                     .ServiceDetails
                     .DeviceInfo();
             ModelBean.ServiceDetails

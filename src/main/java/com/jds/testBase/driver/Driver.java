@@ -16,6 +16,7 @@ public class Driver {
     public static AndroidDriver<AndroidElement> driverAN = null;
     public static AndroidDriver<AndroidElement> driverWX = null;
     public static IOSDriver<IOSElement> driverIOS = null;
+    public static String MiniProgram = null;
 
     public static AndroidDriver<AndroidElement> getDriverWX() {
         return driverWX;
@@ -33,6 +34,14 @@ public class Driver {
         return driverIOS;
     }
 
+    public static void setMiniProgram(String miniProgram) {
+        MiniProgram = miniProgram;
+    }
+
+    public static String getMiniProgram() {
+        return MiniProgram;
+    }
+
     /**
      * 启动微信,返回driver
      * @param port appium端口
@@ -46,6 +55,7 @@ public class Driver {
                                String platformName,
                                String version,
                                String ExperimentalOption){
+        setMiniProgram(ExperimentalOption);
         DesiredCapabilities cap =  new DesiredCapabilities();
         cap.setCapability("deviceName",udid);   //设备ID
         cap.setCapability("platformName",platformName);    //测试平台

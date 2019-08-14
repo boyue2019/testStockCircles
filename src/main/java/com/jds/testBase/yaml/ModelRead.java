@@ -28,15 +28,20 @@ public class ModelRead {
         return modelBean;
     }
 
+    public void ReadDevicesInfo(){
+
+    }
+
     public static void main(String[] args){
         ModelRead read = new ModelRead();
         ModelBean bean = read.ReadYaml();
-        Map driverparameter = new HashMap();
-        driverparameter.put("port",bean.getModeldetails().get(0).getAppiumParameters().getPort());
-        driverparameter.put("udid",bean.getModeldetails().get(0).getSerial());
-        driverparameter.put("platformName",bean.getModeldetails().get(0).getSystem());
-        driverparameter.put("version",bean.getModeldetails().get(0).getDeviceInfos().getVersion());
-        driverparameter.put("ExperimentalOption",CommonTools.getConfigData("ExperimentalOption"));
-        System.out.println(driverparameter.get("ExperimentalOption"));
+        System.out.println(bean.getModeldetails().get(0).getDeviceInfos().getWidth());
+        //Map driverparameter = new HashMap();
+        //driverparameter.put("port",bean.getModeldetails().get(0).getAppiumParameters().getPort());
+        //driverparameter.put("udid",bean.getModeldetails().get(0).getSerial());
+        //driverparameter.put("platformName",bean.getModeldetails().get(0).getSystem());
+        //driverparameter.put("version",bean.getModeldetails().get(0).getDeviceInfos().getVersion());
+        //driverparameter.put("ExperimentalOption",CommonTools.getConfigData("ExperimentalOption"));
+        //System.out.println(driverparameter.get("ExperimentalOption"));
     }
 }

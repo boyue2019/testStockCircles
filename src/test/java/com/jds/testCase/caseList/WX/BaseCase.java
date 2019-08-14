@@ -21,8 +21,8 @@ public class BaseCase {
      */
     @BeforeSuite
     public void startAppium(){
-        ModelFactory modelFactory = new ModelFactory();
-        modelFactory.MakeModel();     //采集设备信息并生成yaml文件
+        //ModelFactory modelFactory = new ModelFactory();
+        //modelFactory.MakeModel();     //采集设备信息并生成yaml文件
         AppiumDriver.startServer();
     }
 
