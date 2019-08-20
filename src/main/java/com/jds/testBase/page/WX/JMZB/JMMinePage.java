@@ -1,4 +1,4 @@
 package com.jds.testBase.page.WX.JMZB;
 
-public class JMMinePage {
+public class JMMinePage extends BasePage implements IJMBottomNavigation{
 }

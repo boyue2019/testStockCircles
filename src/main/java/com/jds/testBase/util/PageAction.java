@@ -2,6 +2,7 @@ package com.jds.testBase.util;
 
 import com.jds.testBase.driver.Driver;
 import com.jds.testBase.log.Log4jUtils;
+import com.jds.testBase.page.WX.JMZB.BasePage;
 import com.jds.testBase.page.WX.JMZB.WXHomePage;
 import com.jds.testBase.yaml.ModelBean;
 import com.jds.testBase.yaml.ModelRead;
@@ -116,7 +117,7 @@ public class PageAction {
             waitElement(TIMEOUT, element,target);
             System.out.println("点击元素.");
             element.click();  //点击指定元素
-        }catch (Exception e){  //若找不到元素退出程序
+        }catch (NoSuchElementException n){  //若找不到元素退出程序
             System.out.println("找不到对应元素;【Method】skiclickpWMGTX");
             System.exit(0);
         }
@@ -297,5 +298,12 @@ public class PageAction {
             }
         }
         return isHave;
+    }
+
+    /**
+     * 返回首页
+     */
+    public static void goBack(){
+        BasePage.goBack();
     }
 }

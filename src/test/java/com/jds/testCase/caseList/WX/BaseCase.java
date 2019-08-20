@@ -17,20 +17,13 @@ public class BaseCase {
     static JMDrycargoPage jmDrycargoPage_cj;
 
     /**
-     * 启动Appium服务
+     * 启动Appium服务,微信
      */
     @BeforeSuite
-    public void startAppium(){
+    public void startWX(){
         //ModelFactory modelFactory = new ModelFactory();
         //modelFactory.MakeModel();     //采集设备信息并生成yaml文件
         AppiumDriver.startServer();
-    }
-
-    /**
-     * 启动微信
-     */
-    @BeforeClass(description = "【前置】启动并进入微信首页")
-    public void startWX(){
         wxHomePage = PageAction.startWX();
     }
 
@@ -42,18 +35,24 @@ public class BaseCase {
     }
 
     /**
-     * 关闭微信
+     * 返回首页或重启WX
      */
     @AfterClass
-    public void closeWX(){
-        PageAction.closeWX();
+    public void goHome(){
+        try {
+            PageAction.goBack(); //class结束后返回首页
+        }catch (Exception e){
+            wxHomePage = PageAction.startWX();  //若返回首页失败，重启WX
+        }
+
     }
 
     /**
-     * 关闭Appium服务
+     * 关闭微信,Appium服务
      */
     @AfterSuite
-    public void stopAppium(){
+    public void closeWX(){
+        PageAction.closeWX();
         AppiumDriver.stopServer();
     }
 }

@@ -130,6 +130,7 @@ public class JMDrycargoPage extends BasePage {
      * @return
      */
     public JMDrycargoPage skipCJZBC(){
+        PageAction.switchToWebview();
         try{
             tab_cjzbc.click();
             this.waitLoading(3);  //等待3秒加载页面元素
