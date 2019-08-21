@@ -52,7 +52,7 @@ public class BaseCase {
      */
     @AfterSuite
     public void closeWX(){
-        PageAction.closeWX();
-        AppiumDriver.stopServer();
+        PageAction.closeWX();   //退出微信
+        AppiumDriver.stopServer();   //关闭Appium服务
     }
 }

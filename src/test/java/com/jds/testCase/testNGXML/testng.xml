@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="投资易课APP_UI自动化" parallel="tests" thread-count="10">
+<suite name="投资易课APP_UI自动化" parallel="tests" thread-count="6">
     <!-- 设置监听器 -->
     <!--
     <listeners>
@@ -12,9 +12,19 @@
     -->
 
     <!-- WX解码直播小程序 -->
-    <test name="WX_JMZB" verbose="2" enabled="true">
+    <test name="WX_JMZB" verbose="2" enabled="false">
         <classes>
             <class name="com.jds.testCase.caseList.WX.CDrycargoPage"></class>
+        </classes>
+    </test>
+
+    <!-- 测试 -->
+    <test name="Test" verbose="2" enabled="true">
+        <parameter name="port" value="4723"></parameter>
+        <parameter name="udid" value="edd06f8e"></parameter>
+        <classes>
+            <class name="com.jds.testCase.caseList.WX.test5"></class>
+            <class name="com.jds.testCase.caseList.WX.test6"></class>
         </classes>
     </test>
 
