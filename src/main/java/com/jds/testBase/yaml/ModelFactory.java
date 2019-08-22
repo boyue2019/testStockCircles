@@ -10,6 +10,7 @@ import java.util.List;
 
 public class ModelFactory {
     private int port;   //appium监听端口
+    private int chromedrniverport;
 
     /**
      * 过滤二维数组中空值并设置设备对应port和bp端口号
@@ -17,10 +18,11 @@ public class ModelFactory {
      */
     public String[][] ModelSource(){
         port = 4723;
+        chromedrniverport = 8000;
         STFDevices stfDevices = new STFDevices();
         String[][] devicesInfo = stfDevices.devicesInfo();
         int size = stfDevices.getLinknum();  //连接设备数==循环次数
-        String[][] imageModel = new String[size][9];
+        String[][] imageModel = new String[size][10];
         for (int i = 0;i < size;i++){
             imageModel[i][0] = devicesInfo[i][0];       //厂商
             imageModel[i][1] = devicesInfo[i][1];       //型号
@@ -31,7 +33,9 @@ public class ModelFactory {
             imageModel[i][6] = devicesInfo[i][4];       //设备系统:Android或iOS
             imageModel[i][7] = devicesInfo[i][5];       //设备屏幕高度
             imageModel[i][8] = devicesInfo[i][6];       //设备屏幕宽度
+            imageModel[i][9] = String.valueOf(chromedrniverport);
             port+=2;
+            chromedrniverport+=1;
         }
         return imageModel;
     }
@@ -71,6 +75,7 @@ public class ModelFactory {
             // 添加Appium参数
             appiumParameter.setPort(source[i][4]);
             appiumParameter.setBp(source[i][5]);
+            appiumParameter.setChromedrniverport(source[i][9]);
             serviceDetails.setAppiumParameters(appiumParameter);
             // 添加Docker镜像参数
             dockerParameter.setImage("");

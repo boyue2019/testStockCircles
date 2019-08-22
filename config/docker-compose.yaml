@@ -1,6 +1,6 @@
 !!com.jds.testBase.yaml.ModelBean
 modeldetails:
-- appiumParameters: {bp: '4724', port: '4723'}
+- appiumParameters: {bp: '4724', chromedrniverport: '8000', port: '4723'}
   deviceInfos: {height: '1920', manufacturer: XIAOMI, model: MI 5, serial: edd06f8e,
     version: '6.0', width: '1080'}
   dockerParameters: {containerName: '', image: ''}

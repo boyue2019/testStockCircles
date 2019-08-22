@@ -88,7 +88,6 @@ public class Dispatcher {
 
         List<XmlSuite> suites = new ArrayList<XmlSuite>();
         suites.add(xmlSuite);
-        //xmlTestList.forEach(x-> System.out.println(x.getClasses()));
 
         testNG.setXmlSuites(suites);
         return testNG;
@@ -98,7 +97,6 @@ public class Dispatcher {
         int devciesCount = 6; //设备数
 
         Dispatcher dispatcher = new Dispatcher();
-        //dispatcher.CaseSplit(devciesCount).forEach(x-> System.out.println(x));
         TestNG testNG = dispatcher.TestNGXML(devciesCount);
         testNG.run();
     }

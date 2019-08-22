@@ -129,6 +129,7 @@ public class ModelBean {
         public static class AppiumParameter{
             private String port;
             private String bp;
+            private String chromedrniverport;
 
             public void setPort(String port) {
                 this.port = port;
@@ -138,12 +139,20 @@ public class ModelBean {
                 this.bp = bp;
             }
 
+            public void setChromedrniverport(String chromedrniverport) {
+                this.chromedrniverport = chromedrniverport;
+            }
+
             public String getPort() {
                 return port;
             }
 
             public String getBp() {
                 return bp;
+            }
+
+            public String getChromedrniverport() {
+                return chromedrniverport;
             }
         }
 
