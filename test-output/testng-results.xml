@@ -2,314 +2,120 @@
 <testng-results skipped="0" failed="0" ignored="0" total="20" passed="20">
   <reporter-output>
   </reporter-output>
-  <suite name="解码直播小程序自动化" duration-ms="263" started-at="2019-08-21T16:03:27Z" finished-at="2019-08-21T16:03:28Z">
+  <suite name="解码直播小程序自动化" duration-ms="155181" started-at="2019-08-22T02:58:10Z" finished-at="2019-08-22T03:00:45Z">
     <groups>
     </groups>
-    <test name="设备:1" duration-ms="255" started-at="2019-08-21T16:03:27Z" finished-at="2019-08-21T16:03:28Z">
-      <class name="com.jds.testCase.caseList.WX.test7">
-        <test-method status="PASS" signature="beofreMethod()[pri:0, instance:com.jds.testCase.caseList.WX.test7@3444d69d]" name="beofreMethod" is-config="true" duration-ms="0" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beofreMethod -->
-        <test-method status="PASS" signature="test1()[pri:0, instance:com.jds.testCase.caseList.WX.test7@3444d69d]" name="test1" duration-ms="1" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
+    <test name="设备:5" duration-ms="75115" started-at="2019-08-22T02:58:10Z" finished-at="2019-08-22T02:59:25Z">
+      <class name="com.jds.testCase.caseList.WX.test13">
+        <test-method status="PASS" signature="test1()[pri:0, instance:com.jds.testCase.caseList.WX.test13@7bc1a03d]" name="test1" duration-ms="35093" started-at="2019-08-22T02:58:10Z" finished-at="2019-08-22T02:58:45Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test1 -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.jds.testCase.caseList.WX.test7@3444d69d]" name="afterMethod" is-config="true" duration-ms="0" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beofreMethod()[pri:0, instance:com.jds.testCase.caseList.WX.test7@3444d69d]" name="beofreMethod" is-config="true" duration-ms="0" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beofreMethod -->
-        <test-method status="PASS" signature="test2()[pri:0, instance:com.jds.testCase.caseList.WX.test7@3444d69d]" name="test2" duration-ms="1" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
+        <test-method status="PASS" signature="test2()[pri:0, instance:com.jds.testCase.caseList.WX.test13@7bc1a03d]" name="test2" duration-ms="39912" started-at="2019-08-22T02:58:45Z" finished-at="2019-08-22T02:59:25Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test2 -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.jds.testCase.caseList.WX.test7@3444d69d]" name="afterMethod" is-config="true" duration-ms="0" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.jds.testCase.caseList.WX.test7@3444d69d]" name="afterClass" is-config="true" duration-ms="1" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterClass -->
-      </class> <!-- com.jds.testCase.caseList.WX.test7 -->
-      <class name="com.jds.testCase.caseList.WX.test6">
-        <test-method status="PASS" signature="beofreMethod()[pri:0, instance:com.jds.testCase.caseList.WX.test6@4ba2ca36]" name="beofreMethod" is-config="true" duration-ms="0" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beofreMethod -->
-        <test-method status="PASS" signature="test1()[pri:0, instance:com.jds.testCase.caseList.WX.test6@4ba2ca36]" name="test1" duration-ms="1" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test1 -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.jds.testCase.caseList.WX.test6@4ba2ca36]" name="afterMethod" is-config="true" duration-ms="0" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beofreMethod()[pri:0, instance:com.jds.testCase.caseList.WX.test6@4ba2ca36]" name="beofreMethod" is-config="true" duration-ms="1" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beofreMethod -->
-        <test-method status="PASS" signature="test2()[pri:0, instance:com.jds.testCase.caseList.WX.test6@4ba2ca36]" name="test2" duration-ms="1" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test2 -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.jds.testCase.caseList.WX.test6@4ba2ca36]" name="afterMethod" is-config="true" duration-ms="0" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.jds.testCase.caseList.WX.test6@4ba2ca36]" name="afterClass" is-config="true" duration-ms="0" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterClass -->
-      </class> <!-- com.jds.testCase.caseList.WX.test6 -->
-      <class name="com.jds.testCase.caseList.WX.test5">
-        <test-method status="PASS" signature="beofreMethod()[pri:0, instance:com.jds.testCase.caseList.WX.test5@120d6fe6]" name="beofreMethod" is-config="true" duration-ms="12" started-at="2019-08-21T16:03:27Z" finished-at="2019-08-21T16:03:27Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beofreMethod -->
-        <test-method status="PASS" signature="test1()[pri:0, instance:com.jds.testCase.caseList.WX.test5@120d6fe6]" name="test1" duration-ms="79" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test1 -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.jds.testCase.caseList.WX.test5@120d6fe6]" name="afterMethod" is-config="true" duration-ms="0" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beofreMethod()[pri:0, instance:com.jds.testCase.caseList.WX.test5@120d6fe6]" name="beofreMethod" is-config="true" duration-ms="4" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beofreMethod -->
-        <test-method status="PASS" signature="test2()[pri:0, instance:com.jds.testCase.caseList.WX.test5@120d6fe6]" name="test2" duration-ms="2" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test2 -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.jds.testCase.caseList.WX.test5@120d6fe6]" name="afterMethod" is-config="true" duration-ms="0" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.jds.testCase.caseList.WX.test5@120d6fe6]" name="afterClass" is-config="true" duration-ms="0" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterClass -->
-      </class> <!-- com.jds.testCase.caseList.WX.test5 -->
-    </test> <!-- 设备:1 -->
-    <test name="设备:2" duration-ms="255" started-at="2019-08-21T16:03:27Z" finished-at="2019-08-21T16:03:28Z">
+      </class> <!-- com.jds.testCase.caseList.WX.test13 -->
+    </test> <!-- 设备:5 -->
+    <test name="设备:2" duration-ms="120154" started-at="2019-08-22T02:58:10Z" finished-at="2019-08-22T03:00:10Z">
       <class name="com.jds.testCase.caseList.WX.test8">
-        <test-method status="PASS" signature="beofreMethod()[pri:0, instance:com.jds.testCase.caseList.WX.test8@77be656f]" name="beofreMethod" is-config="true" duration-ms="1" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beofreMethod -->
-        <test-method status="PASS" signature="test1()[pri:0, instance:com.jds.testCase.caseList.WX.test8@77be656f]" name="test1" duration-ms="2" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
+        <test-method status="PASS" signature="test1()[pri:0, instance:com.jds.testCase.caseList.WX.test8@64d7f7e0]" name="test1" duration-ms="20020" started-at="2019-08-22T02:59:20Z" finished-at="2019-08-22T02:59:40Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test1 -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.jds.testCase.caseList.WX.test8@77be656f]" name="afterMethod" is-config="true" duration-ms="0" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beofreMethod()[pri:0, instance:com.jds.testCase.caseList.WX.test8@77be656f]" name="beofreMethod" is-config="true" duration-ms="0" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beofreMethod -->
-        <test-method status="PASS" signature="test2()[pri:0, instance:com.jds.testCase.caseList.WX.test8@77be656f]" name="test2" duration-ms="3" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
+        <test-method status="PASS" signature="test2()[pri:0, instance:com.jds.testCase.caseList.WX.test8@64d7f7e0]" name="test2" duration-ms="30021" started-at="2019-08-22T02:59:40Z" finished-at="2019-08-22T03:00:10Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test2 -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.jds.testCase.caseList.WX.test8@77be656f]" name="afterMethod" is-config="true" duration-ms="1" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.jds.testCase.caseList.WX.test8@77be656f]" name="afterClass" is-config="true" duration-ms="1" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterClass -->
       </class> <!-- com.jds.testCase.caseList.WX.test8 -->
-      <class name="com.jds.testCase.caseList.WX.test10">
-        <test-method status="PASS" signature="beofreMethod()[pri:0, instance:com.jds.testCase.caseList.WX.test10@221af3c0]" name="beofreMethod" is-config="true" duration-ms="12" started-at="2019-08-21T16:03:27Z" finished-at="2019-08-21T16:03:27Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beofreMethod -->
-        <test-method status="PASS" signature="test1()[pri:0, instance:com.jds.testCase.caseList.WX.test10@221af3c0]" name="test1" duration-ms="78" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
+      <class name="com.jds.testCase.caseList.WX.test7">
+        <test-method status="PASS" signature="test1()[pri:0, instance:com.jds.testCase.caseList.WX.test7@6e38921c]" name="test1" duration-ms="40056" started-at="2019-08-22T02:58:10Z" finished-at="2019-08-22T02:58:50Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test1 -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.jds.testCase.caseList.WX.test10@221af3c0]" name="afterMethod" is-config="true" duration-ms="1" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beofreMethod()[pri:0, instance:com.jds.testCase.caseList.WX.test10@221af3c0]" name="beofreMethod" is-config="true" duration-ms="2" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beofreMethod -->
-        <test-method status="PASS" signature="test2()[pri:0, instance:com.jds.testCase.caseList.WX.test10@221af3c0]" name="test2" duration-ms="2" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
+        <test-method status="PASS" signature="test2()[pri:0, instance:com.jds.testCase.caseList.WX.test7@6e38921c]" name="test2" duration-ms="30020" started-at="2019-08-22T02:58:50Z" finished-at="2019-08-22T02:59:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test2 -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.jds.testCase.caseList.WX.test10@221af3c0]" name="afterMethod" is-config="true" duration-ms="1" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
+      </class> <!-- com.jds.testCase.caseList.WX.test7 -->
+    </test> <!-- 设备:2 -->
+    <test name="设备:3" duration-ms="115157" started-at="2019-08-22T02:58:10Z" finished-at="2019-08-22T03:00:05Z">
+      <class name="com.jds.testCase.caseList.WX.test10">
+        <test-method status="PASS" signature="test1()[pri:0, instance:com.jds.testCase.caseList.WX.test10@15d9bc04]" name="test1" duration-ms="45059" started-at="2019-08-22T02:58:10Z" finished-at="2019-08-22T02:58:55Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.jds.testCase.caseList.WX.test10@221af3c0]" name="afterClass" is-config="true" duration-ms="0" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
+        </test-method> <!-- test1 -->
+        <test-method status="PASS" signature="test2()[pri:0, instance:com.jds.testCase.caseList.WX.test10@15d9bc04]" name="test2" duration-ms="20012" started-at="2019-08-22T02:58:55Z" finished-at="2019-08-22T02:59:15Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- afterClass -->
+        </test-method> <!-- test2 -->
       </class> <!-- com.jds.testCase.caseList.WX.test10 -->
       <class name="com.jds.testCase.caseList.WX.test9">
-        <test-method status="PASS" signature="beofreMethod()[pri:0, instance:com.jds.testCase.caseList.WX.test9@19dc67c2]" name="beofreMethod" is-config="true" duration-ms="0" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beofreMethod -->
-        <test-method status="PASS" signature="test1()[pri:0, instance:com.jds.testCase.caseList.WX.test9@19dc67c2]" name="test1" duration-ms="1" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
+        <test-method status="PASS" signature="test1()[pri:0, instance:com.jds.testCase.caseList.WX.test9@1e9e725a]" name="test1" duration-ms="30030" started-at="2019-08-22T02:59:15Z" finished-at="2019-08-22T02:59:45Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test1 -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.jds.testCase.caseList.WX.test9@19dc67c2]" name="afterMethod" is-config="true" duration-ms="0" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beofreMethod()[pri:0, instance:com.jds.testCase.caseList.WX.test9@19dc67c2]" name="beofreMethod" is-config="true" duration-ms="1" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beofreMethod -->
-        <test-method status="PASS" signature="test2()[pri:0, instance:com.jds.testCase.caseList.WX.test9@19dc67c2]" name="test2" duration-ms="2" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
+        <test-method status="PASS" signature="test2()[pri:0, instance:com.jds.testCase.caseList.WX.test9@1e9e725a]" name="test2" duration-ms="20016" started-at="2019-08-22T02:59:45Z" finished-at="2019-08-22T03:00:05Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test2 -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.jds.testCase.caseList.WX.test9@19dc67c2]" name="afterMethod" is-config="true" duration-ms="1" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.jds.testCase.caseList.WX.test9@19dc67c2]" name="afterClass" is-config="true" duration-ms="0" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterClass -->
       </class> <!-- com.jds.testCase.caseList.WX.test9 -->
-    </test> <!-- 设备:2 -->
-    <test name="设备:3" duration-ms="263" started-at="2019-08-21T16:03:27Z" finished-at="2019-08-21T16:03:28Z">
-      <class name="com.jds.testCase.caseList.WX.test11">
-        <test-method status="PASS" signature="beofreMethod()[pri:0, instance:com.jds.testCase.caseList.WX.test11@709ba3fb]" name="beofreMethod" is-config="true" duration-ms="12" started-at="2019-08-21T16:03:27Z" finished-at="2019-08-21T16:03:27Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beofreMethod -->
-        <test-method status="PASS" signature="test1()[pri:0, instance:com.jds.testCase.caseList.WX.test11@709ba3fb]" name="test1" duration-ms="80" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test1 -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.jds.testCase.caseList.WX.test11@709ba3fb]" name="afterMethod" is-config="true" duration-ms="1" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beofreMethod()[pri:0, instance:com.jds.testCase.caseList.WX.test11@709ba3fb]" name="beofreMethod" is-config="true" duration-ms="1" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beofreMethod -->
-        <test-method status="PASS" signature="test2()[pri:0, instance:com.jds.testCase.caseList.WX.test11@709ba3fb]" name="test2" duration-ms="1" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test2 -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.jds.testCase.caseList.WX.test11@709ba3fb]" name="afterMethod" is-config="true" duration-ms="1" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.jds.testCase.caseList.WX.test11@709ba3fb]" name="afterClass" is-config="true" duration-ms="1" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterClass -->
-      </class> <!-- com.jds.testCase.caseList.WX.test11 -->
-      <class name="com.jds.testCase.caseList.WX.test13">
-        <test-method status="PASS" signature="beofreMethod()[pri:0, instance:com.jds.testCase.caseList.WX.test13@6a472554]" name="beofreMethod" is-config="true" duration-ms="0" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beofreMethod -->
-        <test-method status="PASS" signature="test1()[pri:0, instance:com.jds.testCase.caseList.WX.test13@6a472554]" name="test1" duration-ms="1" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test1 -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.jds.testCase.caseList.WX.test13@6a472554]" name="afterMethod" is-config="true" duration-ms="0" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beofreMethod()[pri:0, instance:com.jds.testCase.caseList.WX.test13@6a472554]" name="beofreMethod" is-config="true" duration-ms="0" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beofreMethod -->
-        <test-method status="PASS" signature="test2()[pri:0, instance:com.jds.testCase.caseList.WX.test13@6a472554]" name="test2" duration-ms="2" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test2 -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.jds.testCase.caseList.WX.test13@6a472554]" name="afterMethod" is-config="true" duration-ms="0" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.jds.testCase.caseList.WX.test13@6a472554]" name="afterClass" is-config="true" duration-ms="1" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterClass -->
-      </class> <!-- com.jds.testCase.caseList.WX.test13 -->
-      <class name="com.jds.testCase.caseList.WX.test12">
-        <test-method status="PASS" signature="beofreMethod()[pri:0, instance:com.jds.testCase.caseList.WX.test12@3d36e4cd]" name="beofreMethod" is-config="true" duration-ms="0" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beofreMethod -->
-        <test-method status="PASS" signature="test1()[pri:0, instance:com.jds.testCase.caseList.WX.test12@3d36e4cd]" name="test1" duration-ms="1" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test1 -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.jds.testCase.caseList.WX.test12@3d36e4cd]" name="afterMethod" is-config="true" duration-ms="0" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beofreMethod()[pri:0, instance:com.jds.testCase.caseList.WX.test12@3d36e4cd]" name="beofreMethod" is-config="true" duration-ms="0" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beofreMethod -->
-        <test-method status="PASS" signature="test2()[pri:0, instance:com.jds.testCase.caseList.WX.test12@3d36e4cd]" name="test2" duration-ms="2" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test2 -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.jds.testCase.caseList.WX.test12@3d36e4cd]" name="afterMethod" is-config="true" duration-ms="1" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.jds.testCase.caseList.WX.test12@3d36e4cd]" name="afterClass" is-config="true" duration-ms="1" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterClass -->
-      </class> <!-- com.jds.testCase.caseList.WX.test12 -->
-      <class name="com.jds.testCase.caseList.WX.test14">
-        <test-method status="PASS" signature="beofreMethod()[pri:0, instance:com.jds.testCase.caseList.WX.test14@7ff2a664]" name="beofreMethod" is-config="true" duration-ms="1" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beofreMethod -->
-        <test-method status="PASS" signature="test1()[pri:0, instance:com.jds.testCase.caseList.WX.test14@7ff2a664]" name="test1" duration-ms="2" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test1 -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.jds.testCase.caseList.WX.test14@7ff2a664]" name="afterMethod" is-config="true" duration-ms="0" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beofreMethod()[pri:0, instance:com.jds.testCase.caseList.WX.test14@7ff2a664]" name="beofreMethod" is-config="true" duration-ms="0" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beofreMethod -->
-        <test-method status="PASS" signature="test2()[pri:0, instance:com.jds.testCase.caseList.WX.test14@7ff2a664]" name="test2" duration-ms="1" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test2 -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.jds.testCase.caseList.WX.test14@7ff2a664]" name="afterMethod" is-config="true" duration-ms="1" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.jds.testCase.caseList.WX.test14@7ff2a664]" name="afterClass" is-config="true" duration-ms="1" started-at="2019-08-21T16:03:28Z" finished-at="2019-08-21T16:03:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterClass -->
-      </class> <!-- com.jds.testCase.caseList.WX.test14 -->
     </test> <!-- 设备:3 -->
+    <test name="设备:1" duration-ms="110150" started-at="2019-08-22T02:58:10Z" finished-at="2019-08-22T03:00:00Z">
+      <class name="com.jds.testCase.caseList.WX.test6">
+        <test-method status="PASS" signature="test1()[pri:0, instance:com.jds.testCase.caseList.WX.test6@282003e1]" name="test1" duration-ms="40041" started-at="2019-08-22T02:59:10Z" finished-at="2019-08-22T02:59:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test1 -->
+        <test-method status="PASS" signature="test2()[pri:0, instance:com.jds.testCase.caseList.WX.test6@282003e1]" name="test2" duration-ms="10008" started-at="2019-08-22T02:59:50Z" finished-at="2019-08-22T03:00:00Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test2 -->
+      </class> <!-- com.jds.testCase.caseList.WX.test6 -->
+      <class name="com.jds.testCase.caseList.WX.test5">
+        <test-method status="PASS" signature="test1()[pri:0, instance:com.jds.testCase.caseList.WX.test5@4148db48]" name="test1" duration-ms="50062" started-at="2019-08-22T02:58:10Z" finished-at="2019-08-22T02:59:00Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test1 -->
+        <test-method status="PASS" signature="test2()[pri:0, instance:com.jds.testCase.caseList.WX.test5@4148db48]" name="test2" duration-ms="10001" started-at="2019-08-22T02:59:00Z" finished-at="2019-08-22T02:59:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test2 -->
+      </class> <!-- com.jds.testCase.caseList.WX.test5 -->
+    </test> <!-- 设备:1 -->
+    <test name="设备:6" duration-ms="125159" started-at="2019-08-22T02:58:10Z" finished-at="2019-08-22T03:00:15Z">
+      <class name="com.jds.testCase.caseList.WX.test14">
+        <test-method status="PASS" signature="test1()[pri:0, instance:com.jds.testCase.caseList.WX.test14@6a472554]" name="test1" duration-ms="80091" started-at="2019-08-22T02:58:10Z" finished-at="2019-08-22T02:59:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test1 -->
+        <test-method status="PASS" signature="test2()[pri:0, instance:com.jds.testCase.caseList.WX.test14@6a472554]" name="test2" duration-ms="45030" started-at="2019-08-22T02:59:30Z" finished-at="2019-08-22T03:00:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test2 -->
+      </class> <!-- com.jds.testCase.caseList.WX.test14 -->
+    </test> <!-- 设备:6 -->
+    <test name="设备:4" duration-ms="155180" started-at="2019-08-22T02:58:10Z" finished-at="2019-08-22T03:00:45Z">
+      <class name="com.jds.testCase.caseList.WX.test11">
+        <test-method status="PASS" signature="test1()[pri:0, instance:com.jds.testCase.caseList.WX.test11@221af3c0]" name="test1" duration-ms="55064" started-at="2019-08-22T02:58:10Z" finished-at="2019-08-22T02:59:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test1 -->
+        <test-method status="PASS" signature="test2()[pri:0, instance:com.jds.testCase.caseList.WX.test11@221af3c0]" name="test2" duration-ms="50048" started-at="2019-08-22T02:59:05Z" finished-at="2019-08-22T02:59:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test2 -->
+      </class> <!-- com.jds.testCase.caseList.WX.test11 -->
+      <class name="com.jds.testCase.caseList.WX.test12">
+        <test-method status="PASS" signature="test1()[pri:0, instance:com.jds.testCase.caseList.WX.test12@62bd765]" name="test1" duration-ms="40033" started-at="2019-08-22T02:59:55Z" finished-at="2019-08-22T03:00:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test1 -->
+        <test-method status="PASS" signature="test2()[pri:0, instance:com.jds.testCase.caseList.WX.test12@62bd765]" name="test2" duration-ms="10002" started-at="2019-08-22T03:00:35Z" finished-at="2019-08-22T03:00:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test2 -->
+      </class> <!-- com.jds.testCase.caseList.WX.test12 -->
+    </test> <!-- 设备:4 -->
   </suite> <!-- 解码直播小程序自动化 -->
 </testng-results>

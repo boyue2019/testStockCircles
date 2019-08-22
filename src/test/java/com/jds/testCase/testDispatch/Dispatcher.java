@@ -10,43 +10,46 @@ import java.util.List;
 import java.util.Map;
 
 public class Dispatcher {
-
     /**
      * 根据设备数量将用例拆分到不同组
      * @param devciesCount
      * @return
      */
     public List CaseSplit(int devciesCount){
-        TestCase testCase = new TestCase();
+        CaseManagement testCase = new CaseManagement();
         Map<Integer,String> map = testCase.GetCaseList();
         int caseCount = map.size();  //获取用例总数[10]
-        int roundNum = 0;
+        int averageNum = caseCount/devciesCount;  //平均分配数
+        int roundNum[] = new int[devciesCount];
         int counter = 1;
         List<List> caseGather = new ArrayList<List>();
 
-        for(int i = 1;i < devciesCount + 1;i++){
+        //计算每个设备分配用例数
+        if(caseCount%devciesCount==0){
+            for (int i = 0;i < devciesCount;i++){
+                roundNum[i] = averageNum;
+            }
+        }else {
+            int sum = 0;
+            for (int t = 0;t < devciesCount;t++){
+                roundNum[t] = averageNum;
+            }
+            for(int r = 0;r < roundNum.length;r++){
+                sum = roundNum[r] + sum;
+            }
+            for(int x = 0;x < (caseCount-sum);x++){
+                roundNum[x] = roundNum[x] + 1;
+            }
+        }
+
+        for(int i = 0;i < devciesCount;i++){
             List<String> classlist = new ArrayList<String>();
 
-            //若用例数与设备数整除
-            if (caseCount%devciesCount==0){
-                roundNum = caseCount/devciesCount;
-                for (int s = 1;s < roundNum + 1;s++){
-                    classlist.add(map.get(counter));
-                    counter++;
-                }
-                caseGather.add(classlist);
-            }else {  //若非整除
-                if(i==devciesCount){
-                    roundNum = caseCount-(caseCount/devciesCount)*(devciesCount-1);
-                }else {
-                    roundNum = caseCount/devciesCount;
-                }
-                for (int k = 1;k < roundNum + 1;k++){
-                    classlist.add(map.get(counter));
-                    counter++;
-                }
-                caseGather.add(classlist);
+            for(int p = 1;p < roundNum[i]+1;p++){
+                classlist.add(map.get(counter));
+                counter++;
             }
+            caseGather.add(classlist);
         }
         return caseGather;
     }
@@ -85,15 +88,17 @@ public class Dispatcher {
 
         List<XmlSuite> suites = new ArrayList<XmlSuite>();
         suites.add(xmlSuite);
+        //xmlTestList.forEach(x-> System.out.println(x.getClasses()));
 
         testNG.setXmlSuites(suites);
         return testNG;
     }
 
     public static void main(String[] args){
-        int devciesCount = 3; //设备数
+        int devciesCount = 6; //设备数
 
         Dispatcher dispatcher = new Dispatcher();
+        //dispatcher.CaseSplit(devciesCount).forEach(x-> System.out.println(x));
         TestNG testNG = dispatcher.TestNGXML(devciesCount);
         testNG.run();
     }
