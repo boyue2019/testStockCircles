@@ -1,5 +1,6 @@
 package com.jds.testCase.testDispatch;
 
+import com.jds.testBase.yaml.ModelRead;
 import org.testng.TestNG;
 import org.testng.xml.XmlClass;
 import org.testng.xml.XmlSuite;
@@ -16,8 +17,8 @@ public class Dispatcher {
      * @return
      */
     public List CaseSplit(int devciesCount){
-        CaseManagement testCase = new CaseManagement();
-        Map<Integer,String> map = testCase.GetCaseList();
+        CaseManagement caseManagement = new CaseManagement();
+        Map<Integer,String> map = caseManagement.jmCaseList();
         int caseCount = map.size();  //获取用例总数[10]
         int averageNum = caseCount/devciesCount;  //平均分配数
         int roundNum[] = new int[devciesCount];
@@ -57,10 +58,14 @@ public class Dispatcher {
     /**
      * 动态生成testNG.xml
      * 用例平均分配到多个Test标签下并发执行
-     * @param devciesCount
      * @return
      */
-    public TestNG TestNGXML(int devciesCount){
+    public TestNG TestNGXML(){
+        //获取设备信息及数量
+        ModelRead read = new ModelRead();
+        List<Map> devicelist = read.DevicesDetails();
+        int devciesCount = devicelist.size();
+
         TestNG testNG = new TestNG();
         List<List> caseGather = this.CaseSplit(devciesCount);
 
@@ -76,6 +81,16 @@ public class Dispatcher {
             XmlTest xmlTest = new XmlTest(xmlSuite);
             xmlTest.setName("设备:" + (t+1));
             xmlTest.setVerbose(2);
+            xmlTest.addParameter("port",devicelist.get(t).get("port").toString());
+            xmlTest.addParameter("bp",devicelist.get(t).get("bp").toString());
+            xmlTest.addParameter("chromedrniverport",devicelist.get(t).get("chromedrniverport").toString());
+            xmlTest.addParameter("system",devicelist.get(t).get("system").toString());
+            xmlTest.addParameter("serial",devicelist.get(t).get("serial").toString());
+            xmlTest.addParameter("height",devicelist.get(t).get("height").toString());
+            xmlTest.addParameter("width",devicelist.get(t).get("width").toString());
+            xmlTest.addParameter("manufacturer",devicelist.get(t).get("manufacturer").toString());
+            xmlTest.addParameter("model",devicelist.get(t).get("model").toString());
+            xmlTest.addParameter("version",devicelist.get(t).get("version").toString());
 
             List<String> classlist = caseGather.get(t);
             List<XmlClass> classes = new ArrayList<XmlClass>();
@@ -91,13 +106,5 @@ public class Dispatcher {
 
         testNG.setXmlSuites(suites);
         return testNG;
-    }
-
-    public static void main(String[] args){
-        int devciesCount = 6; //设备数
-
-        Dispatcher dispatcher = new Dispatcher();
-        TestNG testNG = dispatcher.TestNGXML(devciesCount);
-        testNG.run();
     }
 }

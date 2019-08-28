@@ -1,12 +1,13 @@
 package com.jds.testBase.yaml;
 
-import com.jds.testBase.util.CommonTools;
 import org.yaml.snakeyaml.Yaml;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class ModelRead {
@@ -28,20 +29,35 @@ public class ModelRead {
         return modelBean;
     }
 
-    public void ReadDevicesInfo(){
-
+    /**
+     * 读取设备信息并以Map数组形式返回
+     * @return
+     */
+    public List<Map> DevicesDetails(){
+        List<Map> devicelist = new ArrayList<>();
+        ModelBean bean = this.ReadYaml();
+        int count = bean.getModeldetails().size();
+        for(int i=0;i<count;i++){
+            Map<String,String> map = new HashMap<>();
+            map.put("port",bean.getModeldetails().get(i).getAppiumParameters().getPort());
+            map.put("bp",bean.getModeldetails().get(i).getAppiumParameters().getBp());
+            map.put("chromedrniverport",bean.getModeldetails().get(i).getAppiumParameters().getChromedrniverport());
+            map.put("system",bean.getModeldetails().get(i).getSystem());
+            map.put("serial",bean.getModeldetails().get(i).getSerial());
+            map.put("height",bean.getModeldetails().get(i).getDeviceInfos().getHeight());
+            map.put("width",bean.getModeldetails().get(i).getDeviceInfos().getWidth());
+            map.put("manufacturer",bean.getModeldetails().get(i).getDeviceInfos().getManufacturer());
+            map.put("model",bean.getModeldetails().get(i).getDeviceInfos().getModel());
+            map.put("version",bean.getModeldetails().get(i).getDeviceInfos().getVersion());
+            devicelist.add(map);
+        }
+        return devicelist;
     }
 
     public static void main(String[] args){
         ModelRead read = new ModelRead();
-        ModelBean bean = read.ReadYaml();
-        System.out.println(bean.getModeldetails().get(0).getDeviceInfos().getWidth());
-        //Map driverparameter = new HashMap();
-        //driverparameter.put("port",bean.getModeldetails().get(0).getAppiumParameters().getPort());
-        //driverparameter.put("udid",bean.getModeldetails().get(0).getSerial());
-        //driverparameter.put("platformName",bean.getModeldetails().get(0).getSystem());
-        //driverparameter.put("version",bean.getModeldetails().get(0).getDeviceInfos().getVersion());
-        //driverparameter.put("ExperimentalOption",CommonTools.getConfigData("ExperimentalOption"));
-        //System.out.println(driverparameter.get("ExperimentalOption"));
+        System.out.println(read.DevicesDetails().get(0).get("model"));
+        System.out.println(read.DevicesDetails().get(1).get("model"));
+
     }
 }

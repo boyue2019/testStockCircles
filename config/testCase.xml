@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <app></app>
+    <wxmini>
+        <jmzb>
+            <case>com.jds.testCase.caseList.WX.test5</case>
+            <case>com.jds.testCase.caseList.WX.test6</case>
+        </jmzb>
+        <tzyk></tzyk>
+    </wxmini>
+</project>
