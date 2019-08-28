@@ -38,35 +38,12 @@ public class CaseManagement {
         Element wxmini = project.element("wxmini");
         Element jmzb = wxmini.element("jmzb");
         List<Element> Case = jmzb.elements("case");
-
+        int count = Case.size();  //获取用例数
         Map<Integer,String> map = new HashMap();
-        map.put(1,"com.jds.testCase.caseList.WX.test5");
-        map.put(2,"com.jds.testCase.caseList.WX.test6");
-        /**
-        map.put(3,"com.jds.testCase.caseList.WX.test7");
-        map.put(4,"com.jds.testCase.caseList.WX.test8");
-        map.put(5,"com.jds.testCase.caseList.WX.test9");
-        map.put(6,"com.jds.testCase.caseList.WX.test10");
-        map.put(7,"com.jds.testCase.caseList.WX.test11");
-        map.put(8,"com.jds.testCase.caseList.WX.test12");
-        map.put(9,"com.jds.testCase.caseList.WX.test13");
-        map.put(10,"com.jds.testCase.caseList.WX.test14");
-         */
-        return map;
-    }
 
-    public static void main(String[] args){
-        SAXReader reader = new SAXReader();
-        Document document = null;
-        try {
-            document = reader.read(new File(System.getProperty("user.dir") + "/config/testCase.xml"));
-        } catch (DocumentException e) {
-            e.printStackTrace();
+        for(int i = 0;i < count;i++){
+            map.put(i+1,Case.get(i).getText());
         }
-        Element project = document.getRootElement();
-        Element wxmini = project.element("wxmini");
-        Element jmzb = wxmini.element("jmzb");
-        List<Element> Case = jmzb.elements("case");
-        System.out.println(Case.get(1).getText());
+        return map;
     }
 }

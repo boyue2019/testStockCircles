@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="解码直播小程序自动化" duration-ms="30072" started-at="2019-08-28T08:37:54Z" finished-at="2019-08-28T08:38:24Z">
+  <suite name="解码直播小程序自动化" duration-ms="191" started-at="2019-08-28T17:44:07Z" finished-at="2019-08-28T17:44:07Z">
     <groups>
     </groups>
-    <test name="设备:2" duration-ms="25067" started-at="2019-08-28T08:37:54Z" finished-at="2019-08-28T08:38:19Z">
+    <test name="设备:2" duration-ms="190" started-at="2019-08-28T17:44:07Z" finished-at="2019-08-28T17:44:07Z">
       <class name="com.jds.testCase.caseList.WX.test6">
-        <test-method status="PASS" signature="test1(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.jds.testCase.caseList.WX.test6@48aaecc3]" name="test1" duration-ms="15074" started-at="2019-08-28T08:37:54Z" finished-at="2019-08-28T08:38:09Z">
+        <test-method status="PASS" signature="test1(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.jds.testCase.caseList.WX.test6@4a94ee4]" name="test1" duration-ms="80" started-at="2019-08-28T17:44:07Z" finished-at="2019-08-28T17:44:07Z">
           <params>
             <param index="0">
               <value>
@@ -63,15 +63,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test1 -->
-        <test-method status="PASS" signature="test2()[pri:0, instance:com.jds.testCase.caseList.WX.test6@48aaecc3]" name="test2" duration-ms="9907" started-at="2019-08-28T08:38:09Z" finished-at="2019-08-28T08:38:19Z">
+        <test-method status="PASS" signature="test2()[pri:0, instance:com.jds.testCase.caseList.WX.test6@4a94ee4]" name="test2" duration-ms="2" started-at="2019-08-28T17:44:07Z" finished-at="2019-08-28T17:44:07Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test2 -->
       </class> <!-- com.jds.testCase.caseList.WX.test6 -->
     </test> <!-- 设备:2 -->
-    <test name="设备:1" duration-ms="30072" started-at="2019-08-28T08:37:54Z" finished-at="2019-08-28T08:38:24Z">
+    <test name="设备:1" duration-ms="191" started-at="2019-08-28T17:44:07Z" finished-at="2019-08-28T17:44:07Z">
       <class name="com.jds.testCase.caseList.WX.test5">
-        <test-method status="PASS" signature="test1(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.jds.testCase.caseList.WX.test5@71b1176b]" name="test1" duration-ms="20034" started-at="2019-08-28T08:37:54Z" finished-at="2019-08-28T08:38:14Z">
+        <test-method status="PASS" signature="test1(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.jds.testCase.caseList.WX.test5@62150f9e]" name="test1" duration-ms="81" started-at="2019-08-28T17:44:07Z" finished-at="2019-08-28T17:44:07Z">
           <params>
             <param index="0">
               <value>
@@ -127,7 +127,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test1 -->
-        <test-method status="PASS" signature="test2()[pri:0, instance:com.jds.testCase.caseList.WX.test5@71b1176b]" name="test2" duration-ms="10007" started-at="2019-08-28T08:38:14Z" finished-at="2019-08-28T08:38:24Z">
+        <test-method status="PASS" signature="test2()[pri:0, instance:com.jds.testCase.caseList.WX.test5@62150f9e]" name="test2" duration-ms="2" started-at="2019-08-28T17:44:07Z" finished-at="2019-08-28T17:44:07Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test2 -->

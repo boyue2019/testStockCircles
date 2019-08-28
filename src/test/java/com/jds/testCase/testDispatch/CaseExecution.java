@@ -1,13 +1,6 @@
 package com.jds.testCase.testDispatch;
 
-import com.jds.testBase.appium.AppiumDriver;
-import com.jds.testBase.yaml.ModelBean;
-import com.jds.testBase.yaml.ModelFactory;
-import com.jds.testBase.yaml.ModelRead;
 import org.testng.TestNG;
-
-import java.util.List;
-import java.util.Map;
 
 /**
  * 根据设备信息生成testNG.XML并执行用例
