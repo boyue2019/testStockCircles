@@ -79,8 +79,8 @@ public class Dispatcher {
         List<XmlTest> xmlTestList = new ArrayList<XmlTest>();
         for(int t = 0;t < devciesCount;t++){
             XmlTest xmlTest = new XmlTest(xmlSuite);
-            xmlTest.setName("设备:" + (t+1));
-            xmlTest.setVerbose(2);
+            xmlTest.setName("移动设备:" + devicelist.get(t).get("model").toString());
+            xmlTest.setVerbose(2);  //打印级别
             xmlTest.addParameter("port",devicelist.get(t).get("port").toString());
             xmlTest.addParameter("bp",devicelist.get(t).get("bp").toString());
             xmlTest.addParameter("chromedrniverport",devicelist.get(t).get("chromedrniverport").toString());

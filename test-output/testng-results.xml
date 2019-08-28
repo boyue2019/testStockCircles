@@ -2,76 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="解码直播小程序自动化" duration-ms="191" started-at="2019-08-28T17:44:07Z" finished-at="2019-08-28T17:44:07Z">
+  <suite name="解码直播小程序自动化" duration-ms="225" started-at="2019-08-28T17:46:42Z" finished-at="2019-08-28T17:46:43Z">
     <groups>
     </groups>
-    <test name="设备:2" duration-ms="190" started-at="2019-08-28T17:44:07Z" finished-at="2019-08-28T17:44:07Z">
-      <class name="com.jds.testCase.caseList.WX.test6">
-        <test-method status="PASS" signature="test1(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.jds.testCase.caseList.WX.test6@4a94ee4]" name="test1" duration-ms="80" started-at="2019-08-28T17:44:07Z" finished-at="2019-08-28T17:44:07Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[4725]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[4726]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[8001]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Android]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[6d4a5e0d]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[2340]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[1080]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[XIAOMI]]>
-              </value>
-            </param>
-            <param index="8">
-              <value>
-                <![CDATA[MI 9]]>
-              </value>
-            </param>
-            <param index="9">
-              <value>
-                <![CDATA[9]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test1 -->
-        <test-method status="PASS" signature="test2()[pri:0, instance:com.jds.testCase.caseList.WX.test6@4a94ee4]" name="test2" duration-ms="2" started-at="2019-08-28T17:44:07Z" finished-at="2019-08-28T17:44:07Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test2 -->
-      </class> <!-- com.jds.testCase.caseList.WX.test6 -->
-    </test> <!-- 设备:2 -->
-    <test name="设备:1" duration-ms="191" started-at="2019-08-28T17:44:07Z" finished-at="2019-08-28T17:44:07Z">
+    <test name="移动设备:MI 5" duration-ms="225" started-at="2019-08-28T17:46:42Z" finished-at="2019-08-28T17:46:43Z">
       <class name="com.jds.testCase.caseList.WX.test5">
-        <test-method status="PASS" signature="test1(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.jds.testCase.caseList.WX.test5@62150f9e]" name="test1" duration-ms="81" started-at="2019-08-28T17:44:07Z" finished-at="2019-08-28T17:44:07Z">
+        <test-method status="PASS" signature="test1(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.jds.testCase.caseList.WX.test5@62150f9e]" name="test1" duration-ms="86" started-at="2019-08-28T17:46:42Z" finished-at="2019-08-28T17:46:43Z">
           <params>
             <param index="0">
               <value>
@@ -127,11 +63,75 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test1 -->
-        <test-method status="PASS" signature="test2()[pri:0, instance:com.jds.testCase.caseList.WX.test5@62150f9e]" name="test2" duration-ms="2" started-at="2019-08-28T17:44:07Z" finished-at="2019-08-28T17:44:07Z">
+        <test-method status="PASS" signature="test2()[pri:0, instance:com.jds.testCase.caseList.WX.test5@62150f9e]" name="test2" duration-ms="2" started-at="2019-08-28T17:46:43Z" finished-at="2019-08-28T17:46:43Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test2 -->
       </class> <!-- com.jds.testCase.caseList.WX.test5 -->
-    </test> <!-- 设备:1 -->
+    </test> <!-- 移动设备:MI 5 -->
+    <test name="移动设备:MI 9" duration-ms="225" started-at="2019-08-28T17:46:42Z" finished-at="2019-08-28T17:46:43Z">
+      <class name="com.jds.testCase.caseList.WX.test6">
+        <test-method status="PASS" signature="test1(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.jds.testCase.caseList.WX.test6@4a94ee4]" name="test1" duration-ms="84" started-at="2019-08-28T17:46:42Z" finished-at="2019-08-28T17:46:43Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[4725]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[4726]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[8001]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Android]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[6d4a5e0d]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[2340]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[1080]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[XIAOMI]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[MI 9]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[9]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test1 -->
+        <test-method status="PASS" signature="test2()[pri:0, instance:com.jds.testCase.caseList.WX.test6@4a94ee4]" name="test2" duration-ms="1" started-at="2019-08-28T17:46:43Z" finished-at="2019-08-28T17:46:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test2 -->
+      </class> <!-- com.jds.testCase.caseList.WX.test6 -->
+    </test> <!-- 移动设备:MI 9 -->
   </suite> <!-- 解码直播小程序自动化 -->
 </testng-results>
