@@ -1,11 +1,11 @@
 package com.jds.testBase.util;
 
 import com.jds.testBase.driver.Driver;
-import com.jds.testBase.log.Log4jUtils;
 import com.jds.testBase.page.WX.JMZB.BasePage;
 import com.jds.testBase.page.WX.JMZB.WXHomePage;
 import com.jds.testBase.yaml.ModelBean;
 import com.jds.testBase.yaml.ModelRead;
+import com.jds.testCase.caseList.WX.BaseCase;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
@@ -34,14 +34,14 @@ public class PageAction {
         ModelRead read = new ModelRead();
         ModelBean bean = read.ReadYaml();   //读取docker-compose.yaml文件
         Map dp = new HashMap();             //获取driver所需信息后添加到map
-        dp.put("port",bean.getModeldetails().get(0).getAppiumParameters().getPort());   //appium端口
-        dp.put("udid",bean.getModeldetails().get(0).getSerial());                       //设备号
-        dp.put("platformName",bean.getModeldetails().get(0).getSystem());               //Android/iOS
-        dp.put("version",bean.getModeldetails().get(0).getDeviceInfos().getVersion());  //手机系统版本
+        dp.put("port",bean.getModeldetails().get(1).getAppiumParameters().getPort());   //appium端口
+        dp.put("udid",bean.getModeldetails().get(1).getSerial());                       //设备号
+        dp.put("platformName",bean.getModeldetails().get(1).getSystem());               //Android/iOS
+        dp.put("version",bean.getModeldetails().get(1).getDeviceInfos().getVersion());  //手机系统版本
         dp.put("ExperimentalOption",CommonTools.getConfigData("ExperimentalOption"));   //被测小程序进程名称
         try{
             System.out.println("启动微信.");
-            Driver.startWX(dp.get("port").toString(),
+            BaseCase.ThreadDriver.get().startWX(dp.get("port").toString(),
                     dp.get("udid").toString(),
                     dp.get("platformName").toString(),
                     dp.get("version").toString(),
@@ -58,35 +58,9 @@ public class PageAction {
      */
     @Step("【系统】退出微信")
     public static void closeWX(){
-        PageAction.switchToNative(); //先切换至NATIVE
+        switchToNative(); //先切换至NATIVE
         System.out.println("退出微信.");
-        Driver.getDriverWX().quit();
-    }
-
-    /**
-     * 启动APP
-     * @param port
-     * @param udid
-     * @return
-     */
-    @Step("【系统】启动APP")
-    public static void start(String port, String udid){
-        try{
-            Log4jUtils.logDebug("启动投资易课APP");
-            Driver.startAN(port, udid);
-        }catch (Exception e){
-            Log4jUtils.logError("投资易课APP启动失败");
-            Log4jUtils.logError(e.toString());
-        }
-    }
-
-    /**
-     * 退出APP
-     */
-    @Step("【系统】退出APP")
-    public static void close(){
-        System.out.println("退出APP");
-        Driver.getDriverAN().quit();
+        BaseCase.ThreadDriver.get().getDriverWX().quit();
     }
 
     /**
@@ -112,9 +86,9 @@ public class PageAction {
      * @param TIMEOUT 设置超时时间
      * @param element 元素
      */
-    public static void click(int TIMEOUT,WebElement element,String target){
+    public static void click(int TIMEOUT,WebElement element){
         try{
-            waitElement(TIMEOUT, element,target);
+            waitElement(TIMEOUT, element);
             System.out.println("点击元素.");
             element.click();  //点击指定元素
         }catch (NoSuchElementException n){  //若找不到元素退出程序
@@ -145,35 +119,18 @@ public class PageAction {
      * @param TIMEOUT 超时时间
      * @param element @FindBy标签元素
      */
-    public static void waitElement(int TIMEOUT,WebElement element,String target){
-        if (target == "app"){
-            try{
-                new WebDriverWait(Driver.getDriverAN(),TIMEOUT).
-                        until(new ExpectedCondition<Boolean>(){
-                            @Override
-                            public Boolean apply(WebDriver driver){
-                                //System.out.println("等待APP元素...");
-                                Boolean isExist = element.isDisplayed();
-                                return isExist;
-                            }
-                        });
-            }catch (TimeoutException te){
-                System.out.println("等待超时.");
-            }
-        }else{
-            try{
-                new WebDriverWait(Driver.getDriverWX(),TIMEOUT).
-                        until(new ExpectedCondition<Boolean>(){
-                            @Override
-                            public Boolean apply(WebDriver driver){
-                                //System.out.println("等待WX元素...");
-                                Boolean isExist = element.isDisplayed();
-                                return isExist;
-                            }
-                        });
-            }catch (TimeoutException te){
-                System.out.println("等待超时.");
-            }
+    public static void waitElement(int TIMEOUT,WebElement element){
+        try{
+            new WebDriverWait(BaseCase.ThreadDriver.get().getDriverWX(),TIMEOUT).
+                    until(new ExpectedCondition<Boolean>(){
+                        @Override
+                        public Boolean apply(WebDriver driver){
+                            Boolean isExist = element.isDisplayed();
+                            return isExist;
+                        }
+                    });
+        }catch (TimeoutException te){
+            System.out.println("等待超时.");
         }
     }
 
@@ -182,7 +139,7 @@ public class PageAction {
      * @param TIMEOUT
      * @param element
      */
-    public static void waitElementScreenshot(int TIMEOUT, WebElement element,String target){
+    public static void waitElementScreenshot(int TIMEOUT, WebElement element){
         Date date = new Date();
         SimpleDateFormat screen_name = new SimpleDateFormat("yyyyMMdd_HHmmss");
         String screenName = screen_name.format(date.getTime());   //获取精确时间
@@ -191,12 +148,12 @@ public class PageAction {
         File savePath = new File(System.getProperty("savePicPath"));
 
         //等待元素出现
-        waitElement(TIMEOUT,element,target);
+        waitElement(TIMEOUT,element);
 
         //App截屏
         try{
-            File screenFile = Driver.
-                    getDriverAN().
+            File screenFile = BaseCase.ThreadDriver.get().
+                    getDriverWX().
                     getScreenshotAs(OutputType.FILE);
             FileUtils.copyFile(screenFile,new File(savePath + "/" + screenName + ".jpg"));
             //Log4jUtils.logInfo("截图成功:" + savePath + "/" + screenName + ".jpg");
@@ -217,8 +174,8 @@ public class PageAction {
 
         //App截屏
         try{
-            File screenFile = Driver.getDriverAN().getScreenshotAs(OutputType.FILE);  //保存本地
-            byte[] screenShot = Driver.getDriverAN().getScreenshotAs(OutputType.BYTES);  //返回screenShot,用于上传Allure附件
+            File screenFile = BaseCase.ThreadDriver.get().getDriverWX().getScreenshotAs(OutputType.FILE);  //保存本地
+            byte[] screenShot = BaseCase.ThreadDriver.get().getDriverWX().getScreenshotAs(OutputType.BYTES);  //返回screenShot,用于上传Allure附件
             FileUtils.copyFile(screenFile,new File(savePath + "/" + screenName + ".jpg"));
             //Log4jUtils.logInfo("截图成功:" + savePath + "/" + screenName + ".jpg");
             return screenShot;
@@ -236,13 +193,11 @@ public class PageAction {
      * @param my 终点y坐标(屏高百分比)
      */
     public static void slide(int px,int py,int mx,int my){
-        //ModelRead read = new ModelRead();
-        //ModelBean bean = read.ReadYaml();
         int x1 = (1080 * px) / 100;
         int y1 = (1920 * py) / 100;
         int x2 = (1080 * mx) / 100;
         int y2 = (1920 * my) / 100;
-        new TouchAction(Driver.getDriverWX())     //滑动屏幕
+        new TouchAction(BaseCase.ThreadDriver.get().getDriverWX())     //滑动屏幕
                 .press(PointOption.point(x1,y1))
                 .waitAction(WaitOptions.waitOptions(Duration.ofSeconds(3)))
                 .moveTo(PointOption.point(x2,y2))
@@ -254,9 +209,9 @@ public class PageAction {
      */
     public static void switchToWebview(){
         //若当前context不是webview则切换至webview
-        if(!Driver.getDriverWX().getContext().toString().equals("WEBVIEW_com.tencent.mm:appbrand0")){
+        if(!BaseCase.ThreadDriver.get().getDriverWX().getContext().equals("WEBVIEW_com.tencent.mm:appbrand0")){
             System.out.println("切换至WebView.");
-            Driver.getDriverWX().context("WEBVIEW_com.tencent.mm:appbrand0");
+            BaseCase.ThreadDriver.get().getDriverWX().context("WEBVIEW_com.tencent.mm:appbrand0");
         }else {
             System.out.println("当前Context:WEBVIEW_com.tencent.mm:appbrand0");
         }
@@ -266,9 +221,9 @@ public class PageAction {
      * 切换至'NATIVE_APP'
      */
     public static void switchToNative(){
-        if(!Driver.getDriverWX().getContext().toString().equals("NATIVE_APP")){
+        if(!BaseCase.ThreadDriver.get().getDriverWX().getContext().equals("NATIVE_APP")){
             System.out.println("切换至NATIVE.");
-            Driver.getDriverWX().context("NATIVE_APP");
+            BaseCase.ThreadDriver.get().getDriverWX().context("NATIVE_APP");
         }else {
             System.out.println("当前Context:NATIVE_APP");
         }
@@ -280,9 +235,9 @@ public class PageAction {
      */
     public static Boolean jumpToWindowHandel(WebElement element){
         Boolean isHave = false;
-        for(String handle : Driver.getDriverWX().getWindowHandles()){
-            Driver.getDriverWX().switchTo().window(handle);  //遍历handel直到找到相应元素
-            waitElement(10,element,"wx");
+        for(String handle : BaseCase.ThreadDriver.get().getDriverWX().getWindowHandles()){
+            BaseCase.ThreadDriver.get().getDriverWX().switchTo().window(handle);  //遍历handel直到找到相应元素
+            waitElement(10,element);
             try{
                 if (element.isDisplayed()){
                     System.out.println("找到对应元素;当前WindowHandle:" + handle);

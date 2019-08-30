@@ -2,6 +2,7 @@ package com.jds.testBase.page.WX.JMZB;
 
 import com.jds.testBase.driver.Driver;
 import com.jds.testBase.util.PageAction;
+import com.jds.testCase.caseList.WX.BaseCase;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
@@ -27,8 +28,8 @@ public class BasePage {
      * 初始化页面元素
      */
     public BasePage(){
-        //System.out.println("-------------初始化页面");
-        PageFactory.initElements(Driver.getDriverWX(),this);
+        System.out.println("-------------初始化页面");
+        PageFactory.initElements(BaseCase.ThreadDriver.get().getDriverWX(),this);
     }
 
     /**
@@ -36,7 +37,7 @@ public class BasePage {
      * @param waitingTime
      */
     public void waitLoading(int waitingTime){
-        PageAction.waitElement(waitingTime,stop2,"wx");
+        PageAction.waitElement(waitingTime,stop2);
     }
 
     /**
@@ -46,7 +47,7 @@ public class BasePage {
         PageAction.switchToNative();
         for(int i = 0;i < 10;i++){
             if (back.isDisplayed()){
-                PageAction.click(5,back,"wx");
+                PageAction.click(5,back);
             }else {
                 System.out.println("已返回到首页或找不到返回元素.");
                 break;

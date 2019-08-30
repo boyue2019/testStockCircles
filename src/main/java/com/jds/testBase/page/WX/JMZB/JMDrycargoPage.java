@@ -2,6 +2,7 @@ package com.jds.testBase.page.WX.JMZB;
 
 import com.jds.testBase.driver.Driver;
 import com.jds.testBase.util.PageAction;
+import com.jds.testCase.caseList.WX.BaseCase;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
@@ -86,7 +87,7 @@ public class JMDrycargoPage extends BasePage {
             xpath.append(String.valueOf(i+1));
             xpath.append("]");
             try {
-                PageAction.jumpToWindowHandel(Driver.getDriverWX().findElementByXPath(xpath.toString()));  //查找指定位置的文章元素
+                PageAction.jumpToWindowHandel(BaseCase.ThreadDriver.get().getDriverWX().findElementByXPath(xpath.toString()));  //查找指定位置的文章元素
             }catch (NoSuchElementException n){
                 System.out.println("找不到对应元素;【Method】articleCount");
                 count = i;

@@ -29,11 +29,11 @@ public class WXHomePage extends BasePage{
      * @return
      */
     public JMHomePage openJMZB(){
-        PageAction.waitElement(20,BookTab,"wx");   //等待元素出现
+        PageAction.waitElement(20,BookTab);   //等待元素出现
         //PageAction.slide(500,733,500,1800);   //下拉屏幕
         PageAction.slide(46,38,46,93);   //下拉屏幕
-        PageAction.waitElement(5,stop1,"wx");
-        PageAction.waitElement(20,JMZBEnter,"wx");
+        PageAction.waitElement(5,stop1);
+        PageAction.waitElement(20,JMZBEnter);
         JMZBEnter.click();
         return new JMHomePage();
     }

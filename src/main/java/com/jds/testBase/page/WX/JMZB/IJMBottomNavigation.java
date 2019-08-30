@@ -13,7 +13,7 @@ public interface IJMBottomNavigation {
     default JMHomePage goToHomePage(){
         JMBottomNavigationPage bottomNavigationPage = new JMBottomNavigationPage();
         PageAction.switchToNative();
-        PageAction.click(15,JMBottomNavigationPage.home,"wx");
+        PageAction.click(15,JMBottomNavigationPage.home);
         return new JMHomePage();
     }
 
@@ -26,7 +26,7 @@ public interface IJMBottomNavigation {
     default JMWeiKePage goToWeiKePage(){
         PageAction.switchToNative();
         JMBottomNavigationPage bottomNavigationPage = new JMBottomNavigationPage();
-        PageAction.click(15,JMBottomNavigationPage.WeiKe,"wx");
+        PageAction.click(15,JMBottomNavigationPage.WeiKe);
         return new JMWeiKePage();
     }
 
@@ -39,7 +39,7 @@ public interface IJMBottomNavigation {
     default JMMinePage goToMinePage(){
         PageAction.switchToNative();
         JMBottomNavigationPage bottomNavigationPage = new JMBottomNavigationPage();
-        PageAction.click(15,JMBottomNavigationPage.mine,"wx");
+        PageAction.click(15,JMBottomNavigationPage.mine);
         return new JMMinePage();
     }
 
@@ -48,7 +48,7 @@ public interface IJMBottomNavigation {
      */
     default void waitBottomElement(){
         JMBottomNavigationPage bottomNavigationPage = new JMBottomNavigationPage();
-        PageAction.waitElement(20,JMBottomNavigationPage.home,"wx");  //等待底部导航元素加载成功
+        PageAction.waitElement(20,JMBottomNavigationPage.home);  //等待底部导航元素加载成功
         bottomNavigationPage.waitLoading(5);  //继续等待5秒 - 页面渲染
     }
 }

@@ -1,57 +1,25 @@
 package com.jds.testBase.appium;
 
-import com.jds.testBase.util.CommonTools;
-import com.jds.testBase.yaml.ModelBean;
-import com.jds.testBase.yaml.ModelRead;
-import io.appium.java_client.service.local.AppiumDriverLocalService;
-import io.appium.java_client.service.local.AppiumServiceBuilder;
-import io.appium.java_client.service.local.flags.GeneralServerFlag;
+import java.io.IOException;
 
 public class AppiumDriver {
-    static AppiumDriverLocalService service;
-
     /**
      * 启动Appium服务
      *   - 域名从config.properties配置文件中获取
      *   - port从生成对yaml文件中获取
      */
-    public static void startServer(){
-        ModelRead read = new ModelRead();
-        ModelBean bean = read.ReadYaml();
-        String port = bean.getModeldetails().get(0).getAppiumParameters().getPort();   //获取appium端口
-        AppiumServiceBuilder builder = new AppiumServiceBuilder();
-        builder.withIPAddress(CommonTools.getConfigData("AppiumServerUrl"));            //添加启动
-        builder.usingPort(Integer.parseInt(port));
-        builder.withArgument(GeneralServerFlag.SESSION_OVERRIDE);
-        service = AppiumDriverLocalService.buildService(builder);
-        System.out.println("启动Appium服务.");
-        if (!service.isRunning()){
-            service.start();     //启动服务
-        }
-        else {
-            System.out.println("Appium已启用.");
-        }
-    }
-
-    /**
-     * 关闭Appium服务
-     */
-    public static void stopServer(){
-        if (service.isRunning()){
-            System.out.println("关闭Appium服务.");
-            service.stop();
-        }else {
-            System.out.println("Appium服务未启用.");
-        }
-    }
-
-    public static void main(String[] args){
-        AppiumDriver.startServer();
+    public static void startServer(String port,String bp){
+        String cmd = "appium -a 127.0.0.1 -p " + port + " -bp " + bp;
+        Process p;
         try{
-            Thread.sleep(10000);
-        }catch (InterruptedException i){
-
+            p = Runtime.getRuntime().exec(cmd);
+            System.out.println("启动Appium:");
+            System.out.println("port:" + port + "  bp:" + bp);
+            p.waitFor();
+        }catch (IOException E){
+            System.out.println("Appium启动异常.");
+        }catch (InterruptedException I){
+            System.out.println("Appium启动异常.");
         }
-        AppiumDriver.stopServer();
     }
 }

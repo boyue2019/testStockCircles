@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 返回测试用例集合
+ * 测试用例管理类
  */
 public class CaseManagement {
     /**

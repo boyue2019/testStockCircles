@@ -1,6 +1,5 @@
 package com.jds.testCase.testDispatch;
 
-import com.jds.testBase.yaml.ModelRead;
 import org.testng.TestNG;
 import org.testng.xml.XmlClass;
 import org.testng.xml.XmlSuite;
@@ -60,10 +59,9 @@ public class Dispatcher {
      * 用例平均分配到多个Test标签下并发执行
      * @return
      */
-    public TestNG TestNGXML(){
+    public TestNG TestNGXML(List<Map> devices){
         //获取设备信息及数量
-        ModelRead read = new ModelRead();
-        List<Map> devicelist = read.DevicesDetails();
+        List<Map> devicelist = devices;
         int devciesCount = devicelist.size();
 
         TestNG testNG = new TestNG();

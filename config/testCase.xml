@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
+    <!--APP-->
     <app></app>
+
+    <!--小程序-->
     <wxmini>
+        <!--解码直播 -->
         <jmzb>
-            <case>com.jds.testCase.caseList.WX.test5</case>
-            <case>com.jds.testCase.caseList.WX.test6</case>
+            <case>com.jds.testCase.caseList.WX.CDrycargoPage</case>
+            <case>com.jds.testCase.caseList.WX.CWeiKePage</case>
         </jmzb>
         <tzyk></tzyk>
     </wxmini>

@@ -5,12 +5,14 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+/**
+ * 每日干货列表测试用例
+ */
 public class CDrycargoPage extends BaseCase {
     @Story("【前置】进入解码直播首页")
     @Override
     @BeforeClass
     public void pageEntry() {
-        jmHomePage = wxHomePage.openJMZB();  //打开解码直播
         jmDrycargoPage_ss = jmHomePage.gotoJMDrycargoCheckAll();  //进入每日干货-查看全部
     }
 

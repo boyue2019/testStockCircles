@@ -27,13 +27,4 @@
             <class name="com.jds.testCase.caseList.WX.test6"></class>
         </classes>
     </test>
-
-    <!-- Android -->
-    <test name="RegressionTesting_Android" verbose="2" enabled="false">
-        <parameter name="port" value="4723"></parameter>
-        <parameter name="udid" value="edd06f8e"></parameter>
-        <classes>
-            <class name="com.jds.testCase.caseList.Android.test2"></class>
-        </classes>
-    </test>
 </suite>

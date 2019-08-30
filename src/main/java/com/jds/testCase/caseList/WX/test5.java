@@ -1,11 +1,11 @@
 package com.jds.testCase.caseList.WX;
 
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
-public class test14 {
+public class test5 extends test4{
     @Test
     public void test1() {
-        System.out.println(this.getClass().getName() + " test1");
+        System.out.println(this.getClass().getName() + ":" + super.t1.getModel());
     }
 
     @Test
