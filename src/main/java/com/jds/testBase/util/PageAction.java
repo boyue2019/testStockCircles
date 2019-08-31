@@ -1,10 +1,7 @@
 package com.jds.testBase.util;
 
-import com.jds.testBase.driver.Driver;
 import com.jds.testBase.page.WX.JMZB.BasePage;
 import com.jds.testBase.page.WX.JMZB.WXHomePage;
-import com.jds.testBase.yaml.ModelBean;
-import com.jds.testBase.yaml.ModelRead;
 import com.jds.testCase.caseList.WX.BaseCase;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.touch.WaitOptions;
@@ -30,22 +27,10 @@ public class PageAction {
      * @return
      */
     @Step("【系统】启动微信解码直播小程序")
-    public static WXHomePage startWX(){
-        ModelRead read = new ModelRead();
-        ModelBean bean = read.ReadYaml();   //读取docker-compose.yaml文件
-        Map dp = new HashMap();             //获取driver所需信息后添加到map
-        dp.put("port",bean.getModeldetails().get(1).getAppiumParameters().getPort());   //appium端口
-        dp.put("udid",bean.getModeldetails().get(1).getSerial());                       //设备号
-        dp.put("platformName",bean.getModeldetails().get(1).getSystem());               //Android/iOS
-        dp.put("version",bean.getModeldetails().get(1).getDeviceInfos().getVersion());  //手机系统版本
-        dp.put("ExperimentalOption",CommonTools.getConfigData("ExperimentalOption"));   //被测小程序进程名称
+    public static WXHomePage startWX(String port,String udid,String platformName,String version,String ExperimentalOption){
         try{
             System.out.println("启动微信.");
-            BaseCase.ThreadDriver.get().startWX(dp.get("port").toString(),
-                    dp.get("udid").toString(),
-                    dp.get("platformName").toString(),
-                    dp.get("version").toString(),
-                    dp.get("ExperimentalOption").toString());
+            BaseCase.ThreadDriver.get().startWX(port, udid, platformName, version, ExperimentalOption);
             return new WXHomePage();      //返回微信首页对象
         }catch (Exception e){
             System.out.println("微信启动失败.");

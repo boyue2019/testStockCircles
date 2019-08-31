@@ -10,16 +10,32 @@ public class AppiumDriver {
      */
     public static void startServer(String port,String bp){
         String cmd = "appium -a 127.0.0.1 -p " + port + " -bp " + bp;
+        Runtime runtime = Runtime.getRuntime();
+
+
+        try{
+            runtime.exec(cmd);
+        }catch (IOException I){
+
+        }
+
+        /**
+        String cmd = "appium -a 127.0.0.1 -p " + port + " -bp " + bp;
         Process p;
         try{
-            p = Runtime.getRuntime().exec(cmd);
+                p = Runtime.getRuntime().exec(cmd);
             System.out.println("启动Appium:");
             System.out.println("port:" + port + "  bp:" + bp);
             p.waitFor();
         }catch (IOException E){
             System.out.println("Appium启动异常.");
         }catch (InterruptedException I){
-            System.out.println("Appium启动异常.");
+
         }
+         */
+    }
+
+    public static void main(String[] args){
+        AppiumDriver.startServer("4723","4724");
     }
 }

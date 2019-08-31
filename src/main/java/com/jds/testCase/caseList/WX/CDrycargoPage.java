@@ -13,6 +13,7 @@ public class CDrycargoPage extends BaseCase {
     @Override
     @BeforeClass
     public void pageEntry() {
+        System.out.println("CWeiKePage:" + jmHomePage);
         jmDrycargoPage_ss = jmHomePage.gotoJMDrycargoCheckAll();  //进入每日干货-查看全部
     }
 

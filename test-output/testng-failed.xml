@@ -1,22 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="2" guice-stage="DEVELOPMENT" name="Failed suite [StockCircles Automation Testing]" parallel="tests">
-  <listeners>
-    <listener class-name="com.jds.testCase.caseRule.listener.LCaseType"/>
-    <listener class-name="com.jds.testCase.caseRule.listener.LCaseRetry"/>
-    <listener class-name="com.jds.testCase.caseRule.listener.LTestNG"/>
-  </listeners>
-  <test thread-count="2" name="CompatibilityTesting(failed)" parallel="tests">
+<suite thread-count="1" name="Failed suite [解码直播小程序自动化]" parallel="tests">
+  <test thread-count="1" name="移动设备:MI 9(failed)" parallel="tests">
+    <parameter name="chromedrniverport" value="8000"/>
+    <parameter name="system" value="Android"/>
+    <parameter name="port" value="4723"/>
+    <parameter name="serial" value="6d4a5e0d"/>
+    <parameter name="width" value="1080"/>
+    <parameter name="model" value="MI 9"/>
+    <parameter name="version" value="9"/>
+    <parameter name="bp" value="4724"/>
+    <parameter name="height" value="2340"/>
+    <parameter name="manufacturer" value="XIAOMI"/>
     <classes>
-      <class name="TestClass">
+      <class name="com.jds.testCase.caseList.WX.CWeiKePage">
         <methods>
-          <include name="beforeClass"/>
-          <include name="test3"/>
-          <include name="beforeSuite"/>
-          <include name="test4"/>
-          <include name="resetPage"/>
+          <include name="over"/>
+          <include name="WeiKePage_Case_001"/>
+          <include name="gohome"/>
+          <include name="begin"/>
+          <include name="pageEntry"/>
         </methods>
-      </class> <!-- TestClass -->
+      </class> <!-- com.jds.testCase.caseList.WX.CWeiKePage -->
     </classes>
-  </test> <!-- CompatibilityTesting(failed) -->
-</suite> <!-- Failed suite [StockCircles Automation Testing] -->
+  </test> <!-- 移动设备:MI 9(failed) -->
+</suite> <!-- Failed suite [解码直播小程序自动化] -->

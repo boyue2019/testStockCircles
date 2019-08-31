@@ -12,6 +12,7 @@ public class CWeiKePage extends BaseCase{
     @Override
     @BeforeClass
     public void pageEntry() {
+        System.out.println("CWeiKePage:" + jmHomePage);
         jmWeiKePage = jmHomePage.goToWeiKePage();
     }
 

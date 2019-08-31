@@ -1,27 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
+<testng-results skipped="0" failed="0" ignored="2" total="7" passed="5">
   <reporter-output>
   </reporter-output>
-  <suite name="解码直播小程序自动化" duration-ms="210" started-at="2019-08-30T14:06:23Z" finished-at="2019-08-30T14:06:23Z">
+  <suite name="解码直播小程序自动化" duration-ms="79788" started-at="2019-08-31T07:42:23Z" finished-at="2019-08-31T07:43:43Z">
     <groups>
     </groups>
-    <test name="移动设备:MI 9" duration-ms="210" started-at="2019-08-30T14:06:23Z" finished-at="2019-08-30T14:06:23Z">
-      <class name="com.jds.testCase.caseList.WX.test6">
-        <test-method status="PASS" signature="beforetest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.jds.testCase.caseList.WX.test6@37afeb11]" name="beforetest" is-config="true" duration-ms="17" started-at="2019-08-30T14:06:23Z" finished-at="2019-08-30T14:06:23Z">
+    <test name="移动设备:MI 9" duration-ms="79788" started-at="2019-08-31T07:42:23Z" finished-at="2019-08-31T07:43:43Z">
+      <class name="com.jds.testCase.caseList.WX.CWeiKePage">
+        <test-method status="PASS" signature="pageEntry()[pri:0, instance:com.jds.testCase.caseList.WX.CWeiKePage@52e6fdee]" name="pageEntry" is-config="true" duration-ms="171" started-at="2019-08-31T07:43:37Z" finished-at="2019-08-31T07:43:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- pageEntry -->
+        <test-method status="PASS" signature="WeiKePage_Case_001()[pri:0, instance:com.jds.testCase.caseList.WX.CWeiKePage@52e6fdee]" name="WeiKePage_Case_001" duration-ms="5010" started-at="2019-08-31T07:43:37Z" finished-at="2019-08-31T07:43:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- WeiKePage_Case_001 -->
+        <test-method status="PASS" signature="gohome(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.jds.testCase.caseList.WX.CWeiKePage@52e6fdee]" name="gohome" is-config="true" duration-ms="47" started-at="2019-08-31T07:43:42Z" finished-at="2019-08-31T07:43:43Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[4725]]>
+                <![CDATA[4723]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[4726]]>
+                <![CDATA[4724]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[8001]]>
+                <![CDATA[8000]]>
               </value>
             </param>
             <param index="3">
@@ -62,20 +70,10 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforetest -->
-        <test-method status="PASS" signature="test1()[pri:0, instance:com.jds.testCase.caseList.WX.test6@37afeb11]" name="test1" duration-ms="71" started-at="2019-08-30T14:06:23Z" finished-at="2019-08-30T14:06:23Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test1 -->
-        <test-method status="PASS" signature="test2()[pri:0, instance:com.jds.testCase.caseList.WX.test6@37afeb11]" name="test2" duration-ms="2" started-at="2019-08-30T14:06:23Z" finished-at="2019-08-30T14:06:23Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test2 -->
-      </class> <!-- com.jds.testCase.caseList.WX.test6 -->
-    </test> <!-- 移动设备:MI 9 -->
-    <test name="移动设备:MI 5" duration-ms="210" started-at="2019-08-30T14:06:23Z" finished-at="2019-08-30T14:06:23Z">
-      <class name="com.jds.testCase.caseList.WX.test5">
-        <test-method status="PASS" signature="beforetest(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.jds.testCase.caseList.WX.test5@5af3afd9]" name="beforetest" is-config="true" duration-ms="17" started-at="2019-08-30T14:06:23Z" finished-at="2019-08-30T14:06:23Z">
+        </test-method> <!-- gohome -->
+      </class> <!-- com.jds.testCase.caseList.WX.CWeiKePage -->
+      <class name="com.jds.testCase.caseList.WX.CDrycargoPage">
+        <test-method status="PASS" signature="begin(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.jds.testCase.caseList.WX.CDrycargoPage@14dd9eb7]" name="begin" is-config="true" duration-ms="12641" started-at="2019-08-31T07:42:23Z" finished-at="2019-08-31T07:42:36Z">
           <params>
             <param index="0">
               <value>
@@ -99,12 +97,12 @@
             </param>
             <param index="4">
               <value>
-                <![CDATA[edd06f8e]]>
+                <![CDATA[6d4a5e0d]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[1920]]>
+                <![CDATA[2340]]>
               </value>
             </param>
             <param index="6">
@@ -119,27 +117,99 @@
             </param>
             <param index="8">
               <value>
-                <![CDATA[MI 5]]>
+                <![CDATA[MI 9]]>
               </value>
             </param>
             <param index="9">
               <value>
-                <![CDATA[6.0]]>
+                <![CDATA[9]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforetest -->
-        <test-method status="PASS" signature="test1()[pri:0, instance:com.jds.testCase.caseList.WX.test5@5af3afd9]" name="test1" duration-ms="68" started-at="2019-08-30T14:06:23Z" finished-at="2019-08-30T14:06:23Z">
+        </test-method> <!-- begin -->
+        <test-method status="PASS" signature="pageEntry()[pri:0, instance:com.jds.testCase.caseList.WX.CDrycargoPage@14dd9eb7]" name="pageEntry" is-config="true" duration-ms="20440" started-at="2019-08-31T07:42:36Z" finished-at="2019-08-31T07:42:56Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test1 -->
-        <test-method status="PASS" signature="test2()[pri:0, instance:com.jds.testCase.caseList.WX.test5@5af3afd9]" name="test2" duration-ms="1" started-at="2019-08-30T14:06:23Z" finished-at="2019-08-30T14:06:23Z">
+        </test-method> <!-- pageEntry -->
+        <test-method status="PASS" signature="DrycargoPage_Case_001()[pri:0, instance:com.jds.testCase.caseList.WX.CDrycargoPage@14dd9eb7]" name="DrycargoPage_Case_001" duration-ms="13886" started-at="2019-08-31T07:42:56Z" finished-at="2019-08-31T07:43:10Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test2 -->
-      </class> <!-- com.jds.testCase.caseList.WX.test5 -->
-    </test> <!-- 移动设备:MI 5 -->
+        </test-method> <!-- DrycargoPage_Case_001 -->
+        <test-method status="PASS" signature="DrycargoPage_Case_002()[pri:0, instance:com.jds.testCase.caseList.WX.CDrycargoPage@14dd9eb7]" name="DrycargoPage_Case_002" duration-ms="6272" started-at="2019-08-31T07:43:10Z" finished-at="2019-08-31T07:43:17Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- DrycargoPage_Case_002 -->
+        <test-method status="PASS" signature="DrycargoPage_Case_003()[pri:0, instance:com.jds.testCase.caseList.WX.CDrycargoPage@14dd9eb7]" name="DrycargoPage_Case_003" duration-ms="9596" started-at="2019-08-31T07:43:17Z" finished-at="2019-08-31T07:43:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- DrycargoPage_Case_003 -->
+        <test-method status="PASS" signature="DrycargoPage_Case_004()[pri:0, instance:com.jds.testCase.caseList.WX.CDrycargoPage@14dd9eb7]" name="DrycargoPage_Case_004" duration-ms="9640" started-at="2019-08-31T07:43:26Z" finished-at="2019-08-31T07:43:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- DrycargoPage_Case_004 -->
+        <test-method status="PASS" signature="gohome(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.jds.testCase.caseList.WX.CDrycargoPage@14dd9eb7]" name="gohome" is-config="true" duration-ms="1416" started-at="2019-08-31T07:43:36Z" finished-at="2019-08-31T07:43:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[4723]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[4724]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[8000]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Android]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[6d4a5e0d]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[2340]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[1080]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[XIAOMI]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[MI 9]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[9]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- gohome -->
+        <test-method status="PASS" signature="over()[pri:0, instance:com.jds.testCase.caseList.WX.CDrycargoPage@14dd9eb7]" name="over" is-config="true" duration-ms="566" started-at="2019-08-31T07:43:43Z" finished-at="2019-08-31T07:43:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- over -->
+      </class> <!-- com.jds.testCase.caseList.WX.CDrycargoPage -->
+    </test> <!-- 移动设备:MI 9 -->
   </suite> <!-- 解码直播小程序自动化 -->
 </testng-results>

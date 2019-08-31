@@ -13,8 +13,19 @@
 
     <!-- WX解码直播小程序 -->
     <test name="WX_JMZB" verbose="2" enabled="true">
+        <parameter name="port" value="4723"></parameter>
+        <parameter name="bp" value="4724"></parameter>
+        <parameter name="chromedrniverport" value="8000"></parameter>
+        <parameter name="system" value="Android"></parameter>
+        <parameter name="serial" value="6d4a5e0d"></parameter>
+        <parameter name="height" value="2340"></parameter>
+        <parameter name="width" value="1080"></parameter>
+        <parameter name="manufacturer" value="XIAOMI"></parameter>
+        <parameter name="model" value="MI 9"></parameter>
+        <parameter name="version" value="9"></parameter>
         <classes>
             <class name="com.jds.testCase.caseList.WX.CDrycargoPage"></class>
+            <class name="com.jds.testCase.caseList.WX.CWeiKePage"></class>
         </classes>
     </test>
 
@@ -23,8 +34,6 @@
         <parameter name="port" value="4723"></parameter>
         <parameter name="udid" value="edd06f8e"></parameter>
         <classes>
-            <class name="com.jds.testCase.caseList.WX.test5"></class>
-            <class name="com.jds.testCase.caseList.WX.test6"></class>
         </classes>
     </test>
 </suite>
