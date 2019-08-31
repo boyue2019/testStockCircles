@@ -22,22 +22,18 @@ public class BaseCase {
      * 2.打开微信小程序
      */
     @BeforeTest
-    @Parameters({"port","bp","chromedrniverport","system","serial","height","width","manufacturer","model","version"})
-    public void openWxMini(String port,
-                      String bp,
-                      String chromedrniverport,
-                      String system,
-                      String serial,
-                      String height,
-                      String width,
-                      String manufacturer,
-                      String model,
-                      String version){
+    @Parameters({"port","bp","system","serial","height", "width", "manufacturer","model","version"})
+    public void openWxMini(String port, String bp, String system,
+                           String serial, String height, String width,
+                           String manufacturer, String model, String version){
+        //启动Appium服务
         AppiumDriver.startServer(port,bp);
         Driver driver = new Driver();
         ThreadDriver.set(driver);
+        //启动微信
         wxHomePage = PageAction.startWX(port, serial, system, version, ExperimentalOption);
-        jmHomePage = wxHomePage.openJMZB();  //打开解码直播
+        //打开解码直播小程序
+        jmHomePage = wxHomePage.openJMZB();
     }
 
     /**
@@ -52,20 +48,13 @@ public class BaseCase {
      * 每个Class用例执行结束后返回首页或重新进入小程序
      */
     @AfterClass
-    @Parameters({"port","bp","chromedrniverport","system","serial","height","width","manufacturer","model","version"})
-    public void goHome(String port,
-                       String bp,
-                       String chromedrniverport,
-                       String system,
-                       String serial,
-                       String height,
-                       String width,
-                       String manufacturer,
-                       String model,
-                       String version){
+    @Parameters({"port","bp","system","serial","height","width","manufacturer","model","version"})
+    public void goHome(String port, String bp, String system,
+                       String serial, String height, String width,
+                       String manufacturer, String model, String version){
         try {
             System.out.println("返回首页.");
-            PageAction.goBack(); //class结束后返回首页
+            PageAction.goBack();
         }catch (Exception e){
             System.out.println("重新启动小程序.");
         }

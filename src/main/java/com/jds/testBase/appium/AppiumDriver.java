@@ -45,9 +45,4 @@ public class AppiumDriver {
             e.printStackTrace();
         }
     }
-
-    public static void main(String[] args){
-        AppiumDriver.startServer("4723","4724");
-        AppiumDriver.stopServer();
-    }
 }

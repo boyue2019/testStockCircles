@@ -81,7 +81,7 @@ public class Dispatcher {
             xmlTest.setVerbose(2);  //打印级别
             xmlTest.addParameter("port",devicelist.get(t).get("port").toString());
             xmlTest.addParameter("bp",devicelist.get(t).get("bp").toString());
-            xmlTest.addParameter("chromedrniverport",devicelist.get(t).get("chromedrniverport").toString());
+            //xmlTest.addParameter("chromedrniverport",devicelist.get(t).get("chromedrniverport").toString());
             xmlTest.addParameter("system",devicelist.get(t).get("system").toString());
             xmlTest.addParameter("serial",devicelist.get(t).get("serial").toString());
             xmlTest.addParameter("height",devicelist.get(t).get("height").toString());
