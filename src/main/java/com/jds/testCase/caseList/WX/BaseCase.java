@@ -1,5 +1,6 @@
 package com.jds.testCase.caseList.WX;
 
+import com.jds.testBase.appium.AppiumDriver;
 import com.jds.testBase.driver.Driver;
 import com.jds.testBase.page.WX.JMZB.*;
 import com.jds.testBase.util.CommonTools;
@@ -17,11 +18,12 @@ public class BaseCase {
     static JMDrycargoPage jmDrycargoPage_cj;
     
     /**
-     * 启动Appium服务,微信
+     * 1.启动Appium服务
+     * 2.打开微信小程序
      */
     @BeforeTest
     @Parameters({"port","bp","chromedrniverport","system","serial","height","width","manufacturer","model","version"})
-    public void begin(String port,
+    public void openWxMini(String port,
                       String bp,
                       String chromedrniverport,
                       String system,
@@ -31,7 +33,7 @@ public class BaseCase {
                       String manufacturer,
                       String model,
                       String version){
-        //AppiumDriver.startServer(port,bp);
+        AppiumDriver.startServer(port,bp);
         Driver driver = new Driver();
         ThreadDriver.set(driver);
         wxHomePage = PageAction.startWX(port, serial, system, version, ExperimentalOption);
@@ -39,18 +41,19 @@ public class BaseCase {
     }
 
     /**
-     * 各页面用例Class覆写此方法
+     * 进入被测页面
+     * 备注:在各测试Class中重写
      */
     @BeforeClass(description = "进入测试页面")
     public void pageEntry(){
     }
 
     /**
-     * 返回首页或重启WX
+     * 每个Class用例执行结束后返回首页或重新进入小程序
      */
     @AfterClass
     @Parameters({"port","bp","chromedrniverport","system","serial","height","width","manufacturer","model","version"})
-    public void gohome(String port,
+    public void goHome(String port,
                        String bp,
                        String chromedrniverport,
                        String system,
@@ -69,10 +72,18 @@ public class BaseCase {
     }
 
     /**
-     * 关闭微信,Appium服务
+     * 关闭微信
      */
     @AfterTest
-    public void over(){
-        PageAction.closeWX();   //退出微信
+    public void closeWxMini(){
+        PageAction.closeWX();
+    }
+
+    /**
+     * 关闭Appium服务
+     */
+    @AfterSuite
+    public void stopAppium(){
+        AppiumDriver.stopServer();
     }
 }

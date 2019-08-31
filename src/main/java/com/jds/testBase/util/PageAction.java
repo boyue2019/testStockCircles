@@ -229,11 +229,8 @@ public class PageAction {
                     isHave = true;
                     break;
                 }
-            }catch (NoSuchElementException n){
-                System.out.println("未找到对应元素;当前WindowHandle:" + handle);
-                isHave = false;
-            }catch (StaleElementReferenceException s){
-                System.out.println("页面元素过时;当前WindowHandle:" + handle);
+            }catch (NoSuchElementException | StaleElementReferenceException n){
+                System.out.println("未找到对应元素或页面元素过时;当前WindowHandle:" + handle);
                 isHave = false;
             }
         }
