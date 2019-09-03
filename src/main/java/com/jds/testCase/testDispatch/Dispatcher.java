@@ -1,5 +1,6 @@
 package com.jds.testCase.testDispatch;
 
+import org.testng.ISuiteListener;
 import org.testng.TestNG;
 import org.testng.xml.XmlClass;
 import org.testng.xml.XmlSuite;
@@ -66,12 +67,15 @@ public class Dispatcher {
 
         TestNG testNG = new TestNG();
         List<List> caseGather = this.CaseSplit(devciesCount);
+        List<String> listen = new ArrayList<String>();
+        listen.add("com.jds.testCase.caseRule.listener.LExtentTestNGIReporter");
 
         //设置Suite标签
         XmlSuite xmlSuite = new XmlSuite();
         xmlSuite.setName("解码直播小程序自动化");   //套件Name
         xmlSuite.setParallel("tests");           //并发级别;tests|classes|methods
         xmlSuite.setThreadCount(devciesCount);   //线程数;等于设备数
+        xmlSuite.setListeners(listen);
 
         //设置Test|Classes标签
         List<XmlTest> xmlTestList = new ArrayList<XmlTest>();

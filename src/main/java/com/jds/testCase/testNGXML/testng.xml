@@ -11,6 +11,10 @@
     </listeners>
     -->
 
+    <listeners>
+        <listener class-name="com.jds.testCase.caseRule.listener.LExtentTestNGIReporter"/>
+    </listeners>
+
     <!-- WX解码直播小程序 -->
     <test name="WX_JMZB" verbose="2" enabled="true">
         <parameter name="port" value="4723"></parameter>
@@ -24,8 +28,11 @@
         <parameter name="model" value="MI 9"></parameter>
         <parameter name="version" value="9"></parameter>
         <classes>
-            <class name="com.jds.testCase.caseList.WX.CDrycargoPage"></class>
-            <class name="com.jds.testCase.caseList.WX.CWeiKePage"></class>
+            <class name="com.jds.testCase.caseList.WX.CHomePage">
+                <methods>
+                    <include name="Case011"></include>
+                </methods>
+            </class>
         </classes>
     </test>
 

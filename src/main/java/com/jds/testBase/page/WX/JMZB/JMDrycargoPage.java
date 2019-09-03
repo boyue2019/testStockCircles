@@ -34,6 +34,37 @@ public class JMDrycargoPage extends BasePage {
     private WebElement articlelist;
 
     /**
+     * 【事件】跳转至"为民观天下"列表
+     * 备注:需重新加载页面(new页面对象),否则会报页面元素过时
+     * @return
+     */
+    public JMDrycargoPage skipWMGTX(){
+        try{
+            tab_wmgtx.click();
+            this.waitLoading(3);  //等待3秒加载页面元素
+        }catch (NoSuchElementException e){
+            System.out.println("找不到对应元素;【Method】skipWMGTX");
+        }
+        return new JMDrycargoPage();
+    }
+
+    /**
+     * 【事件】跳转至"财经早班车"列表
+     * 备注:需重新加载页面(new页面对象),否则会报页面元素过时
+     * @return
+     */
+    public JMDrycargoPage skipCJZBC(){
+        PageAction.switchToWebview();
+        try{
+            tab_cjzbc.click();
+            this.waitLoading(3);  //等待3秒加载页面元素
+        }catch (NoSuchElementException e){
+            System.out.println("找不到对应元素;【Method】skipCJZBC");
+        }
+        return new JMDrycargoPage();
+    }
+
+    /**
      * 【测试点】判断页面是否包含所有文章类型
      * @return
      */
@@ -78,7 +109,6 @@ public class JMDrycargoPage extends BasePage {
     public Boolean articleCount(){
         String articleListXpath = "//wx-complisten";   //定义文章列表起始xpath
         int count = 0;
-
         //从"wx-complisten[1]"开始遍历到[11],验证当前页面至少展示11篇文章
         for (int i = 0;i < 11;i++){
             StringBuilder xpath = new StringBuilder();
@@ -108,36 +138,5 @@ public class JMDrycargoPage extends BasePage {
             System.out.println("文章数量:" + count);
             return false;
         }
-    }
-
-    /**
-     * 【事件】跳转至"为民观天下"列表
-     * 备注:需重新加载页面(new页面对象),否则会报页面元素过时
-     * @return
-     */
-    public JMDrycargoPage skipWMGTX(){
-        try{
-            tab_wmgtx.click();
-            this.waitLoading(3);  //等待3秒加载页面元素
-        }catch (NoSuchElementException e){
-            System.out.println("找不到对应元素;【Method】skipWMGTX");
-        }
-        return new JMDrycargoPage();
-    }
-
-    /**
-     * 【事件】跳转至"财经早班车"列表
-     * 备注:需重新加载页面(new页面对象),否则会报页面元素过时
-     * @return
-     */
-    public JMDrycargoPage skipCJZBC(){
-        PageAction.switchToWebview();
-        try{
-            tab_cjzbc.click();
-            this.waitLoading(3);  //等待3秒加载页面元素
-        }catch (NoSuchElementException e){
-            System.out.println("找不到对应元素;【Method】skipCJZBC");
-        }
-        return new JMDrycargoPage();
     }
 }

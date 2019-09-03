@@ -12,9 +12,11 @@ import java.util.Map;
  */
 public class CaseExecution {
     public void run(){
+        /**
         //通过STF获取设备信息并生成yaml文件
         ModelFactory modelFactory = new ModelFactory();
         modelFactory.MakeModel();     //采集设备信息并生成yaml文件
+         */
 
         //从yaml文件读取设备信息
         ModelRead read = new ModelRead();
@@ -26,10 +28,5 @@ public class CaseExecution {
         TestNG testNG = dispatcher.TestNGXML(deviceslist);
 
         testNG.run();
-    }
-
-    public static void main(String[] args){
-        CaseExecution execution = new CaseExecution();
-        execution.run();
     }
 }

@@ -7,8 +7,7 @@
     <wxmini>
         <!--解码直播 -->
         <jmzb>
-            <case>com.jds.testCase.caseList.WX.CDrycargoPage</case>
-            <case>com.jds.testCase.caseList.WX.CWeiKePage</case>
+            <case>com.jds.testCase.caseList.WX.CHomePage</case>
         </jmzb>
         <tzyk></tzyk>
     </wxmini>

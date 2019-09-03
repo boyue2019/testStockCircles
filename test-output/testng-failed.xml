@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite thread-count="1" name="Failed suite [解码直播小程序自动化]" parallel="tests">
+  <listeners>
+    <listener class-name="com.jds.testCase.caseRule.listener.LExtentTestNGIReporter"/>
+  </listeners>
   <test thread-count="1" name="移动设备:MI 9(failed)" parallel="tests">
-    <parameter name="chromedrniverport" value="8000"/>
     <parameter name="system" value="Android"/>
     <parameter name="port" value="4723"/>
     <parameter name="serial" value="6d4a5e0d"/>
@@ -13,15 +15,17 @@
     <parameter name="height" value="2340"/>
     <parameter name="manufacturer" value="XIAOMI"/>
     <classes>
-      <class name="com.jds.testCase.caseList.WX.CWeiKePage">
+      <class name="com.jds.testCase.caseList.WX.CHomePage">
         <methods>
-          <include name="over"/>
-          <include name="WeiKePage_Case_001"/>
-          <include name="gohome"/>
-          <include name="begin"/>
+          <include name="openWxMini"/>
           <include name="pageEntry"/>
+          <include name="Case001"/>
+          <include name="Case002"/>
+          <include name="stopAppium"/>
+          <include name="closeWxMini"/>
+          <include name="goHome"/>
         </methods>
-      </class> <!-- com.jds.testCase.caseList.WX.CWeiKePage -->
+      </class> <!-- com.jds.testCase.caseList.WX.CHomePage -->
     </classes>
   </test> <!-- 移动设备:MI 9(failed) -->
 </suite> <!-- Failed suite [解码直播小程序自动化] -->
