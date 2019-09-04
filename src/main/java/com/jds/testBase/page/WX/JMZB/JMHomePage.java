@@ -67,52 +67,109 @@ public class JMHomePage extends BasePage implements IJMBottomNavigation{
     @CacheLookup
     private WebElement home_drycargo_enter1;
 
-    //每日干货 - 第一篇文章的入口
+    //每日干货 - 第二篇文章的入口
     @FindBy(xpath = "//wx-view[@id='home_drycargo_list']/wx-complisten[2]/wx-view/wx-form/span/wx-button")
     @CacheLookup
     private WebElement home_drycargo_enter2;
 
-    //每日干货 - 第一篇文章的入口
+    //每日干货 - 第三篇文章的入口
     @FindBy(xpath = "//wx-view[@id='home_drycargo_list']/wx-complisten[3]/wx-view/wx-form/span/wx-button")
     @CacheLookup
     private WebElement home_drycargo_enter3;
 
     //明日投资看点 - 区域top
-    @FindBy(xpath = "//wx-view[@id='home_video'][1]")
+    @FindBy(id = "home_video_item0")
     @CacheLookup
     private WebElement home_video_mr;
 
-    //明日投资看点 - 区域top
-    @FindBy(xpath = "//wx-view[@id='home_video'][2]")
+    //明日投资看点 - 标题
+    @FindBy(xpath = "//wx-view[@id='home_video_item0']//wx-view[@id='home_video_title']")
+    @CacheLookup
+    private WebElement home_video_mr_title;
+
+    //明日投资看点 - 查看全部
+    @FindBy(xpath = "//wx-view[@id='home_video_item0']//wx-button[@id='home_video_checkall']")
+    @CacheLookup
+    private WebElement home_video_mr_checkall;
+
+    //明日投资看点 - 视频1入口
+    @FindBy(xpath = "//wx-view[@id='home_video0']//wx-scroll-view[@id='home_video_list0']")
+    @CacheLookup
+    private WebElement home_video_mr_venter1;
+
+    //明日投资看点 - 视频1标题
+    @FindBy(xpath = "//wx-view[@id='home_video0']//wx-scroll-view[@id='home_video_list0']//wx-view[@id='home_video_title2']")
+    @CacheLookup
+    private WebElement home_video_mr_vtitle1;
+
+    //明日投资看点 - 视频2入口
+    @FindBy(xpath = "//wx-view[@id='home_video0']//wx-scroll-view[@id='home_video_list1']")
+    @CacheLookup
+    private WebElement home_video_mr_venter2;
+
+    //明日投资看点 - 视频2标题
+    @FindBy(xpath = "//wx-view[@id='home_video0']//wx-scroll-view[@id='home_video_list1']//wx-view[@id='home_video_title2']")
+    @CacheLookup
+    private WebElement home_video_mr_vtitle2;
+
+    //投资学院 - 区域top
+    @FindBy(id = "home_video_item1")
     @CacheLookup
     private WebElement home_video_tz;
 
+    //投资学院 - 标题
+    @FindBy(xpath = "//wx-view[@id='home_video_item1']//wx-view[@id='home_video_title']")
+    @CacheLookup
+    private WebElement home_video_tz_title;
+
+    //投资学院 - 查看全部
+    @FindBy(xpath = "//wx-view[@id='home_video_item1']//wx-button[@id='home_video_checkall']")
+    @CacheLookup
+    private WebElement home_video_tz_checkall;
+
+    //投资学院 - 视频1入口
+    @FindBy(xpath = "//wx-view[@id='home_video1']//wx-scroll-view[@id='home_video_list0']")
+    @CacheLookup
+    private WebElement home_video_tz_venter1;
+
+    //投资学院 - 视频1标题
+    @FindBy(xpath = "//wx-view[@id='home_video1']//wx-scroll-view[@id='home_video_list0']//wx-view[@id='home_video_title2']")
+    @CacheLookup
+    private WebElement home_video_tz_vtitle1;
+
+    //投资学院 - 视频2入口
+    @FindBy(xpath = "//wx-view[@id='home_video1']//wx-scroll-view[@id='home_video_list1']")
+    @CacheLookup
+    private WebElement home_video_tz_venter2;
+
+    //投资学院 - 视频2标题
+    @FindBy(xpath = "//wx-view[@id='home_video1']//wx-scroll-view[@id='home_video_list1']//wx-view[@id='home_video_title2']")
+    @CacheLookup
+    private WebElement home_video_tz_vtitle2;
+
     /**
-     * 【事件】切换至包含元素当WindowHandel
+     * 【事件】切换至包含当前页面元素WindowHandel
      */
     public void jumpHomeWindowHandel(){
         this.waitBottomElement();   //等待元素出现
-        PageAction.switchToWebview();
+        PageAction.switchToWebview(); //切换至WebView模式
         PageAction.jumpToWindowHandel(home_drycargo_checkall);  //切换至存在'每日干后-查看全部'的WindowHandel
     }
 
     /**
      * 【事件】跳转至每日干货查看全部
-     * context:WEBVIEW_com.tencent.mm:appbrand0
      * @return
      */
     public JMDrycargoPage gotoJMDrycargoCheckAll(){
-        PageAction.switchToWebview();
         PageAction.click(1,home_drycargo_checkall);
         return new JMDrycargoPage();
     }
 
     /**
-     * 【测试点】检查是否存在每日直播title
+     * 【测试点】检查每日直播title是否成功加载
      */
     public Boolean isHaveHomeDailyliveTitle(){
         try{
-            PageAction.switchToWebview();  //切换至WebView模式
             return home_dailylive_title.isDisplayed();
         }catch (NoSuchElementException e){
             System.out.println("【异常】找不到元素:home_dailylive_title");
@@ -121,11 +178,10 @@ public class JMHomePage extends BasePage implements IJMBottomNavigation{
     }
 
     /**
-     * 【测试点】检查是否存在每日直播查看全部入口
+     * 【测试点】检查每日直播查看全部入口是否成功加载
      */
     public Boolean isHaveHomeDailyliveCheckall(){
         try{
-            PageAction.switchToWebview();  //切换至WebView模式
             return home_drycargo_checkall.isDisplayed();
         }catch (NoSuchElementException e){
             System.out.println("【异常】找不到元素:home_drycargo_checkall");
@@ -134,11 +190,10 @@ public class JMHomePage extends BasePage implements IJMBottomNavigation{
     }
 
     /**
-     * 【测试点】检查是否存在每日直播入口
+     * 【测试点】检查每日直播入口是否成功加载
      */
     public Boolean isHaveHomeDailyliveEnter(){
         try{
-            PageAction.switchToWebview();  //切换至WebView模式
             return home_dailylive_enter.isDisplayed();
         }catch (NoSuchElementException e){
             System.out.println("【异常】找不到元素:home_dailylive_enter");
@@ -151,7 +206,6 @@ public class JMHomePage extends BasePage implements IJMBottomNavigation{
      */
     public Boolean isTrueHomeDailyliveName(){
         try{
-            PageAction.switchToWebview();   //切换至WebView模式
             String home_dailylive_nameText = home_dailylive_name.getText();
             System.out.println("每日直播栏目名称:" + home_dailylive_nameText);
             if (home_dailylive_nameText.equals("谈股论金")){
@@ -172,7 +226,6 @@ public class JMHomePage extends BasePage implements IJMBottomNavigation{
      */
     public Boolean isTrueHomeDailylivePerson(){
         try{
-            PageAction.switchToWebview();   //切换至WebView模式
             String personText = home_dailylive_person.getText();
             System.out.println("每日直播信息:" + personText);
             if(personText.length() > 0){
@@ -192,7 +245,6 @@ public class JMHomePage extends BasePage implements IJMBottomNavigation{
      */
     public Boolean isHaveHomeDrycargoList(){
         try{
-            PageAction.switchToWebview();  //切换至WebView模式
             return home_drycargo_list.isDisplayed();
         }catch (NoSuchElementException e){
             System.out.println("【异常】找不到元素:home_drycargo_list");
@@ -206,7 +258,6 @@ public class JMHomePage extends BasePage implements IJMBottomNavigation{
      */
     public Boolean isHaveHomeDrycargoArticleTitle() {
         try {
-            PageAction.switchToWebview();  //切换至WebView模式
             String title = home_drycargo_articletitle.getText();
             if(title.length() > 0 & title.equals("null")){
                 return true;
@@ -225,7 +276,6 @@ public class JMHomePage extends BasePage implements IJMBottomNavigation{
      */
     public Boolean isHaveHomeDrycargoArticleDate(){
         try{
-            PageAction.switchToWebview();  //切换至WebView模式
             String date = home_drycargo_articledate.getText();
             System.out.println("每日干货首篇文章日期:" + date);
             int month = Integer.parseInt(date.substring(0,2));
@@ -246,7 +296,6 @@ public class JMHomePage extends BasePage implements IJMBottomNavigation{
      */
     public void isGoHomeDrycargoArticle(){
         try{
-            PageAction.switchToWebview();  //切换至WebView模式
             Random random = new Random();
             switch (random.nextInt(3)){
                 case 0:
@@ -266,12 +315,11 @@ public class JMHomePage extends BasePage implements IJMBottomNavigation{
     }
 
     /**
-     * 【测试点】检查明日投资看点是否存在
+     * 【测试点】检查明日投资看点是否成功加载
      * @return
      */
     public Boolean isHaveHomeVideoMr(){
         try{
-            PageAction.switchToWebview();  //切换至WebView模式
             return home_video_mr.isDisplayed();
         }catch (NoSuchElementException e){
             System.out.println("【异常】找不到元素:home_video_mr");
@@ -280,10 +328,144 @@ public class JMHomePage extends BasePage implements IJMBottomNavigation{
     }
 
     /**
-     * 【测试点】检查投资学院是否存在
+     * 【测试点】检查明日投资看点标题是否正确展示
      * @return
      */
-    public void isHaveHomeVideoTz(){
-        System.out.println(home_video_mr);
+    public Boolean isTrueHomeVideoMrTitle(){
+        try{
+            String title = home_video_mr_title.getText();
+            if (title.equals("明日投资看点")){
+                return true;
+            }else {
+                return false;
+            }
+        }catch (NoSuchElementException e){
+            System.out.println("【异常】找不到元素:home_video_mr_title");
+            return false;
+        }
+    }
+
+    /**
+     * 【测试点】检查明日投资看点查看全部入口是否成功加载
+     * @return
+     */
+    public Boolean isHaveHomeVideoMrCheckall(){
+        try{
+            return home_video_mr_checkall.isDisplayed();
+        }catch (NoSuchElementException e){
+            System.out.println("【异常】找不到元素:home_video_mr_checkall");
+            return false;
+        }
+    }
+
+    /**
+     * 【测试点】检查明日投资看点任意随机视频标题是否正确展示
+     */
+    public Boolean isTrueHomeVideoMrVtitle(){
+        try {
+            Random random = new Random();
+            String title = "";
+            int num = 0;
+            switch (random.nextInt(2)){
+                case 0:
+                    title = home_video_mr_vtitle1.getText();
+                    num = 1;
+                    break;
+                case 1:
+                    title = home_video_mr_vtitle2.getText();
+                    num = 2;
+                    break;
+            }
+            if (title.length() > 0 && !title.equals("null")){
+                System.out.println("投资学院第" + num + "篇文章的标题:" + title);
+                return true;
+            }else {
+                System.out.println("投资学院第" + num + "篇文章的标题:" + title);
+                return false;
+            }
+        }catch (NoSuchElementException e){
+            System.out.println("【异常】找不到元素:home_video_mr_vtitle");
+            return false;
+        }
+    }
+
+    /**
+     * 【测试点】检查投资学院看点是否成功加载
+     * @return
+     */
+    public Boolean isHaveHomeVideoTz(){
+        try{
+            return home_video_tz.isDisplayed();
+        }catch (NoSuchElementException e){
+            System.out.println("【异常】找不到元素:home_video_tz");
+            return false;
+        }
+    }
+
+    /**
+     * 【测试点】检查投资学院标题是否正确展示
+     * @return
+     */
+    public Boolean isTrueHomeVideoTzTitle(){
+        try{
+            String title = home_video_tz_title.getText();
+            if (title.equals("投资学院")){
+                return true;
+            }else {
+                return false;
+            }
+        }catch (NoSuchElementException e){
+            System.out.println("【异常】找不到元素:home_video_tz_title");
+            return false;
+        }
+    }
+
+    /**
+     * 【测试点】检查投资学院查看全部入口是否成功加载
+     * @return
+     */
+    public Boolean isHaveHomeVideoTzCheckall(){
+        try{
+            return home_video_tz_checkall.isDisplayed();
+        }catch (NoSuchElementException e){
+            System.out.println("【异常】找不到元素:home_video_tz_checkall");
+            return false;
+        }
+    }
+
+    /**
+     * 【测试点】检查投资学院任意随机视频标题是否正确展示
+     */
+    public Boolean isTrueHomeVideoTzVtitle(){
+        try {
+            Random random = new Random();
+            String title = "";
+            int num = 0;
+            switch (random.nextInt(2)){
+                case 0:
+                    title = home_video_tz_vtitle1.getText();
+                    num = 1;
+                    break;
+                case 1:
+                    title = home_video_tz_vtitle2.getText();
+                    num = 2;
+                    break;
+            }
+            if (title.length() > 0 && !title.equals("null")){
+                System.out.println("投资学院第" + num + "篇文章的标题:" + title);
+                return true;
+            }else {
+                System.out.println("投资学院第" + num + "篇文章的标题:" + title);
+                return false;
+            }
+        }catch (NoSuchElementException e){
+            System.out.println("【异常】找不到元素:home_video_tz_vtitle");
+            return false;
+        }
+    }
+
+    public static void main(String[] args){
+        Random random = new Random();
+        System.out.println(random.nextInt(2));
     }
 }

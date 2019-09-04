@@ -1,6 +1,5 @@
 package com.jds.testBase.page.WX.JMZB;
 
-import com.jds.testBase.driver.Driver;
 import com.jds.testBase.util.PageAction;
 import com.jds.testCase.caseList.WX.BaseCase;
 import org.openqa.selenium.WebElement;
@@ -12,7 +11,7 @@ import org.openqa.selenium.support.PageFactory;
  * Page基类，提供各页面间重复功能
  * 1.PageFactory页面元素初始化  2.页面截图（非等待）
  */
-public class BasePage {
+public class BasePage{
     //暂停专用
     @FindBy(xpath = "//*[@text='找到算我输']")
     @CacheLookup
@@ -40,10 +39,18 @@ public class BasePage {
     }
 
     /**
-     * 返回首页
+     * 返回上一页
      */
     public static void goBack(){
-        PageAction.switchToNative();
+        PageAction.switchToNative();   //切换至Native模式
+        PageAction.click(5,back);
+    }
+
+    /**
+     * 返回首页
+     */
+    public static void goBackHome(){
+        PageAction.switchToNative();   //切换至Native模式
         for(int i = 0;i < 10;i++){
             if (back.isDisplayed()){
                 PageAction.click(5,back);
@@ -54,4 +61,6 @@ public class BasePage {
         }
 
     }
+
+
 }

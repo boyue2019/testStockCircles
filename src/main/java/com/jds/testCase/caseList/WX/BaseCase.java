@@ -54,7 +54,7 @@ public class BaseCase {
                        String manufacturer, String model, String version){
         try {
             System.out.println("返回首页.");
-            PageAction.goBack();
+            PageAction.goBackHome();
         }catch (Exception e){
             System.out.println("重新启动小程序.");
         }

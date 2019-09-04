@@ -83,7 +83,7 @@ public class PageAction {
     }
 
     /**
-     * 判断元素是否存在
+     * 判断元素是否成功加载
      * @param element
      * @return
      */
@@ -240,7 +240,7 @@ public class PageAction {
     /**
      * 返回首页
      */
-    public static void goBack(){
-        BasePage.goBack();
+    public static void goBackHome(){
+        BasePage.goBackHome();
     }
 }
