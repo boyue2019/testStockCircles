@@ -30,14 +30,11 @@
         <classes>
             <class name="com.jds.testCase.caseList.WX.CHomePage">
                 <methods>
-                    <include name="Case010"></include>
-                    <include name="Case011"></include>
-                    <include name="Case012"></include>
-                    <include name="Case013"></include>
-                    <include name="Case014"></include>
-                    <include name="Case015"></include>
-                    <include name="Case016"></include>
-                    <include name="Case017"></include>
+                    <include name="Case018"></include>
+                    <include name="Case019"></include>
+                    <include name="Case020"></include>
+                    <include name="Case021"></include>
+                    <include name="Case022"></include>
                 </methods>
             </class>
         </classes>

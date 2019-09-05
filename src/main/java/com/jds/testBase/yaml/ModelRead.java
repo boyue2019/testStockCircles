@@ -53,11 +53,4 @@ public class ModelRead {
         }
         return devicelist;
     }
-
-    public static void main(String[] args){
-        ModelRead read = new ModelRead();
-        System.out.println(read.DevicesDetails().get(0).get("model"));
-        System.out.println(read.DevicesDetails().get(1).get("model"));
-
-    }
 }

@@ -1,6 +1,5 @@
 package com.jds.testCase.caseList.WX;
 
-import com.jds.testBase.util.PageAction;
 import io.qameta.allure.Story;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
@@ -107,16 +106,46 @@ public class CHomePage extends BaseCase {
         Assert.assertTrue(jmHomePage.isTrueHomeVideoTzTitle());
     }
 
-    @Story("【用例016】检查投资学院查看全部入口是否成功加载")
+    @Story("【用例016】检查'投资学院'查看全部入口是否成功加载")
     @Test
     public void Case016() {
         Assert.assertTrue(jmHomePage.isHaveHomeVideoTzCheckall());
     }
 
-    @Story("【用例017】检查投资学院任意随机视频标题是否正确展示")
+    @Story("【用例017】检查'投资学院'任意随机视频标题是否正确展示")
     @Test
     public void Case017() {
         Assert.assertTrue(jmHomePage.isTrueHomeVideoTzVtitle());
+    }
+
+    @Story("【用例018】检查'策略直播'title正确展示")
+    @Test
+    public void Case018() {
+        Assert.assertTrue(jmHomePage.isTrueHomeTacticsLiveTitle());
+    }
+
+    @Story("【用例019】检查'策略直播'查看全部入口是否成功加载")
+    @Test
+    public void Case019() {
+        Assert.assertTrue(jmHomePage.isHaveHomeTacticsLiveCheckall());
+    }
+
+    @Story("【用例020】检查'策略直播'入口是否成功加载")
+    @Test
+    public void Case020() {
+        Assert.assertTrue(jmHomePage.isHaveHomeTacticsLiveEnter());
+    }
+
+    @Story("【用例021】检查'策略直播'栏目名称是否正确展示")
+    @Test
+    public void Case021() {
+        Assert.assertTrue(jmHomePage.isTrueHomeTacticsLiveItemname());
+    }
+
+    @Story("【用例022】检查'策略直播'观看人数正确展示")
+    @Test
+    public void Case022() {
+        Assert.assertTrue(jmHomePage.isTrueHomeTacticsLivePerson());
     }
 
 }

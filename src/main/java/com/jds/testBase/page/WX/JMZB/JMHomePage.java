@@ -147,6 +147,31 @@ public class JMHomePage extends BasePage implements IJMBottomNavigation{
     @CacheLookup
     private WebElement home_video_tz_vtitle2;
 
+    //策略直播title
+    @FindBy(id = "home_tacticslive_title")
+    @CacheLookup
+    private WebElement home_tacticslive_title;
+
+    //策略直播查看全部
+    @FindBy(id = "home_tacticslive_checkall")
+    @CacheLookup
+    private WebElement home_tacticslive_checkall;
+
+    //策略直播入口
+    @FindBy(id = "home_tacticslive_enter")
+    @CacheLookup
+    private WebElement home_tacticslive_enter;
+
+    //策略直播栏目名称
+    @FindBy(xpath = "//wx-view[@id='home_tacticslive_itemname']/wx-view[1]")
+    @CacheLookup
+    private WebElement home_tacticslive_itemname;
+
+    //策略直播观看人数
+    @FindBy(xpath = "//wx-view[@id='home_tacticslive_itemname']/wx-view[2]")
+    @CacheLookup
+    private WebElement home_tacticslive_person;
+
     /**
      * 【事件】切换至包含当前页面元素WindowHandel
      */
@@ -435,6 +460,7 @@ public class JMHomePage extends BasePage implements IJMBottomNavigation{
 
     /**
      * 【测试点】检查投资学院任意随机视频标题是否正确展示
+     * @return
      */
     public Boolean isTrueHomeVideoTzVtitle(){
         try {
@@ -464,8 +490,89 @@ public class JMHomePage extends BasePage implements IJMBottomNavigation{
         }
     }
 
-    public static void main(String[] args){
-        Random random = new Random();
-        System.out.println(random.nextInt(2));
+    /**
+     * 【测试点】检查策略直播title正确展示
+     * @return
+     */
+    public Boolean isTrueHomeTacticsLiveTitle(){
+        try{
+            String title = home_tacticslive_title.getText();
+            if (title.equals("策略直播")){
+                return true;
+            }else {
+                return false;
+            }
+        }catch (NoSuchElementException e){
+            System.out.println("【异常】找不到元素:home_tacticslive_title");
+            return false;
+        }
+    }
+
+    /**
+     * 【测试点】检查策略直播查看全部入口是否成功加载
+     * @return
+     */
+    public Boolean isHaveHomeTacticsLiveCheckall(){
+        try{
+            return home_tacticslive_checkall.isDisplayed();
+        }catch (NoSuchElementException e){
+            System.out.println("【异常】找不到元素:home_video_tz_checkall");
+            return false;
+        }
+    }
+
+    /**
+     * 【测试点】检查策略直播入口是否成功加载
+     * @return
+     */
+    public Boolean isHaveHomeTacticsLiveEnter(){
+        try{
+            return home_tacticslive_enter.isDisplayed();
+        }catch (NoSuchElementException e){
+            System.out.println("【异常】找不到元素:home_tacticslive_enter");
+            return false;
+        }
+    }
+
+    /**
+     * 【测试点】检查策略直播栏目名称是否正确展示
+     * @return
+     */
+    public Boolean isTrueHomeTacticsLiveItemname(){
+        String title = home_tacticslive_itemname.getText();
+        try{
+            if (title.length() > 0 && !title.equals("null")){
+                System.out.println("策略直播栏目名称:" + title);
+                return true;
+            }else {
+                return false;
+            }
+        }catch (NoSuchElementException e){
+            System.out.println("【异常】找不到元素:home_tacticslive_itemname");
+            return false;
+        }
+    }
+
+    /**
+     * 【测试点】检查策略直播观看人数正确展示
+     * @return
+     */
+    public Boolean isTrueHomeTacticsLivePerson(){
+        String person = home_tacticslive_person.getText();
+        try{
+            String count = "";
+            for (String s:person.split("次播放")){
+                count+=s;
+            }
+            if (Integer.parseInt(count) > 0 || Integer.parseInt(count)==0){
+                System.out.println("策略直播观看人数:" + Integer.parseInt(count));
+                return true;
+            }else {
+                return false;
+            }
+        }catch (NoSuchElementException e){
+            System.out.println("【异常】找不到元素:home_tacticslive_person");
+            return false;
+        }
     }
 }
