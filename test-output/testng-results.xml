@@ -2,72 +2,72 @@
 <testng-results skipped="0" failed="0" ignored="6" total="38" passed="32">
   <reporter-output>
   </reporter-output>
-  <suite name="解码直播小程序自动化" duration-ms="135488" started-at="2019-09-07T07:40:05Z" finished-at="2019-09-07T07:42:20Z">
+  <suite name="解码直播小程序自动化" duration-ms="176445" started-at="2019-09-07T15:55:20Z" finished-at="2019-09-07T15:58:17Z">
     <groups>
     </groups>
-    <test name="移动设备:MI 9" duration-ms="135488" started-at="2019-09-07T07:40:05Z" finished-at="2019-09-07T07:42:20Z">
+    <test name="移动设备:MI 9" duration-ms="176445" started-at="2019-09-07T15:55:20Z" finished-at="2019-09-07T15:58:17Z">
       <class name="com.jds.testCase.caseList.WX.CWeiKePage">
-        <test-method status="PASS" signature="pageEntry()[pri:0, instance:com.jds.testCase.caseList.WX.CWeiKePage@694abbdc]" name="pageEntry" is-config="true" duration-ms="22229" started-at="2019-09-07T07:41:31Z" finished-at="2019-09-07T07:41:53Z">
+        <test-method status="PASS" signature="pageEntry()[pri:0, instance:com.jds.testCase.caseList.WX.CWeiKePage@694abbdc]" name="pageEntry" is-config="true" duration-ms="21804" started-at="2019-09-07T15:57:16Z" finished-at="2019-09-07T15:57:38Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- pageEntry -->
-        <test-method status="PASS" signature="WeiKePage_Case_001()[pri:0, instance:com.jds.testCase.caseList.WX.CWeiKePage@694abbdc]" name="WeiKePage_Case_001" duration-ms="216" started-at="2019-09-07T07:41:53Z" finished-at="2019-09-07T07:41:53Z">
+        <test-method status="PASS" signature="WeiKePage_Case_001()[pri:0, instance:com.jds.testCase.caseList.WX.CWeiKePage@694abbdc]" name="WeiKePage_Case_001" duration-ms="251" started-at="2019-09-07T15:57:38Z" finished-at="2019-09-07T15:57:38Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- WeiKePage_Case_001 -->
-        <test-method status="PASS" signature="WeiKePage_Case_002()[pri:0, instance:com.jds.testCase.caseList.WX.CWeiKePage@694abbdc]" name="WeiKePage_Case_002" duration-ms="67" started-at="2019-09-07T07:41:53Z" finished-at="2019-09-07T07:41:54Z">
+        <test-method status="PASS" signature="WeiKePage_Case_002()[pri:0, instance:com.jds.testCase.caseList.WX.CWeiKePage@694abbdc]" name="WeiKePage_Case_002" duration-ms="115" started-at="2019-09-07T15:57:38Z" finished-at="2019-09-07T15:57:38Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- WeiKePage_Case_002 -->
-        <test-method status="PASS" signature="WeiKePage_Case_003()[pri:0, instance:com.jds.testCase.caseList.WX.CWeiKePage@694abbdc]" name="WeiKePage_Case_003" duration-ms="2207" started-at="2019-09-07T07:41:54Z" finished-at="2019-09-07T07:41:56Z">
+        <test-method status="PASS" signature="WeiKePage_Case_003()[pri:0, instance:com.jds.testCase.caseList.WX.CWeiKePage@694abbdc]" name="WeiKePage_Case_003" duration-ms="2273" started-at="2019-09-07T15:57:38Z" finished-at="2019-09-07T15:57:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- WeiKePage_Case_003 -->
-        <test-method status="PASS" signature="WeiKePage_Case_004()[pri:0, instance:com.jds.testCase.caseList.WX.CWeiKePage@694abbdc]" name="WeiKePage_Case_004" duration-ms="78" started-at="2019-09-07T07:41:56Z" finished-at="2019-09-07T07:41:56Z">
+        <test-method status="PASS" signature="WeiKePage_Case_004()[pri:0, instance:com.jds.testCase.caseList.WX.CWeiKePage@694abbdc]" name="WeiKePage_Case_004" duration-ms="89" started-at="2019-09-07T15:57:41Z" finished-at="2019-09-07T15:57:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- WeiKePage_Case_004 -->
-        <test-method status="PASS" signature="goHome()[pri:0, instance:com.jds.testCase.caseList.WX.CWeiKePage@694abbdc]" name="goHome" is-config="true" duration-ms="23908" started-at="2019-09-07T07:41:56Z" finished-at="2019-09-07T07:42:20Z">
+        <test-method status="PASS" signature="goHome()[pri:0, instance:com.jds.testCase.caseList.WX.CWeiKePage@694abbdc]" name="goHome" is-config="true" duration-ms="35543" started-at="2019-09-07T15:57:41Z" finished-at="2019-09-07T15:58:16Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- goHome -->
       </class> <!-- com.jds.testCase.caseList.WX.CWeiKePage -->
       <class name="com.jds.testCase.caseList.WX.CDrycargoPage">
-        <test-method status="PASS" signature="pageEntry()[pri:0, instance:com.jds.testCase.caseList.WX.CDrycargoPage@44ebcd03]" name="pageEntry" is-config="true" duration-ms="15248" started-at="2019-09-07T07:40:28Z" finished-at="2019-09-07T07:40:43Z">
+        <test-method status="PASS" signature="pageEntry()[pri:0, instance:com.jds.testCase.caseList.WX.CDrycargoPage@44ebcd03]" name="pageEntry" is-config="true" duration-ms="15298" started-at="2019-09-07T15:55:43Z" finished-at="2019-09-07T15:55:59Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- pageEntry -->
-        <test-method status="PASS" signature="DrycargoPage_Case_001()[pri:0, instance:com.jds.testCase.caseList.WX.CDrycargoPage@44ebcd03]" name="DrycargoPage_Case_001" duration-ms="79" started-at="2019-09-07T07:40:43Z" finished-at="2019-09-07T07:40:43Z">
+        <test-method status="PASS" signature="DrycargoPage_Case_001()[pri:0, instance:com.jds.testCase.caseList.WX.CDrycargoPage@44ebcd03]" name="DrycargoPage_Case_001" duration-ms="74" started-at="2019-09-07T15:55:59Z" finished-at="2019-09-07T15:55:59Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- DrycargoPage_Case_001 -->
-        <test-method status="PASS" signature="DrycargoPage_Case_002()[pri:0, instance:com.jds.testCase.caseList.WX.CDrycargoPage@44ebcd03]" name="DrycargoPage_Case_002" duration-ms="73" started-at="2019-09-07T07:40:43Z" finished-at="2019-09-07T07:40:43Z">
+        <test-method status="PASS" signature="DrycargoPage_Case_002()[pri:0, instance:com.jds.testCase.caseList.WX.CDrycargoPage@44ebcd03]" name="DrycargoPage_Case_002" duration-ms="60" started-at="2019-09-07T15:55:59Z" finished-at="2019-09-07T15:55:59Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- DrycargoPage_Case_002 -->
-        <test-method status="PASS" signature="DrycargoPage_Case_003()[pri:0, instance:com.jds.testCase.caseList.WX.CDrycargoPage@44ebcd03]" name="DrycargoPage_Case_003" duration-ms="62" started-at="2019-09-07T07:40:43Z" finished-at="2019-09-07T07:40:43Z">
+        <test-method status="PASS" signature="DrycargoPage_Case_003()[pri:0, instance:com.jds.testCase.caseList.WX.CDrycargoPage@44ebcd03]" name="DrycargoPage_Case_003" duration-ms="63" started-at="2019-09-07T15:55:59Z" finished-at="2019-09-07T15:55:59Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- DrycargoPage_Case_003 -->
-        <test-method status="PASS" signature="DrycargoPage_Case_004()[pri:0, instance:com.jds.testCase.caseList.WX.CDrycargoPage@44ebcd03]" name="DrycargoPage_Case_004" duration-ms="1294" started-at="2019-09-07T07:40:43Z" finished-at="2019-09-07T07:40:44Z">
+        <test-method status="PASS" signature="DrycargoPage_Case_004()[pri:0, instance:com.jds.testCase.caseList.WX.CDrycargoPage@44ebcd03]" name="DrycargoPage_Case_004" duration-ms="1226" started-at="2019-09-07T15:55:59Z" finished-at="2019-09-07T15:56:00Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- DrycargoPage_Case_004 -->
-        <test-method status="PASS" signature="DrycargoPage_Case_005()[pri:0, instance:com.jds.testCase.caseList.WX.CDrycargoPage@44ebcd03]" name="DrycargoPage_Case_005" duration-ms="3591" started-at="2019-09-07T07:40:44Z" finished-at="2019-09-07T07:40:48Z">
+        <test-method status="PASS" signature="DrycargoPage_Case_005()[pri:0, instance:com.jds.testCase.caseList.WX.CDrycargoPage@44ebcd03]" name="DrycargoPage_Case_005" duration-ms="3488" started-at="2019-09-07T15:56:00Z" finished-at="2019-09-07T15:56:04Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- DrycargoPage_Case_005 -->
-        <test-method status="PASS" signature="DrycargoPage_Case_006()[pri:0, instance:com.jds.testCase.caseList.WX.CDrycargoPage@44ebcd03]" name="DrycargoPage_Case_006" duration-ms="3522" started-at="2019-09-07T07:40:48Z" finished-at="2019-09-07T07:40:52Z">
+        <test-method status="PASS" signature="DrycargoPage_Case_006()[pri:0, instance:com.jds.testCase.caseList.WX.CDrycargoPage@44ebcd03]" name="DrycargoPage_Case_006" duration-ms="3454" started-at="2019-09-07T15:56:04Z" finished-at="2019-09-07T15:56:07Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- DrycargoPage_Case_006 -->
-        <test-method status="PASS" signature="goHome()[pri:0, instance:com.jds.testCase.caseList.WX.CDrycargoPage@44ebcd03]" name="goHome" is-config="true" duration-ms="21048" started-at="2019-09-07T07:40:52Z" finished-at="2019-09-07T07:41:13Z">
+        <test-method status="PASS" signature="goHome()[pri:0, instance:com.jds.testCase.caseList.WX.CDrycargoPage@44ebcd03]" name="goHome" is-config="true" duration-ms="32744" started-at="2019-09-07T15:56:07Z" finished-at="2019-09-07T15:56:40Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- goHome -->
       </class> <!-- com.jds.testCase.caseList.WX.CDrycargoPage -->
       <class name="com.jds.testCase.caseList.WX.CHomePage">
-        <test-method status="PASS" signature="openWxMini(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.jds.testCase.caseList.WX.CHomePage@323b36e0]" name="openWxMini" is-config="true" duration-ms="22823" started-at="2019-09-07T07:40:05Z" finished-at="2019-09-07T07:40:28Z">
+        <test-method status="PASS" signature="openWxMini(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.jds.testCase.caseList.WX.CHomePage@323b36e0]" name="openWxMini" is-config="true" duration-ms="22995" started-at="2019-09-07T15:55:20Z" finished-at="2019-09-07T15:55:43Z">
           <params>
             <param index="0">
               <value>
@@ -118,107 +118,107 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openWxMini -->
-        <test-method status="PASS" signature="pageEntry()[pri:0, instance:com.jds.testCase.caseList.WX.CHomePage@323b36e0]" name="pageEntry" is-config="true" duration-ms="586" started-at="2019-09-07T07:41:13Z" finished-at="2019-09-07T07:41:13Z">
+        <test-method status="PASS" signature="pageEntry()[pri:0, instance:com.jds.testCase.caseList.WX.CHomePage@323b36e0]" name="pageEntry" is-config="true" duration-ms="782" started-at="2019-09-07T15:56:40Z" finished-at="2019-09-07T15:56:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- pageEntry -->
-        <test-method status="PASS" signature="HomePage_Case_001()[pri:0, instance:com.jds.testCase.caseList.WX.CHomePage@323b36e0]" name="HomePage_Case_001" duration-ms="25" started-at="2019-09-07T07:41:13Z" finished-at="2019-09-07T07:41:13Z">
+        <test-method status="PASS" signature="HomePage_Case_001()[pri:0, instance:com.jds.testCase.caseList.WX.CHomePage@323b36e0]" name="HomePage_Case_001" duration-ms="40" started-at="2019-09-07T15:56:41Z" finished-at="2019-09-07T15:56:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- HomePage_Case_001 -->
-        <test-method status="PASS" signature="HomePage_Case_002()[pri:0, instance:com.jds.testCase.caseList.WX.CHomePage@323b36e0]" name="HomePage_Case_002" duration-ms="61" started-at="2019-09-07T07:41:13Z" finished-at="2019-09-07T07:41:13Z">
+        <test-method status="PASS" signature="HomePage_Case_002()[pri:0, instance:com.jds.testCase.caseList.WX.CHomePage@323b36e0]" name="HomePage_Case_002" duration-ms="58" started-at="2019-09-07T15:56:41Z" finished-at="2019-09-07T15:56:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- HomePage_Case_002 -->
-        <test-method status="PASS" signature="HomePage_Case_003()[pri:0, instance:com.jds.testCase.caseList.WX.CHomePage@323b36e0]" name="HomePage_Case_003" duration-ms="62" started-at="2019-09-07T07:41:13Z" finished-at="2019-09-07T07:41:13Z">
+        <test-method status="PASS" signature="HomePage_Case_003()[pri:0, instance:com.jds.testCase.caseList.WX.CHomePage@323b36e0]" name="HomePage_Case_003" duration-ms="56" started-at="2019-09-07T15:56:41Z" finished-at="2019-09-07T15:56:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- HomePage_Case_003 -->
-        <test-method status="PASS" signature="HomePage_Case_004()[pri:0, instance:com.jds.testCase.caseList.WX.CHomePage@323b36e0]" name="HomePage_Case_004" duration-ms="65" started-at="2019-09-07T07:41:13Z" finished-at="2019-09-07T07:41:13Z">
+        <test-method status="PASS" signature="HomePage_Case_004()[pri:0, instance:com.jds.testCase.caseList.WX.CHomePage@323b36e0]" name="HomePage_Case_004" duration-ms="65" started-at="2019-09-07T15:56:41Z" finished-at="2019-09-07T15:56:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- HomePage_Case_004 -->
-        <test-method status="PASS" signature="HomePage_Case_005()[pri:0, instance:com.jds.testCase.caseList.WX.CHomePage@323b36e0]" name="HomePage_Case_005" duration-ms="67" started-at="2019-09-07T07:41:13Z" finished-at="2019-09-07T07:41:13Z">
+        <test-method status="PASS" signature="HomePage_Case_005()[pri:0, instance:com.jds.testCase.caseList.WX.CHomePage@323b36e0]" name="HomePage_Case_005" duration-ms="59" started-at="2019-09-07T15:56:41Z" finished-at="2019-09-07T15:56:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- HomePage_Case_005 -->
-        <test-method status="PASS" signature="HomePage_Case_006()[pri:0, instance:com.jds.testCase.caseList.WX.CHomePage@323b36e0]" name="HomePage_Case_006" duration-ms="66" started-at="2019-09-07T07:41:13Z" finished-at="2019-09-07T07:41:14Z">
+        <test-method status="PASS" signature="HomePage_Case_006()[pri:0, instance:com.jds.testCase.caseList.WX.CHomePage@323b36e0]" name="HomePage_Case_006" duration-ms="48" started-at="2019-09-07T15:56:41Z" finished-at="2019-09-07T15:56:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- HomePage_Case_006 -->
-        <test-method status="PASS" signature="HomePage_Case_007()[pri:0, instance:com.jds.testCase.caseList.WX.CHomePage@323b36e0]" name="HomePage_Case_007" duration-ms="62" started-at="2019-09-07T07:41:14Z" finished-at="2019-09-07T07:41:14Z">
+        <test-method status="PASS" signature="HomePage_Case_007()[pri:0, instance:com.jds.testCase.caseList.WX.CHomePage@323b36e0]" name="HomePage_Case_007" duration-ms="53" started-at="2019-09-07T15:56:41Z" finished-at="2019-09-07T15:56:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- HomePage_Case_007 -->
-        <test-method status="PASS" signature="HomePage_Case_008()[pri:0, instance:com.jds.testCase.caseList.WX.CHomePage@323b36e0]" name="HomePage_Case_008" duration-ms="70" started-at="2019-09-07T07:41:14Z" finished-at="2019-09-07T07:41:14Z">
+        <test-method status="PASS" signature="HomePage_Case_008()[pri:0, instance:com.jds.testCase.caseList.WX.CHomePage@323b36e0]" name="HomePage_Case_008" duration-ms="68" started-at="2019-09-07T15:56:41Z" finished-at="2019-09-07T15:56:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- HomePage_Case_008 -->
-        <test-method status="PASS" signature="HomePage_Case_009()[pri:0, instance:com.jds.testCase.caseList.WX.CHomePage@323b36e0]" name="HomePage_Case_009" duration-ms="2430" started-at="2019-09-07T07:41:14Z" finished-at="2019-09-07T07:41:16Z">
+        <test-method status="PASS" signature="HomePage_Case_009()[pri:0, instance:com.jds.testCase.caseList.WX.CHomePage@323b36e0]" name="HomePage_Case_009" duration-ms="2725" started-at="2019-09-07T15:56:41Z" finished-at="2019-09-07T15:56:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- HomePage_Case_009 -->
-        <test-method status="PASS" signature="HomePage_Case_010()[pri:0, instance:com.jds.testCase.caseList.WX.CHomePage@323b36e0]" name="HomePage_Case_010" duration-ms="102" started-at="2019-09-07T07:41:16Z" finished-at="2019-09-07T07:41:16Z">
+        <test-method status="PASS" signature="HomePage_Case_010()[pri:0, instance:com.jds.testCase.caseList.WX.CHomePage@323b36e0]" name="HomePage_Case_010" duration-ms="84" started-at="2019-09-07T15:56:44Z" finished-at="2019-09-07T15:56:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- HomePage_Case_010 -->
-        <test-method status="PASS" signature="HomePage_Case_011()[pri:0, instance:com.jds.testCase.caseList.WX.CHomePage@323b36e0]" name="HomePage_Case_011" duration-ms="73" started-at="2019-09-07T07:41:16Z" finished-at="2019-09-07T07:41:16Z">
+        <test-method status="PASS" signature="HomePage_Case_011()[pri:0, instance:com.jds.testCase.caseList.WX.CHomePage@323b36e0]" name="HomePage_Case_011" duration-ms="87" started-at="2019-09-07T15:56:44Z" finished-at="2019-09-07T15:56:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- HomePage_Case_011 -->
-        <test-method status="PASS" signature="HomePage_Case_012()[pri:0, instance:com.jds.testCase.caseList.WX.CHomePage@323b36e0]" name="HomePage_Case_012" duration-ms="128" started-at="2019-09-07T07:41:16Z" finished-at="2019-09-07T07:41:16Z">
+        <test-method status="PASS" signature="HomePage_Case_012()[pri:0, instance:com.jds.testCase.caseList.WX.CHomePage@323b36e0]" name="HomePage_Case_012" duration-ms="72" started-at="2019-09-07T15:56:44Z" finished-at="2019-09-07T15:56:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- HomePage_Case_012 -->
-        <test-method status="PASS" signature="HomePage_Case_013()[pri:0, instance:com.jds.testCase.caseList.WX.CHomePage@323b36e0]" name="HomePage_Case_013" duration-ms="94" started-at="2019-09-07T07:41:16Z" finished-at="2019-09-07T07:41:17Z">
+        <test-method status="PASS" signature="HomePage_Case_013()[pri:0, instance:com.jds.testCase.caseList.WX.CHomePage@323b36e0]" name="HomePage_Case_013" duration-ms="69" started-at="2019-09-07T15:56:44Z" finished-at="2019-09-07T15:56:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- HomePage_Case_013 -->
-        <test-method status="PASS" signature="HomePage_Case_014()[pri:0, instance:com.jds.testCase.caseList.WX.CHomePage@323b36e0]" name="HomePage_Case_014" duration-ms="75" started-at="2019-09-07T07:41:17Z" finished-at="2019-09-07T07:41:17Z">
+        <test-method status="PASS" signature="HomePage_Case_014()[pri:0, instance:com.jds.testCase.caseList.WX.CHomePage@323b36e0]" name="HomePage_Case_014" duration-ms="68" started-at="2019-09-07T15:56:44Z" finished-at="2019-09-07T15:56:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- HomePage_Case_014 -->
-        <test-method status="PASS" signature="HomePage_Case_015()[pri:0, instance:com.jds.testCase.caseList.WX.CHomePage@323b36e0]" name="HomePage_Case_015" duration-ms="82" started-at="2019-09-07T07:41:17Z" finished-at="2019-09-07T07:41:17Z">
+        <test-method status="PASS" signature="HomePage_Case_015()[pri:0, instance:com.jds.testCase.caseList.WX.CHomePage@323b36e0]" name="HomePage_Case_015" duration-ms="71" started-at="2019-09-07T15:56:44Z" finished-at="2019-09-07T15:56:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- HomePage_Case_015 -->
-        <test-method status="PASS" signature="HomePage_Case_016()[pri:0, instance:com.jds.testCase.caseList.WX.CHomePage@323b36e0]" name="HomePage_Case_016" duration-ms="82" started-at="2019-09-07T07:41:17Z" finished-at="2019-09-07T07:41:17Z">
+        <test-method status="PASS" signature="HomePage_Case_016()[pri:0, instance:com.jds.testCase.caseList.WX.CHomePage@323b36e0]" name="HomePage_Case_016" duration-ms="75" started-at="2019-09-07T15:56:44Z" finished-at="2019-09-07T15:56:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- HomePage_Case_016 -->
-        <test-method status="PASS" signature="HomePage_Case_017()[pri:0, instance:com.jds.testCase.caseList.WX.CHomePage@323b36e0]" name="HomePage_Case_017" duration-ms="80" started-at="2019-09-07T07:41:17Z" finished-at="2019-09-07T07:41:17Z">
+        <test-method status="PASS" signature="HomePage_Case_017()[pri:0, instance:com.jds.testCase.caseList.WX.CHomePage@323b36e0]" name="HomePage_Case_017" duration-ms="75" started-at="2019-09-07T15:56:44Z" finished-at="2019-09-07T15:56:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- HomePage_Case_017 -->
-        <test-method status="PASS" signature="HomePage_Case_018()[pri:0, instance:com.jds.testCase.caseList.WX.CHomePage@323b36e0]" name="HomePage_Case_018" duration-ms="90" started-at="2019-09-07T07:41:17Z" finished-at="2019-09-07T07:41:17Z">
+        <test-method status="PASS" signature="HomePage_Case_018()[pri:0, instance:com.jds.testCase.caseList.WX.CHomePage@323b36e0]" name="HomePage_Case_018" duration-ms="70" started-at="2019-09-07T15:56:44Z" finished-at="2019-09-07T15:56:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- HomePage_Case_018 -->
-        <test-method status="PASS" signature="HomePage_Case_019()[pri:0, instance:com.jds.testCase.caseList.WX.CHomePage@323b36e0]" name="HomePage_Case_019" duration-ms="76" started-at="2019-09-07T07:41:17Z" finished-at="2019-09-07T07:41:17Z">
+        <test-method status="PASS" signature="HomePage_Case_019()[pri:0, instance:com.jds.testCase.caseList.WX.CHomePage@323b36e0]" name="HomePage_Case_019" duration-ms="71" started-at="2019-09-07T15:56:44Z" finished-at="2019-09-07T15:56:45Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- HomePage_Case_019 -->
-        <test-method status="PASS" signature="HomePage_Case_020()[pri:0, instance:com.jds.testCase.caseList.WX.CHomePage@323b36e0]" name="HomePage_Case_020" duration-ms="64" started-at="2019-09-07T07:41:17Z" finished-at="2019-09-07T07:41:17Z">
+        <test-method status="PASS" signature="HomePage_Case_020()[pri:0, instance:com.jds.testCase.caseList.WX.CHomePage@323b36e0]" name="HomePage_Case_020" duration-ms="75" started-at="2019-09-07T15:56:45Z" finished-at="2019-09-07T15:56:45Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- HomePage_Case_020 -->
-        <test-method status="PASS" signature="HomePage_Case_021()[pri:0, instance:com.jds.testCase.caseList.WX.CHomePage@323b36e0]" name="HomePage_Case_021" duration-ms="81" started-at="2019-09-07T07:41:17Z" finished-at="2019-09-07T07:41:17Z">
+        <test-method status="PASS" signature="HomePage_Case_021()[pri:0, instance:com.jds.testCase.caseList.WX.CHomePage@323b36e0]" name="HomePage_Case_021" duration-ms="85" started-at="2019-09-07T15:56:45Z" finished-at="2019-09-07T15:56:45Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- HomePage_Case_021 -->
-        <test-method status="PASS" signature="HomePage_Case_022()[pri:0, instance:com.jds.testCase.caseList.WX.CHomePage@323b36e0]" name="HomePage_Case_022" duration-ms="78" started-at="2019-09-07T07:41:17Z" finished-at="2019-09-07T07:41:17Z">
+        <test-method status="PASS" signature="HomePage_Case_022()[pri:0, instance:com.jds.testCase.caseList.WX.CHomePage@323b36e0]" name="HomePage_Case_022" duration-ms="143" started-at="2019-09-07T15:56:45Z" finished-at="2019-09-07T15:56:45Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- HomePage_Case_022 -->
-        <test-method status="PASS" signature="goHome()[pri:0, instance:com.jds.testCase.caseList.WX.CHomePage@323b36e0]" name="goHome" is-config="true" duration-ms="13795" started-at="2019-09-07T07:41:17Z" finished-at="2019-09-07T07:41:31Z">
+        <test-method status="PASS" signature="goHome()[pri:0, instance:com.jds.testCase.caseList.WX.CHomePage@323b36e0]" name="goHome" is-config="true" duration-ms="31255" started-at="2019-09-07T15:56:45Z" finished-at="2019-09-07T15:57:16Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- goHome -->
-        <test-method status="PASS" signature="closeWxMini()[pri:0, instance:com.jds.testCase.caseList.WX.CHomePage@323b36e0]" name="closeWxMini" is-config="true" duration-ms="495" started-at="2019-09-07T07:42:20Z" finished-at="2019-09-07T07:42:20Z">
+        <test-method status="PASS" signature="closeWxMini()[pri:0, instance:com.jds.testCase.caseList.WX.CHomePage@323b36e0]" name="closeWxMini" is-config="true" duration-ms="530" started-at="2019-09-07T15:58:16Z" finished-at="2019-09-07T15:58:17Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeWxMini -->
-        <test-method status="PASS" signature="stopAppium()[pri:0, instance:com.jds.testCase.caseList.WX.CHomePage@323b36e0]" name="stopAppium" is-config="true" duration-ms="3" started-at="2019-09-07T07:42:20Z" finished-at="2019-09-07T07:42:20Z">
+        <test-method status="PASS" signature="stopAppium()[pri:0, instance:com.jds.testCase.caseList.WX.CHomePage@323b36e0]" name="stopAppium" is-config="true" duration-ms="3" started-at="2019-09-07T15:58:17Z" finished-at="2019-09-07T15:58:17Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- stopAppium -->

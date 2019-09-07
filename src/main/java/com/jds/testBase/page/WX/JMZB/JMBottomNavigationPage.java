@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 /**
  * 底导元素
  */
-public class JMBottomNavigationPage extends BasePage{
+public class JMBottomNavigationPage{
     //底部导航栏:首页 【NATIVE_APP】
     @FindBy(xpath = "//android.widget.LinearLayout/android.widget.RelativeLayout[1]")
     @CacheLookup

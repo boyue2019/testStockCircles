@@ -17,28 +17,27 @@ public class BasePage{
     //暂停专用
     @FindBy(xpath = "//*[@text='找到算我输']")
     @CacheLookup
-    static WebElement stop2;
+    private static WebElement stop2;
 
     //返回上一级 【NATIVE_APP】
-    //备注:非一级页面返回按钮都相同
     @FindBy(id = "com.tencent.mm:id/p7")
     @CacheLookup
-    static WebElement back;  //返回上一级
+    private static WebElement back;  //返回上一级
 
     //底部导航栏:首页 【NATIVE_APP】
     @FindBy(xpath = "//android.widget.LinearLayout/android.widget.RelativeLayout[1]")
     @CacheLookup
-    static WebElement home;  //底导"首页"
+    private static WebElement home;  //底导"首页"
 
     //底部导航栏:首页 【NATIVE_APP】
     @FindBy(xpath = "//android.widget.LinearLayout/android.widget.RelativeLayout[2]")
     @CacheLookup
-    static WebElement WeiKe;  //底导"首页"
+    private static WebElement WeiKe;  //底导"首页"
 
     //底部导航栏:首页 【NATIVE_APP】
     @FindBy(xpath = "//android.widget.LinearLayout/android.widget.RelativeLayout[3]")
     @CacheLookup
-    static WebElement mine;  //底导"首页"
+    private static WebElement mine;  //底导"首页"
 
     /**
      * 初始化页面元素
@@ -86,8 +85,7 @@ public class BasePage{
     @Step("【底部导航】点击进入'首页'")
     public static JMHomePage goToHomePage(){
         PageAction.switchToNative();
-        JMBottomNavigationPage bottomNavigationPage = new JMBottomNavigationPage();
-        PageAction.click(15,JMBottomNavigationPage.home);
+        PageAction.click(15, home);
         return new JMHomePage();
     }
 
@@ -99,8 +97,7 @@ public class BasePage{
     @Step("【底部导航】点击进入'微课'")
     public static JMWeiKePage goToWeiKePage(){
         PageAction.switchToNative();
-        JMBottomNavigationPage bottomNavigationPage = new JMBottomNavigationPage();
-        PageAction.click(15,JMBottomNavigationPage.WeiKe);
+        PageAction.click(15,WeiKe);
         return new JMWeiKePage();
     }
 
@@ -112,8 +109,7 @@ public class BasePage{
     @Step("【底部导航】点击进入'我的'")
     public static JMMinePage goToMinePage(){
         PageAction.switchToNative();
-        JMBottomNavigationPage bottomNavigationPage = new JMBottomNavigationPage();
-        PageAction.click(15,JMBottomNavigationPage.mine);
+        PageAction.click(15,mine);
         return new JMMinePage();
     }
 

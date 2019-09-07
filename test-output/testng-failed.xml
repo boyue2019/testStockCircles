@@ -15,17 +15,34 @@
     <parameter name="height" value="2340"/>
     <parameter name="manufacturer" value="XIAOMI"/>
     <classes>
-      <class name="com.jds.testCase.caseList.WX.CHomePage">
+      <class name="com.jds.testCase.caseList.WX.CDrycargoPage">
         <methods>
           <include name="openWxMini"/>
+          <include name="DrycargoPage_Case_003"/>
+          <include name="stopAppium"/>
+          <include name="DrycargoPage_Case_001"/>
+          <include name="closeWxMini"/>
+          <include name="DrycargoPage_Case_002"/>
           <include name="pageEntry"/>
-          <include name="Case001"/>
-          <include name="Case002"/>
+          <include name="goHome"/>
+          <include name="DrycargoPage_Case_005"/>
+          <include name="DrycargoPage_Case_006"/>
+          <include name="DrycargoPage_Case_004"/>
+        </methods>
+      </class> <!-- com.jds.testCase.caseList.WX.CDrycargoPage -->
+      <class name="com.jds.testCase.caseList.WX.CWeiKePage">
+        <methods>
+          <include name="openWxMini"/>
+          <include name="WeiKePage_Case_002"/>
+          <include name="WeiKePage_Case_001"/>
           <include name="stopAppium"/>
           <include name="closeWxMini"/>
+          <include name="WeiKePage_Case_004"/>
           <include name="goHome"/>
+          <include name="WeiKePage_Case_003"/>
+          <include name="pageEntry"/>
         </methods>
-      </class> <!-- com.jds.testCase.caseList.WX.CHomePage -->
+      </class> <!-- com.jds.testCase.caseList.WX.CWeiKePage -->
     </classes>
   </test> <!-- 移动设备:MI 9(failed) -->
 </suite> <!-- Failed suite [解码直播小程序自动化] -->

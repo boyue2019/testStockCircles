@@ -12,7 +12,7 @@ public class AppiumDriver {
      * @param port
      * @param bp
      */
-    public static void startServer(String port,String bp){
+    public static void startAppiumServer(String port,String bp){
         CommandLine cmd = new CommandLine("/usr/local/bin/node");
         cmd.addArgument("/usr/local/bin/appium");
         cmd.addArgument("-a");
@@ -37,7 +37,7 @@ public class AppiumDriver {
     /**
      * 关闭Appium服务
      */
-    public static void stopServer() {
+    public static void stopAppiumServer() {
         Runtime runtime = Runtime.getRuntime();
         try {
             runtime.exec("killall node");

@@ -42,13 +42,4 @@ public interface IJMBottomNavigation {
         PageAction.click(15,JMBottomNavigationPage.mine);
         return new JMMinePage();
     }
-
-    /**
-     * 等待首页底导出现
-     */
-    default void waitBottomElement(){
-        JMBottomNavigationPage bottomNavigationPage = new JMBottomNavigationPage();
-        PageAction.waitElement(20,JMBottomNavigationPage.home);  //等待底部导航元素加载成功
-        bottomNavigationPage.waitLoading(5);  //继续等待5秒 - 页面渲染
-    }
 }

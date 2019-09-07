@@ -12,8 +12,6 @@ public class BaseCase {
     public static ThreadLocal<String> ThreadHeight = new ThreadLocal<>();
     public static ThreadLocal<String> ThreadWidth = new ThreadLocal<>();
 
-    String ExperimentalOption = CommonTools.getConfigData("ExperimentalOption");
-
     static WXHomePage wxHomePage;
     static JMHomePage jmHomePage;
     static JMWeiKePage jmWeiKePage;
@@ -22,23 +20,29 @@ public class BaseCase {
     static JMDrycargoPage jmDrycargoPage_cj;
     
     /**
-     * 1.启动Appium服务
-     * 2.打开微信小程序
+     * 启动Appium服务后打开小程序
      */
     @BeforeTest
     @Parameters({"port","bp","system","serial","height", "width", "manufacturer","model","version"})
-    public void openWxMini(String port, String bp, String system,
-                           String serial, String height, String width,
-                           String manufacturer, String model, String version){
+    public void openWxMini(String port,    //Appium端口
+                           String bp,      //Bootstrap端口
+                           String system,  //设备系统
+                           String serial,  //设备号
+                           String height,  //设备屏幕高度
+                           String width,   //设备屏幕宽度
+                           String manufacturer,   //厂商
+                           String model,          //机型
+                           String version){       //系统版本
         //启动Appium服务
-        AppiumDriver.startServer(port,bp);
+        AppiumDriver.startAppiumServer(port,bp);
         Driver driver = new Driver();
         ThreadDriver.set(driver);
         ThreadHeight.set(height);
         ThreadWidth.set(width);
 
         //启动微信
-        wxHomePage = PageAction.startWX(port, serial, system, version, ExperimentalOption);
+        wxHomePage = PageAction.startWX(port, serial,
+                system, version, CommonTools.getCommonTools().getConfigData("ExperimentalOption"));
         //打开解码直播小程序
         jmHomePage = wxHomePage.openJMZB();
     }
@@ -73,6 +77,6 @@ public class BaseCase {
      */
     @AfterSuite
     public void stopAppium(){
-        AppiumDriver.stopServer();
+        AppiumDriver.stopAppiumServer();
     }
 }

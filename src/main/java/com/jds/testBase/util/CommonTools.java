@@ -12,6 +12,30 @@ import java.util.Properties;
  * 公共工具类
  */
 public class CommonTools {
+    private static CommonTools commonTools;
+    private static Date date;
+    private static Properties properties;
+
+    public static CommonTools getCommonTools() {
+        return CommonTools.commonTools;
+    }
+
+    public static Date getDate() {
+        return CommonTools.date;
+    }
+
+    public static Properties getProperties() {
+        return CommonTools.properties;
+    }
+
+    static {
+        commonTools = new CommonTools();
+        date = new Date();
+        properties = new Properties();
+    }
+
+    private CommonTools(){};
+
     /**
      * 从config.properties配置文件获取key对应value
      * @param key
@@ -19,9 +43,8 @@ public class CommonTools {
      */
     public static String getConfigData(String key){
         try{
-            Properties pFile = new Properties();
-            pFile.load(new FileInputStream(System.getProperty("user.dir") + "/config/config.properties"));
-            String value =  pFile.getProperty(key);
+            CommonTools.properties.load(new FileInputStream(System.getProperty("user.dir") + "/config/config.properties"));
+            String value =  CommonTools.properties.getProperty(key);
             return value;
         }catch (FileNotFoundException f){
             System.out.println("找不到文件;【Method】getConfigData");
@@ -36,13 +59,12 @@ public class CommonTools {
      * 创建截图、日志目录
      */
     public static void createSavePath(){
-        Date date = new Date();
         SimpleDateFormat datePath = new SimpleDateFormat("yyyy-MM-dd");
-        String datePathName = datePath.format(date.getTime());       //获取日期
+        String datePathName = datePath.format(CommonTools.getDate().getTime());       //获取日期
         SimpleDateFormat timePath = new SimpleDateFormat("HH_mm_ss");
-        String timePathName = timePath.format(date.getTime());       //获取时间
+        String timePathName = timePath.format(CommonTools.getDate().getTime());       //获取时间
         SimpleDateFormat fileName = new SimpleDateFormat("yyyyMMdd_HHmmss");
-        String logName = fileName.format(date.getTime());            //获取精确时间
+        String logName = fileName.format(CommonTools.getDate().getTime());            //获取精确时间
 
         //创建截图目录：文件夹名称为当天日期
         File savePicPath = new File("/Users/boyue/工作/StockCircles/ScreenShot/" + datePathName + "/" + timePathName + "/");

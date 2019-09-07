@@ -17,7 +17,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
-import java.util.*;
 
 /**
  * Page事件类
@@ -126,9 +125,8 @@ public class PageAction {
      * @param element
      */
     public static void waitElementScreenshot(int TIMEOUT, WebElement element){
-        Date date = new Date();
         SimpleDateFormat screen_name = new SimpleDateFormat("yyyyMMdd_HHmmss");
-        String screenName = screen_name.format(date.getTime());   //获取精确时间
+        String screenName = screen_name.format(CommonTools.getDate().getTime());   //获取精确时间
 
         //从系统变量中获取截图路径
         File savePath = new File(System.getProperty("savePicPath"));
@@ -152,9 +150,8 @@ public class PageAction {
      * 截图(非等待)
      */
     public static byte[] screenshot(){
-        Date date = new Date();
         SimpleDateFormat screen_name = new SimpleDateFormat("yyyyMMdd_HHmmss");
-        String screenName = screen_name.format(date.getTime());   //获取执行时间
+        String screenName = screen_name.format(CommonTools.getDate().getTime());   //获取执行时间
 
         File savePath = new File(System.getProperty("savePicPath")); //从系统变量中获取截图路径(BeforeSuite
 
@@ -249,25 +246,5 @@ public class PageAction {
             }
         }
         return isHave;
-    }
-
-    /**
-     * 返回当前模块一级页面
-     */
-    public static JMHomePage goHome(){
-        try{
-            BasePage.goBackHome();
-        }catch (Exception e){
-
-        }
-
-        return new JMHomePage();
-    }
-
-    /**
-     * 点击首页底导
-     */
-    public static void tapHomeTab(){
-        BasePage.goToHomePage();
     }
 }
