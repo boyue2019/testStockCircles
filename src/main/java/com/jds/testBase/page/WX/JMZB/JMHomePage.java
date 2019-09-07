@@ -11,7 +11,12 @@ import java.util.Random;
 /**
  * 解码直播小程序首页
  */
-public class JMHomePage extends BasePage implements IJMBottomNavigation{
+public class JMHomePage extends BasePage{
+    //小程序名称 【NATIVE_APP】
+    @FindBy(id = "com.tencent.mm:id/ph")
+    @CacheLookup
+    private WebElement wxmini_name;
+
     //每日直播 - title
     @FindBy(id = "home_dailylive_title")
     @CacheLookup
@@ -176,9 +181,8 @@ public class JMHomePage extends BasePage implements IJMBottomNavigation{
      * 【事件】切换至包含当前页面元素WindowHandel
      */
     public void jumpHomeWindowHandel(){
-        this.waitBottomElement();   //等待元素出现
         PageAction.switchToWebview(); //切换至WebView模式
-        PageAction.jumpToWindowHandel(home_drycargo_checkall);  //切换至存在'每日干后-查看全部'的WindowHandel
+        PageAction.jumpToWindowHandel(home_dailylive_title);  //切换至存在'每日干后-查看全部'的WindowHandel
     }
 
     /**
@@ -188,6 +192,13 @@ public class JMHomePage extends BasePage implements IJMBottomNavigation{
     public JMDrycargoPage gotoJMDrycargoCheckAll(){
         PageAction.click(1,home_drycargo_checkall);
         return new JMDrycargoPage();
+    }
+
+    /**
+     * 【事件】等待小程序名称加载成功
+     */
+    public void waitWxminiName(){
+        PageAction.waitElement(20,wxmini_name);
     }
 
     /**
@@ -284,7 +295,7 @@ public class JMHomePage extends BasePage implements IJMBottomNavigation{
     public Boolean isHaveHomeDrycargoArticleTitle() {
         try {
             String title = home_drycargo_articletitle.getText();
-            if(title.length() > 0 & title.equals("null")){
+            if(title.length() > 0 && !title.equals("null")){
                 return true;
             }else {
                 return false;
@@ -335,7 +346,7 @@ public class JMHomePage extends BasePage implements IJMBottomNavigation{
             }
             this.goBack();    //返回首页
         }catch (Exception e){
-            System.out.println("【异常】跳转失败");
+            System.out.println("【异常】跳转失败:home_drycargo_enter");
         }
     }
 
@@ -390,22 +401,20 @@ public class JMHomePage extends BasePage implements IJMBottomNavigation{
         try {
             Random random = new Random();
             String title = "";
-            int num = 0;
-            switch (random.nextInt(2)){
+            int num = random.nextInt(2);
+            switch (num){
                 case 0:
                     title = home_video_mr_vtitle1.getText();
-                    num = 1;
                     break;
                 case 1:
                     title = home_video_mr_vtitle2.getText();
-                    num = 2;
                     break;
             }
             if (title.length() > 0 && !title.equals("null")){
-                System.out.println("投资学院第" + num + "篇文章的标题:" + title);
+                System.out.println("投资学院第" + (num+1) + "篇文章的标题:" + title);
                 return true;
             }else {
-                System.out.println("投资学院第" + num + "篇文章的标题:" + title);
+                System.out.println("投资学院第" + (num+1) + "篇文章的标题:" + title);
                 return false;
             }
         }catch (NoSuchElementException e){

@@ -13,25 +13,20 @@ import org.openqa.selenium.support.FindBy;
  * 每日听干货列表
  */
 public class JMDrycargoPage extends BasePage {
-    //每日听干货-师说Tab 【WebView】
-    @FindBy(xpath = "//wx-view[@class='category_item']/wx-text[1][span[2]='师说']")
+    //每日听干货-师说Tab
+    @FindBy(xpath = "//wx-view[@id='category_tab0']/wx-text")
     @CacheLookup
     private WebElement tab_ss;
 
-    //每日听干货-为民观天下Tab 【WebView】
-    @FindBy(xpath = "//wx-view[@class='category_item']/wx-text[1][span[2]='为民观天下']")
+    //每日听干货-为民观天下Tab
+    @FindBy(xpath = "//wx-view[@id='category_tab1']/wx-text")
     @CacheLookup
     private WebElement tab_wmgtx;
 
-    //每日听干货-财经早班车Tab 【WebView】
-    @FindBy(xpath = "//wx-view[@class='category_item']/wx-text[1][span[2]='财经早班车']")
+    //每日听干货-财经早班车Tab
+    @FindBy(xpath = "//wx-view[@id='category_tab2']/wx-text")
     @CacheLookup
     private WebElement tab_cjzbc;
-
-    //每日听干货文章列表 【WebView】
-    @FindBy(xpath = "//wx-complisten[5]")
-    @CacheLookup
-    private WebElement articlelist;
 
     /**
      * 【事件】跳转至"为民观天下"列表
@@ -41,9 +36,9 @@ public class JMDrycargoPage extends BasePage {
     public JMDrycargoPage skipWMGTX(){
         try{
             tab_wmgtx.click();
-            this.waitLoading(3);  //等待3秒加载页面元素
+            this.waitLoading(2);  //等待3秒加载页面元素
         }catch (NoSuchElementException e){
-            System.out.println("找不到对应元素;【Method】skipWMGTX");
+            System.out.println("【异常】找不到元素:tab_wmgtx");
         }
         return new JMDrycargoPage();
     }
@@ -57,53 +52,61 @@ public class JMDrycargoPage extends BasePage {
         PageAction.switchToWebview();
         try{
             tab_cjzbc.click();
-            this.waitLoading(3);  //等待3秒加载页面元素
+            this.waitLoading(2);  //等待3秒加载页面元素
         }catch (NoSuchElementException e){
-            System.out.println("找不到对应元素;【Method】skipCJZBC");
+            System.out.println("【异常】找不到元素:tab_cjzbc");
         }
         return new JMDrycargoPage();
     }
 
     /**
-     * 【测试点】判断页面是否包含所有文章类型
-     * @return
+     * 【事件】切换至包含当前页面元素WindowHandel
      */
-    public Boolean isIncludeArticleType(){
-        Boolean isHave = false;
-        this.waitLoading(3);  //等待3秒加载页面
-        for (int i =0;i < 3;i++){
-            switch (i){
-                case 0:
-                    Boolean a = PageAction.jumpToWindowHandel(tab_ss);
-                    if (a){
-                        isHave = a;
-                    }else {
-                        isHave = false;
-                        break;
-                    }
-                case 1:
-                    Boolean b = PageAction.jumpToWindowHandel(tab_wmgtx);
-                    if (b){
-                        isHave = b;
-                    }else {
-                        isHave = false;
-                        break;
-                    }
-                case 2:
-                    Boolean c = PageAction.jumpToWindowHandel(tab_cjzbc);
-                    if (c){
-                        isHave = c;
-                    }else {
-                        isHave = false;
-                        break;
-                    }
-            }
-        }
-        return isHave;
+    public void jumpDrycargoWindowHandel(){
+        PageAction.jumpToWindowHandel(tab_ss);  //切换至存在'每日干后-查看全部'的WindowHandel
     }
 
     /**
-     * 【测试点】判断文章列表至少展示11篇文章
+     * 【测试点】检查每日听干货列表师说tab是否成功加载
+     * @return
+     */
+    public Boolean isHaveDrycargoTabSS(){
+        try{
+            return tab_ss.isDisplayed();
+        }catch (NoSuchElementException e){
+            System.out.println("【异常】找不到元素:tab_tab_sscjzbc");
+            return false;
+        }
+    }
+
+    /**
+     * 【测试点】检查每日听干货列表为民观天下tab是否成功加载
+     * @return
+     */
+    public Boolean isHaveDrycargoTabWmgtx(){
+        try{
+            return tab_wmgtx.isDisplayed();
+        }catch (NoSuchElementException e){
+            System.out.println("【异常】找不到元素:tab_wmgtx");
+            return false;
+        }
+    }
+
+    /**
+     * 【测试点】检查每日听干货列表财经早班车tab是否成功加载
+     * @return
+     */
+    public Boolean isHaveDrycargoTabCjzbc(){
+        try{
+            return tab_cjzbc.isDisplayed();
+        }catch (NoSuchElementException e){
+            System.out.println("【异常】找不到元素:tab_cjzbc");
+            return false;
+        }
+    }
+
+    /**
+     * 【测试点】检查文章列表至少展示11篇文章
      * @return
      */
     public Boolean articleCount(){
@@ -129,7 +132,6 @@ public class JMDrycargoPage extends BasePage {
             }
             count++;
         }
-
         //判断文章数量是否满足要求
         if (count == 11){
             System.out.println("文章数量:" + count);

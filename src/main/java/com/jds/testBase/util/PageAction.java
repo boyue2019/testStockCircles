@@ -1,6 +1,7 @@
 package com.jds.testBase.util;
 
 import com.jds.testBase.page.WX.JMZB.BasePage;
+import com.jds.testBase.page.WX.JMZB.JMHomePage;
 import com.jds.testBase.page.WX.JMZB.WXHomePage;
 import com.jds.testCase.caseList.WX.BaseCase;
 import io.appium.java_client.TouchAction;
@@ -77,7 +78,7 @@ public class PageAction {
             System.out.println("点击元素.");
             element.click();  //点击指定元素
         }catch (NoSuchElementException n){  //若找不到元素退出程序
-            System.out.println("找不到对应元素;【Method】skiclickpWMGTX");
+            System.out.println("找不到对应元素:" + element);
             System.exit(0);
         }
     }
@@ -178,14 +179,27 @@ public class PageAction {
      * @param my 终点y坐标(屏高百分比)
      */
     public static void slide(int px,int py,int mx,int my){
-        int x1 = (1080 * px) / 100;
-        int y1 = (1920 * py) / 100;
-        int x2 = (1080 * mx) / 100;
-        int y2 = (1920 * my) / 100;
+        int x1 = (Integer.parseInt(BaseCase.ThreadWidth.get()) * px) / 100;
+        int y1 = (Integer.parseInt(BaseCase.ThreadHeight.get()) * py) / 100;
+        int x2 = (Integer.parseInt(BaseCase.ThreadWidth.get()) * mx) / 100;
+        int y2 = (Integer.parseInt(BaseCase.ThreadHeight.get()) * my) / 100;
         new TouchAction(BaseCase.ThreadDriver.get().getDriverWX())     //滑动屏幕
                 .press(PointOption.point(x1,y1))
                 .waitAction(WaitOptions.waitOptions(Duration.ofSeconds(3)))
                 .moveTo(PointOption.point(x2,y2))
+                .release().perform();
+    }
+
+    /**
+     * 点击坐标
+     * @param x
+     * @param y
+     */
+    public static void tap(int x,int y){
+        int x1 = (Integer.parseInt(BaseCase.ThreadWidth.get()) * x) / 100;
+        int y1 = (Integer.parseInt(BaseCase.ThreadHeight.get()) * y) / 100;
+        new TouchAction(BaseCase.ThreadDriver.get().getDriverWX())     //滑动屏幕
+                .press(PointOption.point(x1,y1))
                 .release().perform();
     }
 
@@ -230,7 +244,7 @@ public class PageAction {
                     break;
                 }
             }catch (NoSuchElementException | StaleElementReferenceException n){
-                System.out.println("未找到对应元素或页面元素过时;当前WindowHandle:" + handle);
+                System.out.println("未找到对应元素;当前WindowHandle:" + handle);
                 isHave = false;
             }
         }
@@ -238,9 +252,22 @@ public class PageAction {
     }
 
     /**
-     * 返回首页
+     * 返回当前模块一级页面
      */
-    public static void goBackHome(){
-        BasePage.goBackHome();
+    public static JMHomePage goHome(){
+        try{
+            BasePage.goBackHome();
+        }catch (Exception e){
+
+        }
+
+        return new JMHomePage();
+    }
+
+    /**
+     * 点击首页底导
+     */
+    public static void tapHomeTab(){
+        BasePage.goToHomePage();
     }
 }

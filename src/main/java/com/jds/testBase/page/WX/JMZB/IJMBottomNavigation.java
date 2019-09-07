@@ -11,14 +11,14 @@ public interface IJMBottomNavigation {
      */
     @Step("【底部导航】点击进入'首页'")
     default JMHomePage goToHomePage(){
-        JMBottomNavigationPage bottomNavigationPage = new JMBottomNavigationPage();
         PageAction.switchToNative();
+        JMBottomNavigationPage bottomNavigationPage = new JMBottomNavigationPage();
         PageAction.click(15,JMBottomNavigationPage.home);
         return new JMHomePage();
     }
 
     /**
-     * 点击底部导航:首页
+     * 点击底部导航:微课
      * context:NATIVE_APP
      * @return
      */
@@ -31,7 +31,7 @@ public interface IJMBottomNavigation {
     }
 
     /**
-     * 点击底部导航:首页
+     * 点击底部导航:我的
      * context:NATIVE_APP
      * @return
      */

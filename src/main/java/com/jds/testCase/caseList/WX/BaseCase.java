@@ -9,7 +9,11 @@ import org.testng.annotations.*;
 
 public class BaseCase {
     public static ThreadLocal<Driver> ThreadDriver = new ThreadLocal<Driver>();
+    public static ThreadLocal<String> ThreadHeight = new ThreadLocal<>();
+    public static ThreadLocal<String> ThreadWidth = new ThreadLocal<>();
+
     String ExperimentalOption = CommonTools.getConfigData("ExperimentalOption");
+
     static WXHomePage wxHomePage;
     static JMHomePage jmHomePage;
     static JMWeiKePage jmWeiKePage;
@@ -30,6 +34,9 @@ public class BaseCase {
         AppiumDriver.startServer(port,bp);
         Driver driver = new Driver();
         ThreadDriver.set(driver);
+        ThreadHeight.set(height);
+        ThreadWidth.set(width);
+
         //启动微信
         wxHomePage = PageAction.startWX(port, serial, system, version, ExperimentalOption);
         //打开解码直播小程序
@@ -45,19 +52,12 @@ public class BaseCase {
     }
 
     /**
-     * 每个Class用例执行结束后返回首页或重新进入小程序
+     * 每个Class用例执行结束后返回首页
      */
     @AfterClass
-    @Parameters({"port","bp","system","serial","height","width","manufacturer","model","version"})
-    public void goHome(String port, String bp, String system,
-                       String serial, String height, String width,
-                       String manufacturer, String model, String version){
-        try {
-            System.out.println("返回首页.");
-            PageAction.goBackHome();
-        }catch (Exception e){
-            System.out.println("重新启动小程序.");
-        }
+    public void goHome(){
+        BasePage.goBackHome();
+        jmHomePage = BasePage.goToHomePage();
     }
 
     /**

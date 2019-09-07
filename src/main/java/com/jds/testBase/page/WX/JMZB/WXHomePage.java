@@ -30,7 +30,7 @@ public class WXHomePage extends BasePage{
      */
     public JMHomePage openJMZB(){
         PageAction.waitElement(20,BookTab);   //等待元素出现
-        PageAction.slide(40,38,40,93);   //根据设备分辨率下拉屏幕
+        PageAction.slide(50,35,50,90);   //根据设备分辨率下拉屏幕
         PageAction.waitElement(5,stop1);
         PageAction.waitElement(20,JMZBEnter);
         JMZBEnter.click();

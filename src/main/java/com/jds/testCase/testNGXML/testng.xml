@@ -30,13 +30,11 @@
         <classes>
             <class name="com.jds.testCase.caseList.WX.CHomePage">
                 <methods>
-                    <include name="Case018"></include>
-                    <include name="Case019"></include>
-                    <include name="Case020"></include>
-                    <include name="Case021"></include>
-                    <include name="Case022"></include>
+                    <include name="HomePage_Case_022"></include>
                 </methods>
             </class>
+            <class name="com.jds.testCase.caseList.WX.CDrycargoPage"></class>
+            <class name="com.jds.testCase.caseList.WX.CWeiKePage"></class>
         </classes>
     </test>
 

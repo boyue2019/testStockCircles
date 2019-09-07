@@ -9,20 +9,17 @@ import org.openqa.selenium.support.FindBy;
  */
 public class JMBottomNavigationPage extends BasePage{
     //底部导航栏:首页 【NATIVE_APP】
-    @FindBy(xpath = "//*[@text='首页']")
+    @FindBy(xpath = "//android.widget.LinearLayout/android.widget.RelativeLayout[1]")
     @CacheLookup
     static WebElement home;  //底导"首页"
 
     //底部导航栏:首页 【NATIVE_APP】
-    @FindBy(xpath = "//*[@text='微课']")
+    @FindBy(xpath = "//android.widget.LinearLayout/android.widget.RelativeLayout[2]")
     @CacheLookup
     static WebElement WeiKe;  //底导"首页"
 
     //底部导航栏:首页 【NATIVE_APP】
-    @FindBy(xpath = "//*[@text='我的']")
+    @FindBy(xpath = "//android.widget.LinearLayout/android.widget.RelativeLayout[3]")
     @CacheLookup
     static WebElement mine;  //底导"首页"
-
-
-
 }

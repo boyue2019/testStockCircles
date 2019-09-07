@@ -8,6 +8,8 @@
         <!--解码直播 -->
         <jmzb>
             <case>com.jds.testCase.caseList.WX.CHomePage</case>
+            <case>com.jds.testCase.caseList.WX.CDrycargoPage</case>
+            <case>com.jds.testCase.caseList.WX.CWeiKePage</case>
         </jmzb>
         <tzyk></tzyk>
     </wxmini>
