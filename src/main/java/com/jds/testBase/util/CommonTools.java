@@ -41,11 +41,10 @@ public class CommonTools {
      * @param key
      * @return
      */
-    public static String getConfigData(String key){
+    public String getConfigData(String key){
         try{
             CommonTools.properties.load(new FileInputStream(System.getProperty("user.dir") + "/config/config.properties"));
-            String value =  CommonTools.properties.getProperty(key);
-            return value;
+            return CommonTools.properties.getProperty(key);
         }catch (FileNotFoundException f){
             System.out.println("找不到文件;【Method】getConfigData");
         }
@@ -58,7 +57,7 @@ public class CommonTools {
     /**
      * 创建截图、日志目录
      */
-    public static void createSavePath(){
+    public void createSavePath(){
         SimpleDateFormat datePath = new SimpleDateFormat("yyyy-MM-dd");
         String datePathName = datePath.format(CommonTools.getDate().getTime());       //获取日期
         SimpleDateFormat timePath = new SimpleDateFormat("HH_mm_ss");

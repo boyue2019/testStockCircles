@@ -33,8 +33,6 @@
                     <include name="HomePage_Case_022"></include>
                 </methods>
             </class>
-            <class name="com.jds.testCase.caseList.WX.CDrycargoPage"></class>
-            <class name="com.jds.testCase.caseList.WX.CWeiKePage"></class>
         </classes>
     </test>
 

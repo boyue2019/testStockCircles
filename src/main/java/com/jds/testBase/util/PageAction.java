@@ -1,7 +1,5 @@
 package com.jds.testBase.util;
 
-import com.jds.testBase.page.WX.JMZB.BasePage;
-import com.jds.testBase.page.WX.JMZB.JMHomePage;
 import com.jds.testBase.page.WX.JMZB.WXHomePage;
 import com.jds.testCase.caseList.WX.BaseCase;
 import io.appium.java_client.TouchAction;
@@ -205,9 +203,9 @@ public class PageAction {
      */
     public static void switchToWebview(){
         //若当前context不是webview则切换至webview
-        if(!BaseCase.ThreadDriver.get().getDriverWX().getContext().equals("WEBVIEW_com.tencent.mm:appbrand0")){
+        if(!BaseCase.ThreadDriver.get().getDriverWX().getContext().equals("WEBVIEW_" + CommonTools.getCommonTools().getConfigData("ExperimentalOption"))){
             System.out.println("切换至WebView.");
-            BaseCase.ThreadDriver.get().getDriverWX().context("WEBVIEW_com.tencent.mm:appbrand0");
+            BaseCase.ThreadDriver.get().getDriverWX().context("WEBVIEW_" + CommonTools.getCommonTools().getConfigData("ExperimentalOption"));
         }else {
             System.out.println("当前Context:WEBVIEW_com.tencent.mm:appbrand0");
         }

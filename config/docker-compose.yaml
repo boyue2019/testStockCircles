@@ -1,8 +1,20 @@
 !!com.jds.testBase.yaml.ModelBean
 modeldetails:
 - appiumParameters: {bp: '4724', chromedrniverport: '8000', port: '4723'}
+  deviceInfos: {height: '1920', manufacturer: XIAOMI, model: MI 5, serial: edd06f8e,
+    version: '6.0', width: '1080'}
+  dockerParameters: {containerName: '', image: ''}
+  serial: edd06f8e
+  system: Android
+- appiumParameters: {bp: '4726', chromedrniverport: '8001', port: '4725'}
   deviceInfos: {height: '2340', manufacturer: XIAOMI, model: MI 9, serial: 6d4a5e0d,
     version: '9', width: '1080'}
   dockerParameters: {containerName: '', image: ''}
   serial: 6d4a5e0d
+  system: Android
+- appiumParameters: {bp: '4728', chromedrniverport: '8002', port: '4727'}
+  deviceInfos: {height: '1920', manufacturer: OPPO, model: ' R9s', serial: 38b4dadf,
+    version: 6.0.1, width: '1080'}
+  dockerParameters: {containerName: '', image: ''}
+  serial: 38b4dadf
   system: Android
